@@ -1,56 +1,240 @@
+@charset "utf-8";
+
+/* 変数設定 */
+:root {
+    --table-th-size: 100px;
+    --table-td-size: 250px;
+}
+
+/* 画面余白を削除 */
+body {
+    margin: 0px;
+    padding: 0;
+}
+
+/* div.container {
+    display: flex;
+    flex-direction: column;
+} */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: rgb(10, 30, 150);
+}
+
+/* ヘッダー */
 div.header2015 {
-    position:fixed;
-    top: 0px;
+    display: grid;
     width: 100%;
     height: auto;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: -50px 10px;
-
+    gap: -50px 0px;
 }
 div#Item1 {
-    background: rgb(167, 209, 16);
+    text-align: center;
+    color: white;
+}
+div#Item2 {
+    text-align: center;
+    color: white;
 }
 div#Item3 {
     text-align: center;
-    background: rgb(167, 209, 16);
+    color: white;
+}
+div#Item4 {
+    text-align: center;
+    color: white;
 }
 div#Item5 {
     text-align: center;
-    background: rgb(167, 209, 16);
+    color: white;
 }
 div#Item6 {
     text-align: center;
-    background: rgb(167, 209, 16);
+    color: white;
 }
 
-.header2015::after {
-    content: '';
-    display: block;
-    clear: both;
+main {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+}
+div.sidebar {
+    position: sticky;
+    top: 20rem;
+    /* bottom: 0; */
+    z-index: 999;
+    /* flex-grow: 1; */
+    flex-shrink: 0;
+    width: 96px;
+    background-color: moccasin;
+    border: 4px solid chocolate;
+}
+div.content {
+    /* flex: 1; */
+    display: flex;
+    flex-direction: column;
+    /* flex-shrink: 1; */
+    background-color: rgb(255, 255, 255);
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
-
-/* .spring2015{ */
-    /* ヘッダーの高さに応じて適宜調整してください */
-    /* padding-top:150px; */
-    /* フッターの高さに応じて適宜調整してください */
-    /* padding-bottom:60px; */
-/* } */
-
-.container::after {
-    content: '';
-    display: block;
-    clear: both;
+div.winter {
+    background-color: rgb(187, 188, 191);
+    color: white;
+    padding-left: 2rem;
 }
+div.spring {
+    background-color: rgb(164, 202, 104);
+    color: white;
+    padding-left: 2rem;
+}
+div.summer {
+    background-color: rgb(113, 164, 217);
+    color: white;
+    padding-left: 2rem;
+}
+div.autumn {
+    background-color: rgb(183, 40, 46);
+    color: white;
+    padding-left: 2rem;
+}
+div.detail-caption {
+    text-align: center;
+}
+/* 表デザイン */
+div.table-wrap {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+table.table {
+    table-layout: fixed;
+    width: 1000px;
+    /* border-style: solid; */
+    /* border-width: 0.3rem; */
+    /* border-color: rgb(0, 0, 0); */
+    /* 要素間の幅指定 */
+    border-collapse: separate;
+    border-spacing: 10px 5px;
+}
+
+td.none {
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    padding-top: 0.4rem;
+    padding-left: 2rem;
+    padding-bottom: 0.4rem;
+}
+/* アイコン設定 */
+td.new {
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    padding-top: 0.4rem;
+    padding-left: 2rem;
+    padding-bottom: 0.4rem;
+    background: url(image/icon_new.png) no-repeat left center;
+}
+td.continuation {
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    padding-top: 0.4rem;
+    padding-left: 2rem;
+    padding-bottom: 0.4rem;
+    background: url(image/icon_continuation.png) no-repeat left center;
+}
+td.reair {
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    padding-top: 0.4rem;
+    padding-left: 2rem;
+    padding-bottom: 0.4rem;
+    background: url(image/icon_reair.png) no-repeat left center;
+}
+
+table tr:first-child {
+    /* background-color: rgb(255, 240, 240); */
+    /* background-color: rgb(230, 180, 180); */
+    background-color: rgb(220, 220, 220);
+}
+table tr:nth-child(3) {
+    background-color: rgb(220, 220, 220);
+}
+table tr:nth-child(5) {
+    background-color: rgb(220, 220, 220);
+}
+table tr:last-child {
+    /* background-color: rgb(240, 255, 255); */
+    /* background-color: rgb(130, 170, 225); */
+    background-color: rgb(220, 220, 220);
+}
+
+th.sun {
+    background-color: rgb(150, 0, 0);
+    background-color: rgb(230, 180, 180);
+    color: white;
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+}
+th.weekday{
+    background-color: rgb(120, 120, 120);
+    color: white;
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+}
+th.sat {
+    background-color: rgb(130, 170, 225);
+    color: white;
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+}
+
 
 /* フッター */
+footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    background-color: rgb(170, 170, 170);
+}
 div.footer {
-    position:fixed;
-    bottom:0px;
-    width:100%;
-    height: auto;
-    background: rgb(150, 0, 0);
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(10, 30, 150);
     text-align: center;
     padding: 0px 0;
 }
