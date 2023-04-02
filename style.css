@@ -4,6 +4,7 @@
 :root {
     --table-th-size: 100px;
     --table-td-size: 250px;
+    --sidebar-width: 130px;
     /* 配色設定 */
     --table-caption-color: rgb(15, 37, 64);
     --table-colum-color: rgb(189, 192, 186);
@@ -28,12 +29,13 @@ div.header2015 {
     display: grid;
     width: 100%;
     height: auto;
-    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
     gap: -50px 0px;
 }
 div#Item1 {
-    text-align: center;
-    color: white;
+    background: url(image/header_year_2015.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
 }
 div#Item2 {
     text-align: center;
@@ -72,21 +74,34 @@ div.sidebar {
     flex-grow: 1;
     flex-shrink: 0;
     width: 130px;
-    height: 150px;
+    height: 300px;
     padding: 10px;
 }
 div.sidebar-header {
     border-radius: 5px 5px 5px 5px;
+    background: url(image/img_archive.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
     background-color: var(--header-color);
+    flex-grow: 1;
+    flex-shrink: 0;
     padding: 0px;
-    text-align: center;
+    width: var(--sidebar-width);
+    height: 50px;
 }
 div.sidebar-main {
-    /* flex-grow: 1; */
+    flex-grow: 1;
     flex-shrink: 0;
-    height: 100px;
+    width: var(--sidebar-width);
+    height: 300px;
     text-align: center;
     overflow-y: scroll;
+}
+div.sidebar-footer {
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: var(--sidebar-width);
+    height: 50px;
 }
 
 div.content {
