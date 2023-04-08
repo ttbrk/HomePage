@@ -3,7 +3,7 @@
 /* 変数設定 */
 :root {
     --table-th-size: 100px;
-    --table-td-size: 250px;
+    --table-td-size: 180px;
     --sidebar-width: 130px;
     /* 配色設定 */
     --table-caption-color: rgb(15, 37, 64);
@@ -25,35 +25,48 @@ header {
 }
 
 /* ヘッダー */
-div.header2015 {
+div.headerMain {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 2fr 1fr;
+    gap: -50px 0px;
+}
+div.TitleMain {
+    background: url(image/header_main.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
+}
+
+div.header {
     display: grid;
     width: 100%;
     height: auto;
     grid-template-columns: 1.5fr 1fr 1.5fr;
     gap: -50px 0px;
 }
-div#Item1 {
+div.Title2017 {
+    background: url(image/header_year_2017.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
+}
+div.Title2016 {
+    background: url(image/header_year_2016.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
+}
+div.Title2015 {
     background: url(image/header_year_2015.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
-div#Item2 {
+
+
+div.SubItem1 {
     text-align: center;
     color: white;
 }
-div#Item3 {
-    text-align: center;
-    color: white;
-}
-div#Item4 {
-    text-align: center;
-    color: white;
-}
-div#Item5 {
-    text-align: center;
-    color: white;
-}
-div#Item6 {
+div.SubItem2 {
     text-align: center;
     color: white;
 }
@@ -117,30 +130,34 @@ div.content {
 div.winter {
     border-radius: 5px 5px 5px 5px;
     background: url(image/icon_winter.png) no-repeat left center;
+    background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
-    padding-left: 10rem;
+    padding-left: 6rem;
 }
 div.spring {
     border-radius: 5px 5px 5px 5px;
     background: url(image/icon_spring.png) no-repeat left center;
+    background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
-    padding-left: 10rem;
+    padding-left: 6rem;
 }
 div.summer {
     border-radius: 5px 5px 5px 5px;
     background: url(image/icon_summer.png) no-repeat left center;
+    background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
-    padding-left: 10rem;
+    padding-left: 6rem;
 }
 div.autumn {
     border-radius: 5px 5px 5px 5px;
     background: url(image/icon_autumn.png) no-repeat left center;
+    background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
-    padding-left: 10rem;
+    padding-left: 6rem;
 }
 div.detail-caption {
     text-align: center;
@@ -152,7 +169,7 @@ div.table-wrap {
 }
 table.table {
     table-layout: fixed;
-    width: 1000px;
+    width: 800px;
     /* border-style: solid; */
     /* border-width: 0.3rem; */
     /* border-color: rgb(0, 0, 0); */
@@ -255,7 +272,10 @@ th.sat {
     background-color: rgb(111, 51, 129);
     color: white;
 }
-
+/* SNS */
+.sub-title {
+    margin-bottom: 30px;
+}
 
 /* フッター */
 footer {
