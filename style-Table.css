@@ -58,12 +58,11 @@ table.table {
     /* border-color: rgb(0, 0, 0); */
     /* 要素間の幅指定 */
     border-collapse: separate;
-    border-spacing: 10px 5px;
 }
 
 td.none {
     padding-top: 0.4rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
     padding-bottom: 0.4rem;
     border-radius: 5px 5px 5px 5px;
     border-right-style: dashed;
@@ -73,11 +72,12 @@ td.none {
     border-bottom-width: 0.1rem;
     border-bottom-color: rgb(0, 0, 0);
     width: var(--table-td-size);
+    background: url(image/icon_none.png) no-repeat left center;
 }
 /* アイコン設定 */
 td.new {
     padding-top: 0.4rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
     padding-bottom: 0.4rem;
     border-radius: 5px 5px 5px 5px;
     border-right-style: dashed;
@@ -91,7 +91,7 @@ td.new {
 }
 td.continuation {
     padding-top: 0.4rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
     padding-bottom: 0.4rem;
     border-radius: 5px 5px 5px 5px;
     border-right-style: dashed;
@@ -106,7 +106,7 @@ td.continuation {
 td.reair {
     width: var(--table-td-size);
     padding-top: 0.4rem;
-    padding-left: 2rem;
+    padding-left: 3rem;
     padding-bottom: 0.4rem;
     border-radius: 5px 5px 5px 5px;
     border-right-style: dashed;

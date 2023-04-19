@@ -41,6 +41,16 @@ div.header {
     grid-template-columns: 1.5fr 1fr 1.5fr;
     gap: -50px 0px;
 }
+div.Title2019 {
+    background: url(image/header_year_2019.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
+}
+div.Title2018 {
+    background: url(image/header_year_2018.png) no-repeat left center;
+    background-size: contain;
+    background-position: center;
+}
 div.Title2017 {
     background: url(image/header_year_2017.png) no-repeat left center;
     background-size: contain;
