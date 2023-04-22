@@ -155,3 +155,41 @@ th.sat {
     background-color: rgb(111, 51, 129);
     color: white;
 }
+
+th.ranking1{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    padding-left: 0.5rem;
+    background: url(image/ranking1.png) no-repeat left center;
+    background-size: contain;
+    background-color: white
+}
+th.ranking2{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    padding-left: 0.5rem;
+    background: url(image/ranking2.png) no-repeat left center;
+    background-size: contain;
+    background-color: white
+}
+th.ranking3{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    padding-left: 0.5rem;
+    background: url(image/ranking3.png) no-repeat left center;
+    background-size: contain;
+    background-color: white
+}
+
+td.ranking1 {
+    background-color: white
+}
+td.ranking2 {
+    background-color: white
+}
+td.ranking3 {
+    background-color: white
+}

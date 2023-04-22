@@ -6,6 +6,7 @@
     /* 配色設定 */
     --header-color: rgba(0, 92, 175);
     --footer-color: rgba(0, 92, 175);
+    --footer-bar-color: rgba(0, 92, 17);
 }
 /* 画面余白を削除 */
 body {
@@ -124,10 +125,8 @@ div.sidebar-footer {
 }
 
 div.content {
-    /* flex: 1; */
     display: flex;
     flex-direction: column;
-    /* flex-shrink: 1; */
     background-color: rgb(255, 255, 255);
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
@@ -154,5 +153,4 @@ div.footer {
 }
 div.footer p{
     color: rgb(255, 255, 255);
-    /* font-size: 0.875rem; */
 }
