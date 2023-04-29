@@ -3,7 +3,7 @@
 /* 変数設定 */
 :root {
     --table-th-size: 100px;
-    --table-td-size: 180px;
+    --table-td-size: 200px;
     /* 配色設定 */
     --table-caption-color: rgb(15, 37, 64);
     --table-colum-color: rgb(189, 192, 186);
