@@ -2,19 +2,20 @@
 <html lang ="ja">
     <head>
         <meta character ="UTF8">
+        <script src="../js/tabledata.js"></script>
         <title>2021 視聴アニメ一覧</title>
     </head>
 
     <body>
-        <link rel = "stylesheet" href ="../style.css"></link>
-        <link rel = "stylesheet" href ="../style-Table.css"></link>
+        <link rel = "stylesheet" href ="../css/style.css"></link>
+        <link rel = "stylesheet" href ="../css/style-Table.css"></link>
         <div class ="container">
             <!-- ヘッダー定義 -->
             <header>
                 <div class ="header">
                     <div class ="Title2021"></div>
-                    <div class ="SubItem1"><h4>合計視聴数: 63</h4></div>
-                    <div class ="SubItem2"><h4>新規: 47, 継続: 12, 再放送:  4</h4></div>
+                    <div class ="SubItem1"><h4 id="count_year_sum_2021"></h4></div>
+                    <div class ="SubItem2"><h4 id="count_year_2021"></h4></div>
                 </div>
             </header>
             <br></br>
@@ -25,11 +26,11 @@
                     <div class="winter">
                         <h3>2021/01～2021/03</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 9, 継続: 3, 再放送: 2</h4>
+                            <h4 id="count_winter_2021"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_winter_2021">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">デジモンアドベンチャー：</td>
@@ -80,6 +81,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_winter_2021", "count_winter_2021");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -87,11 +89,11 @@
                     <div class="spring">
                         <h3>2021/04～2021/06</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 8, 継続: 3, 再放送: 1</h4>
+                            <h4 id="count_spring_2021"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_spring_2021">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">デジモンアドベンチャー：</td>
@@ -142,6 +144,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_spring_2021", "count_spring_2021");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -149,11 +152,11 @@
                     <div class="summer">
                         <h3>2021/07～2021/09</h3>
                         <div class ="detail-caption">
-                            <h4>新規:16, 継続: 2, 再放送:--</h4>
+                            <h4 id="count_summer_2021"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_summer_2021">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">デジモンアドベンチャー：</td>
@@ -204,6 +207,7 @@
                                 <td class="new">現実主義勇者の王国再建記</td>
                             </tr>
                         </table>
+                        <script> countup_season("table_summer_2021", "count_summer_2021");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -211,11 +215,11 @@
                     <div class="autumn">
                         <h3>2021/10～2021/12</h3>
                         <div class ="detail-caption">
-                            <h4>新規:14, 継続: 4, 再放送: 1</h4>
+                            <h4 id="count_autumn_2021"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_autumn_2021">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">職転生 ～異世界行ったら本気だす～</td>
@@ -266,10 +270,13 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_autumn_2021", "count_autumn_2021");</script>
                     </div>
                     <br></br>
                     <br></br>
                 </div>
+                <script> countup_year(["table_winter_2021", "table_spring_2021", "table_summer_2021", "table_autumn_2021"], "count_year_2021", "count_year_sum_2021");</script>
+                
                 <!-- サイドバー -->
                 <div class="sidebar">
                     <div class="sidebar-header">

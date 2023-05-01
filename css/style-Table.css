@@ -1,0 +1,393 @@
+@charset "utf-8";
+
+/* 変数設定 */
+:root {
+    --table-size: 800px;
+    --table-th-size: 100px;
+    --table-td-size: 200px;
+    /* 配色設定 */
+    --table-caption-color: rgb(15, 37, 64);
+    --table-colum-color: rgb(189, 192, 186);
+    --table-index-color: rgba(0, 92, 175);
+}
+
+div.winter {
+    border-radius: 5px 5px 5px 5px;
+    background: url(../image/icon_winter.png) no-repeat left center;
+    background-size: contain;
+    background-color: var(--table-caption-color);
+    color: white;
+    padding-left: 6rem;
+}
+div.spring {
+    border-radius: 5px 5px 5px 5px;
+    background: url(../image/icon_spring.png) no-repeat left center;
+    background-size: contain;
+    background-color: var(--table-caption-color);
+    color: white;
+    padding-left: 6rem;
+}
+div.summer {
+    border-radius: 5px 5px 5px 5px;
+    background: url(../image/icon_summer.png) no-repeat left center;
+    background-size: contain;
+    background-color: var(--table-caption-color);
+    color: white;
+    padding-left: 6rem;
+}
+div.autumn {
+    border-radius: 5px 5px 5px 5px;
+    background: url(../image/icon_autumn.png) no-repeat left center;
+    background-size: contain;
+    background-color: var(--table-caption-color);
+    color: white;
+    padding-left: 6rem;
+}
+div.detail-caption {
+    text-align: center;
+}
+/* 表デザイン */
+div.table-wrap {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+table.table {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2023======================= */
+#table_winter_2023 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2023 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2023 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2023 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2022======================= */
+#table_winter_2022 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2022 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2022 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2022 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2021======================= */
+#table_winter_2021 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2021 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2021 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2021 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2020======================= */
+#table_winter_2020 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2020 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2020 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2020 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2019======================= */
+#table_winter_2019 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2019 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2019 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2019 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2018======================= */
+#table_winter_2018 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2018 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2018 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2018 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2017======================= */
+#table_winter_2017 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2017 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2017 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2017 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2016======================= */
+#table_winter_2016 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2016 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2016 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2016 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+/* =======================2015======================= */
+#table_winter_2015 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_spring_2015 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_summer_2015 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+#table_autumn_2015 {
+    table-layout: fixed;
+    width: var(--table-size);
+    border-collapse: separate;
+}
+
+
+
+
+td.none {
+    padding-top: 0.4rem;
+    padding-left: 3rem;
+    padding-bottom: 0.4rem;
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    background: url(../image/icon_none.png) no-repeat left center;
+}
+/* アイコン設定 */
+td.new {
+    padding-top: 0.4rem;
+    padding-left: 3rem;
+    padding-bottom: 0.4rem;
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    background: url(../image/icon_new.png) no-repeat left center;
+}
+td.continuation {
+    padding-top: 0.4rem;
+    padding-left: 3rem;
+    padding-bottom: 0.4rem;
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
+    background: url(../image/icon_continuation.png) no-repeat left center;
+}
+td.reair {
+    width: var(--table-td-size);
+    padding-top: 0.4rem;
+    padding-left: 3rem;
+    padding-bottom: 0.4rem;
+    border-radius: 5px 5px 5px 5px;
+    border-right-style: dashed;
+    border-right-width: 0.1rem;
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-style: dashed;
+    border-bottom-width: 0.1rem;
+    border-bottom-color: rgb(0, 0, 0);
+    background: url(../image/icon_reair.png) no-repeat left center;
+}
+
+table tr:first-child {
+    background-color: var(--table-colum-color);
+}
+table tr:nth-child(3) {
+    background-color: var(--table-colum-color);
+}
+table tr:nth-child(5) {
+    background-color: var(--table-colum-color);
+}
+table tr:last-child {
+    background-color: var(--table-colum-color);
+}
+
+th.sun {
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgb(111, 51, 129);
+    color: white;
+}
+th.weekday{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: var(--table-index-color);
+    color: white;
+}
+th.sat {
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgb(111, 51, 129);
+    color: white;
+}
+
+th.ranking1{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    padding-left: 0.5rem;
+    background: url(../image/ranking1.png) no-repeat left center;
+    background-size: contain;
+    background-color: white
+}
+th.ranking2{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    padding-left: 0.5rem;
+    background: url(../image/ranking2.png) no-repeat left center;
+    background-size: contain;
+    background-color: white
+}
+th.ranking3{
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    padding-left: 0.5rem;
+    background: url(../image/ranking3.png) no-repeat left center;
+    background-size: contain;
+    background-color: white
+}
+
+td.ranking1 {
+    background-color: white
+}
+td.ranking2 {
+    background-color: white
+}
+td.ranking3 {
+    background-color: white
+}

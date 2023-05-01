@@ -2,12 +2,13 @@
 <html lang ="ja">
     <head>
         <meta character ="UTF8">
+        <script src="js/tabledata.js"></script>
         <title>アニメ備忘録</title>
     </head>
 
     <body>
-        <link rel = "stylesheet" href ="style.css"></link>
-        <link rel = "stylesheet" href ="style-Table.css"></link>
+        <link rel = "stylesheet" href ="css/style.css"></link>
+        <link rel = "stylesheet" href ="css/style-Table.css"></link>
         <div class ="container">
             <!-- ヘッダー定義 -->
             <header>
@@ -47,11 +48,11 @@
                     <div class="spring">
                         <h3>2023/04～2023/07</h3>
                         <div class ="detail-caption">
-                            <h4>新規:28, 継続: 1, 再放送: 2</h4>
+                            <h4 id="count_spring_2023"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_spring_2023">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">機動戦士ガンダム 水星の魔女 Season2</td>
@@ -137,6 +138,7 @@
                                 <td class="new">異世界召喚は二度目です</td>
                             </tr>
                         </table>
+                        <script> countup_season("table_spring_2023", "count_spring_2023");</script>
                     </div>
                     <br></br>
                     <br></br>

@@ -2,20 +2,20 @@
 <html lang ="ja">
     <head>
         <meta character ="UTF8">
+        <script src="../js/tabledata.js"></script>
         <title>2018 視聴アニメ一覧</title>
     </head>
 
     <body>
-        <link rel = "stylesheet" href ="../style.css"></link>
-        <link rel = "stylesheet" href ="../style-Table.css"></link>
+        <link rel = "stylesheet" href ="../css/style.css"></link>
+        <link rel = "stylesheet" href ="../css/style-Table.css"></link>
         <div class ="container">
             <!-- ヘッダー定義 -->
             <header>
                 <div class ="header">
                     <div class ="Title2018"></div>
-                    <div class ="SubItem1"><h4>合計視聴数: 35</h4></div>
-                    <div class ="SubItem2"><h4>新規: 26, 継続:  7, 再放送:  2</h4></div>
-                </div>
+                    <div class ="SubItem1"><h4 id="count_year_sum_2018"></h4></div>
+                    <div class ="SubItem2"><h4 id="count_year_2018"></h4></div>
             </header>
             <br></br>
             <!-- メイン -->
@@ -25,11 +25,11 @@
                     <div class="winter">
                         <h3>2018/01～2018/03</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 5, 継続: 1, 再放送: 1</h4>
+                            <h4 id="count_winter_2018"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_winter_2018">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">citrus</td>
@@ -80,6 +80,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_winter_2018", "count_winter_2018");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -87,11 +88,11 @@
                     <div class="spring">
                         <h3>2018/04～2018/06</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 6, 継続: 2, 再放送: 1</h4>
+                            <h4 id="count_spring_2018"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_spring_2018">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">あまんちゅ！～あどばんす～(2期)</td>
@@ -142,6 +143,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_spring_2018", "count_spring_2018");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -149,11 +151,11 @@
                     <div class="summer">
                         <h3>2018/07～2018/09</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 6, 継続: 3, 再放送:--</h4>
+                            <h4 id="count_summer_2018"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_summer_2018">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">ISLAMD(アイランド)</td>
@@ -204,6 +206,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_summer_2018", "count_summer_2018");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -211,11 +214,11 @@
                     <div class="autumn">
                         <h3>2018/10～2018/12</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 9, 継続: 1, 再放送:--</h4>
+                            <h4 id="count_autumn_2018"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_autumn_2018">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="none"></td>
@@ -266,10 +269,13 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_autumn_2018", "count_autumn_2018");</script>
                     </div>
                     <br></br>
                     <br></br>
                 </div>
+                <script> countup_year(["table_winter_2018", "table_spring_2018", "table_summer_2018", "table_autumn_2018"], "count_year_2018", "count_year_sum_2018");</script>
+
                 <!-- サイドバー -->
                 <div class="sidebar">
                     <div class="sidebar-header">

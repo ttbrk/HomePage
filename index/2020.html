@@ -2,19 +2,20 @@
 <html lang ="ja">
     <head>
         <meta character ="UTF8">
+        <script src="../js/tabledata.js"></script>
         <title>2020 視聴アニメ一覧</title>
     </head>
 
     <body>
-        <link rel = "stylesheet" href ="../style.css"></link>
-        <link rel = "stylesheet" href ="../style-Table.css"></link>
+        <link rel = "stylesheet" href ="../css/style.css"></link>
+        <link rel = "stylesheet" href ="../css/style-Table.css"></link>
         <div class ="container">
             <!-- ヘッダー定義 -->
             <header>
                 <div class ="header">
                     <div class ="Title2020"></div>
-                    <div class ="SubItem1"><h4>合計視聴数: 46</h4></div>
-                    <div class ="SubItem2"><h4>新規: 34, 継続:  4, 再放送:  8</h4></div>
+                    <div class ="SubItem1"><h4 id="count_year_sum_2020"></h4></div>
+                    <div class ="SubItem2"><h4 id="count_year_2020"></h4></div>
                 </div>
             </header>
             <br></br>
@@ -25,11 +26,11 @@
                     <div class="winter">
                         <h3>2020/01～2020/03</h3>
                         <div class ="detail-caption">
-                            <h4>新規:11, 継続: 1, 再放送: 2</h4>
+                            <h4 id="count_winter_2020"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_winter_2020">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="reair">翠星のガルガンティア</td>
@@ -80,6 +81,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_winter_2020", "count_winter_2020");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -87,11 +89,11 @@
                     <div class="spring">
                         <h3>2020/04～2020/06</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 7, 継続:--, 再放送: 2</h4>
+                            <h4 id="count_spring_2020"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_spring_2020">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">グレイプニル</td>
@@ -142,6 +144,7 @@
                                 <td class="new">イエスタデイをうたって</td>
                             </tr>
                         </table>
+                        <script> countup_season("table_spring_2020", "count_spring_2020");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -149,11 +152,11 @@
                     <div class="summer">
                         <h3>2020/07～2020/09</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 7, 継続: 2, 再放送: 2</h4>
+                            <h4 id="count_summer_2020"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_summer_2020">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">デジモンアドベンチャー：</td>
@@ -204,6 +207,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_summer_2020", "count_summer_2020");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -211,11 +215,11 @@
                     <div class="autumn">
                         <h3>2020/10～2020/12</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 9, 継続: 1, 再放送: 2</h4>
+                            <h4 id="count_autumn_2020"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_autumn_2020">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">デジモンアドベンチャー：</td>
@@ -266,10 +270,13 @@
                                 <td class="new">魔法科高校の劣等生 来訪者編</td>
                             </tr>
                         </table>
+                        <script> countup_season("table_autumn_2020", "count_autumn_2020");</script>
                     </div>
                     <br></br>
                     <br></br>
                 </div>
+                <script> countup_year(["table_winter_2020", "table_spring_2020", "table_summer_2020", "table_autumn_2020"], "count_year_2020", "count_year_sum_2020");</script>
+
                 <!-- サイドバー -->
                 <div class="sidebar">
                     <div class="sidebar-header">

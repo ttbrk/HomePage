@@ -30,7 +30,7 @@ div.headerMain {
     gap: -50px 0px;
 }
 div.TitleMain {
-    background: url(image/header_main.png) no-repeat left center;
+    background: url(../image/header_main.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
@@ -43,37 +43,37 @@ div.header {
     gap: -50px 0px;
 }
 div.Title2021 {
-    background: url(image/header_year_2021.png) no-repeat left center;
+    background: url(../image/header_year_2021.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
 div.Title2020 {
-    background: url(image/header_year_2020.png) no-repeat left center;
+    background: url(../image/header_year_2020.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
 div.Title2019 {
-    background: url(image/header_year_2019.png) no-repeat left center;
+    background: url(../image/header_year_2019.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
 div.Title2018 {
-    background: url(image/header_year_2018.png) no-repeat left center;
+    background: url(../image/header_year_2018.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
 div.Title2017 {
-    background: url(image/header_year_2017.png) no-repeat left center;
+    background: url(../image/header_year_2017.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
 div.Title2016 {
-    background: url(image/header_year_2016.png) no-repeat left center;
+    background: url(../image/header_year_2016.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
 div.Title2015 {
-    background: url(image/header_year_2015.png) no-repeat left center;
+    background: url(../image/header_year_2015.png) no-repeat left center;
     background-size: contain;
     background-position: center;
 }
@@ -109,7 +109,7 @@ div.sidebar {
 }
 div.sidebar-header {
     border-radius: 5px 5px 5px 5px;
-    background: url(image/img_archive.png) no-repeat left center;
+    background: url(../image/img_archive.png) no-repeat left center;
     background-size: contain;
     background-position: center;
     background-color: var(--header-color);

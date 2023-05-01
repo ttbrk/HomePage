@@ -2,19 +2,20 @@
 <html lang ="ja">
     <head>
         <meta character ="UTF8">
+        <script src="../js/tabledata.js"></script>
         <title>2017 視聴アニメ一覧</title>
     </head>
 
     <body>
-        <link rel = "stylesheet" href ="../style.css"></link>
-        <link rel = "stylesheet" href ="../style-Table.css"></link>
+        <link rel = "stylesheet" href ="../css/style.css"></link>
+        <link rel = "stylesheet" href ="../css/style-Table.css"></link>
         <div class ="container">
             <!-- ヘッダー定義 -->
             <header>
                 <div class ="header">
                     <div class ="Title2017"></div>
-                    <div class ="SubItem1"><h4>合計視聴数: 36</h4></div>
-                    <div class ="SubItem2"><h4>新規: 21, 継続:  8, 再放送:  7</h4></div>
+                    <div class ="SubItem1"><h4 id="count_year_sum_2017"></h4></div>
+                    <div class ="SubItem2"><h4 id="count_year_2017"></h4></div>
                 </div>
             </header>
             <br></br>
@@ -25,11 +26,11 @@
                     <div class="winter">
                         <h3>2017/01～2017/03</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 5, 継続: 3, 再放送: 2</h4>
+                            <h4 id="count_winter_2017"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_winter_2017">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="continuation">機動戦士ガンダム鉄血のオルフェンズ(2期)</td>
@@ -80,6 +81,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_winter_2017", "count_winter_2017");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -87,11 +89,11 @@
                     <div class="spring">
                         <h3>2017/04～2017/06</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 7, 継続: 1, 再放送: 2</h4>
+                            <h4 id="count_spring_2017"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_spring_2017">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">アリスと蔵六</td>
@@ -109,7 +111,6 @@
                             <tr>
                                 <th class="weekday">火曜日</th>
                                 <td class="reair">機動戦士ガンダムSEED</td>
-                                <td class="none"></td>
                                 <td class="none"></td>
                                 <td class="none"></td>
                                 <td class="none"></td>
@@ -141,9 +142,9 @@
                                 <td class="new">GRANBLUE FANTASY The Animation</td>
                                 <td class="new">Re：CREATORS</td>
                                 <td class="none"></td>
-                                <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_spring_2017", "count_spring_2017");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -151,11 +152,11 @@
                     <div class="summer">
                         <h3>2017/07～2017/09</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 4, 継続: 4, 再放送: 2</h4>
+                            <h4 id="count_summer_2017"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_summer_2017">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="none"></td>
@@ -206,6 +207,7 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_summer_2017", "count_summer_2017");</script>
                     </div>
                     <br></br>
                     <br></br>
@@ -213,11 +215,11 @@
                     <div class="autumn">
                         <h3>2017/10～2017/12</h3>
                         <div class ="detail-caption">
-                            <h4>新規: 5, 継続:--, 再放送: 1</h4>
+                            <h4 id="count_autumn_2017"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table class="table">
+                        <table id="table_autumn_2017">
                             <tr>
                                 <th class="sun">日曜日</th>
                                 <td class="new">クジラの子らは砂上に歌う</td>
@@ -268,10 +270,13 @@
                                 <td class="none"></td>
                             </tr>
                         </table>
+                        <script> countup_season("table_autumn_2017", "count_autumn_2017");</script>
                     </div>
                     <br></br>
                     <br></br>
                 </div>
+                <script> countup_year(["table_winter_2017", "table_spring_2017", "table_summer_2017", "table_autumn_2017"], "count_year_2017", "count_year_sum_2017");</script>
+
                 <!-- サイドバー -->
                 <div class="sidebar">
                     <div class="sidebar-header">
