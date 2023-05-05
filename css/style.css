@@ -4,9 +4,9 @@
 :root {
     --sidebar-width: 130px;
     /* 配色設定 */
-    --header-color: rgba(0, 92, 175);
-    --footer-color: rgba(0, 92, 175);
-    --footer-bar-color: rgba(0, 92, 17);
+    --background-color: rgb(255, 255, 255);
+    --header-color: linear-gradient(180deg, rgb(0, 92, 175), rgb(255, 42, 212));
+    --footer-color: linear-gradient(360deg, rgb(0, 92, 175), rgb(255, 42, 212));
 }
 /* 画面余白を削除 */
 body {
@@ -18,7 +18,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: var(--header-color);
+    background: var(--header-color);
 }
 
 /* ヘッダー */
@@ -98,11 +98,15 @@ div.SubItem2 {
     color: white;
 }
 
+div.container {
+    background-image: -webkit-linear-gradient(top, #C8C9D1 0%, #AAAFB7 99%);
+    background-image: linear-gradient(180deg, #C8C9D1 0%, #AAAFB7 99%);
+    /* background-color: var(--background-color); */
+}
 main {
     flex: 1;
     display: flex;
     flex-direction: row;
-    background-color: rgb(255, 255, 255);
 }
 
 div.sidebar {
@@ -119,10 +123,9 @@ div.sidebar {
 }
 div.sidebar-header {
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/img_archive.png) no-repeat left center;
+    background: url(../image/img_archive.png) no-repeat left center, var(--header-color);
     background-size: contain;
     background-position: center;
-    background-color: var(--header-color);
     flex-grow: 1;
     flex-shrink: 0;
     padding: 0px;
@@ -147,7 +150,6 @@ div.sidebar-footer {
 div.content {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
@@ -163,7 +165,7 @@ footer {
     position: sticky;
     bottom: 0;
     z-index: 999;
-    background-color: var(--footer-color);
+    background: var(--footer-color);
 }
 div.footer {
     width: 100%;

@@ -5,15 +5,24 @@
     --table-size: 800px;
     --table-th-size: 100px;
     --table-td-size: 200px;
+    --table-boder-type: solid;
+    --table-boder-size: 0.1rem;
     /* 配色設定 */
-    --table-caption-color: rgb(15, 37, 64);
-    --table-colum-color: rgb(189, 192, 186);
-    --table-index-color: rgba(0, 92, 175);
+    --background-color: rgb(255, 255, 255);
+    --table-caption-color: linear-gradient(90deg, rgb(0, 92, 175), rgb(255, 42, 212));
+    --table-boder-color: rgb(0, 0, 0);
+    --table-sun-color: linear-gradient(90deg, rgb(231, 0, 18), rgb(30, 30, 30));
+    --table-mon-color: linear-gradient(90deg, rgb(156, 51, 133), rgb(30, 30, 30));
+    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 0), rgb(30, 30, 30));
+    --table-wed-color: linear-gradient(90deg, rgb(0, 170, 232), rgb(30, 30, 30));
+    --table-thu-color: linear-gradient(90deg, rgb(16, 168, 59), rgb(30, 30, 30));
+    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 0), rgb(30, 30, 30));
+    --table-sat-color: linear-gradient(90deg, rgb(70, 82, 161), rgb(30, 30, 30));
 }
 
 div.winter {
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_winter.png) no-repeat left center;
+    background: url(../image/icon_winter.png) no-repeat left center, var(--table-caption-color);
     background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
@@ -21,15 +30,14 @@ div.winter {
 }
 div.spring {
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_spring.png) no-repeat left center;
+    background: url(../image/icon_spring.png) no-repeat left center, var(--table-caption-color);
     background-size: contain;
-    background-color: var(--table-caption-color);
     color: white;
     padding-left: 6rem;
 }
 div.summer {
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_summer.png) no-repeat left center;
+    background: url(../image/icon_summer.png) no-repeat left center, var(--table-caption-color);
     background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
@@ -37,7 +45,7 @@ div.summer {
 }
 div.autumn {
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_autumn.png) no-repeat left center;
+    background: url(../image/icon_autumn.png) no-repeat left center, var(--table-caption-color);
     background-size: contain;
     background-color: var(--table-caption-color);
     color: white;
@@ -262,13 +270,6 @@ td.none {
     padding-top: 0.4rem;
     padding-left: 3rem;
     padding-bottom: 0.4rem;
-    border-radius: 5px 5px 5px 5px;
-    border-right-style: dashed;
-    border-right-width: 0.1rem;
-    border-right-color: rgb(0, 0, 0);
-    border-bottom-style: dashed;
-    border-bottom-width: 0.1rem;
-    border-bottom-color: rgb(0, 0, 0);
     width: var(--table-td-size);
     background: url(../image/icon_none.png) no-repeat left center;
 }
@@ -277,13 +278,6 @@ td.new {
     padding-top: 0.4rem;
     padding-left: 3rem;
     padding-bottom: 0.4rem;
-    border-radius: 5px 5px 5px 5px;
-    border-right-style: dashed;
-    border-right-width: 0.1rem;
-    border-right-color: rgb(0, 0, 0);
-    border-bottom-style: dashed;
-    border-bottom-width: 0.1rem;
-    border-bottom-color: rgb(0, 0, 0);
     width: var(--table-td-size);
     background: url(../image/icon_new.png) no-repeat left center;
 }
@@ -291,103 +285,222 @@ td.continuation {
     padding-top: 0.4rem;
     padding-left: 3rem;
     padding-bottom: 0.4rem;
-    border-radius: 5px 5px 5px 5px;
-    border-right-style: dashed;
-    border-right-width: 0.1rem;
-    border-right-color: rgb(0, 0, 0);
-    border-bottom-style: dashed;
-    border-bottom-width: 0.1rem;
-    border-bottom-color: rgb(0, 0, 0);
     width: var(--table-td-size);
     background: url(../image/icon_continuation.png) no-repeat left center;
 }
 td.reair {
-    width: var(--table-td-size);
     padding-top: 0.4rem;
     padding-left: 3rem;
     padding-bottom: 0.4rem;
-    border-radius: 5px 5px 5px 5px;
-    border-right-style: dashed;
-    border-right-width: 0.1rem;
-    border-right-color: rgb(0, 0, 0);
-    border-bottom-style: dashed;
-    border-bottom-width: 0.1rem;
-    border-bottom-color: rgb(0, 0, 0);
+    width: var(--table-td-size);
     background: url(../image/icon_reair.png) no-repeat left center;
 }
 
-table tr:first-child {
-    background-color: var(--table-colum-color);
-}
-table tr:nth-child(3) {
-    background-color: var(--table-colum-color);
-}
-table tr:nth-child(5) {
-    background-color: var(--table-colum-color);
-}
-table tr:last-child {
-    background-color: var(--table-colum-color);
-}
 
+table tr:nth-child(1) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+}
 th.sun {
     width: var(--table-th-size);
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
-    background-color: rgb(111, 51, 129);
+    background: var(--table-sun-color);
     color: white;
 }
-th.weekday{
+
+table tr:nth-child(2) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+}
+th.mon {
     width: var(--table-th-size);
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
-    background-color: var(--table-index-color);
+    background: var(--table-mon-color);
     color: white;
+}
+
+table tr:nth-child(3) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+}
+th.tue {
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background: var(--table-tue-color);
+    color: white;
+}
+
+table tr:nth-child(4) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+}
+th.wed {
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background: var(--table-wed-color);
+    color: white;
+}
+
+table tr:nth-child(5) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+}
+th.thu {
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background: var(--table-thu-color);
+    color: white;
+}
+
+table tr:nth-child(6) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+}
+th.fri {
+    width: var(--table-th-size);
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background: var(--table-fri-color);
+    color: white;
+}
+
+table tr:nth-child(7) td {
+    border-radius: 5px 5px 5px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
 }
 th.sat {
     width: var(--table-th-size);
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
-    background-color: rgb(111, 51, 129);
+    background: var(--table-sat-color);
     color: white;
 }
+
 
 th.ranking1{
     width: var(--table-th-size);
     position: sticky;
     left: 0;
-    padding-left: 0.5rem;
-    background: url(../image/ranking1.png) no-repeat left center;
+    border-radius: 5px 5px 5px 5px;
+    background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
     background-size: contain;
-    background-color: white
 }
+
 th.ranking2{
     width: var(--table-th-size);
     position: sticky;
     left: 0;
-    padding-left: 0.5rem;
-    background: url(../image/ranking2.png) no-repeat left center;
+    border-radius: 5px 5px 5px 5px;
+    background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
     background-size: contain;
-    background-color: white
 }
 th.ranking3{
     width: var(--table-th-size);
     position: sticky;
     left: 0;
-    padding-left: 0.5rem;
-    background: url(../image/ranking3.png) no-repeat left center;
+    border-radius: 5px 5px 5px 5px;
+    background: linear-gradient(45deg, #a57e65 0%, #a57e65 45%, #f3cfb8 70%, #a57e65 85%, #a57e65 90% 100%);
     background-size: contain;
-    background-color: white
 }
 
 td.ranking1 {
-    background-color: white
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
 }
 td.ranking2 {
-    background-color: white
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
 }
 td.ranking3 {
-    background-color: white
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
 }
