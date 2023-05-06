@@ -9,8 +9,9 @@
     --table-boder-size: 0.1rem;
     /* 配色設定 */
     --background-color: rgb(255, 255, 255);
-    --table-caption-color: linear-gradient(90deg, rgb(0, 92, 175), rgb(255, 42, 212));
-    --table-boder-color: rgb(0, 0, 0);
+    --table-caption-color: linear-gradient(90deg, rgb(0, 92, 175), rgb(30, 30, 30));
+    --table-boder-color: rgb(255, 255, 255);
+    --table-char-color: rgb(255, 255, 255);
     --table-sun-color: linear-gradient(90deg, rgb(231, 0, 18), rgb(30, 30, 30));
     --table-mon-color: linear-gradient(90deg, rgb(156, 51, 133), rgb(30, 30, 30));
     --table-tue-color: linear-gradient(90deg, rgb(240, 131, 0), rgb(30, 30, 30));
@@ -271,7 +272,7 @@ td.none {
     padding-left: 3rem;
     padding-bottom: 0.4rem;
     width: var(--table-td-size);
-    background: url(../image/icon_none.png) no-repeat left center;
+    color: var(--table-char-color);
 }
 /* アイコン設定 */
 td.new {
@@ -280,6 +281,7 @@ td.new {
     padding-bottom: 0.4rem;
     width: var(--table-td-size);
     background: url(../image/icon_new.png) no-repeat left center;
+    color: var(--table-char-color);
 }
 td.continuation {
     padding-top: 0.4rem;
@@ -287,6 +289,7 @@ td.continuation {
     padding-bottom: 0.4rem;
     width: var(--table-td-size);
     background: url(../image/icon_continuation.png) no-repeat left center;
+    color: var(--table-char-color);
 }
 td.reair {
     padding-top: 0.4rem;
@@ -294,6 +297,7 @@ td.reair {
     padding-bottom: 0.4rem;
     width: var(--table-td-size);
     background: url(../image/icon_reair.png) no-repeat left center;
+    color: var(--table-char-color);
 }
 
 
@@ -304,7 +308,7 @@ table tr:nth-child(1) td {
     border-left-color: var(--table-boder-color);
     border-right-style: var(--table-boder-type);
     border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-boder-color);
+    border-right-color: var(--table-boder-color);
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
