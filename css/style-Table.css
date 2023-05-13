@@ -2,7 +2,7 @@
 
 /* 変数設定 */
 :root {
-    --table-size: 800px;
+    --table-size: 400px;
     --table-th-size: 100px;
     --table-td-size: 200px;
     --table-boder-type: solid;
@@ -62,202 +62,54 @@ div.table-wrap {
 }
 table.table {
     table-layout: fixed;
-    width: var(--table-size);
+    width: 3 * var(--table-size);
     border-collapse: separate;
 }
 
 /* =======================2023======================= */
-#table_winter_2023 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2023 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2023 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2023 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2023,
+#table_spring_2023,
+#table_summer_2023,
+#table_autumn_2023,
 /* =======================2022======================= */
-#table_winter_2022 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2022 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2022 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2022 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2022,
+#table_spring_2022,
+#table_summer_2022,
+#table_autumn_2022,
 /* =======================2021======================= */
-#table_winter_2021 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2021 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2021 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2021 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2021,
+#table_spring_2021,
+#table_summer_2021,
+#table_autumn_2021,
 /* =======================2020======================= */
-#table_winter_2020 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2020 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2020 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2020 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2020,
+#table_spring_2020,
+#table_summer_2020,
+#table_autumn_2020,
 /* =======================2019======================= */
-#table_winter_2019 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2019 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2019 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2019 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2019,
+#table_spring_2019,
+#table_summer_2019,
+#table_autumn_2019,
 /* =======================2018======================= */
-#table_winter_2018 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2018 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2018 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2018 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2018,
+#table_spring_2018,
+#table_summer_2018,
+#table_autumn_2018,
 /* =======================2017======================= */
-#table_winter_2017 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2017 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2017 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2017 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2017,
+#table_spring_2017,
+#table_summer_2017,
+#table_autumn_2017,
 /* =======================2016======================= */
-#table_winter_2016 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2016 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2016 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_autumn_2016 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-
+#table_winter_2016,
+#table_spring_2016,
+#table_summer_2016,
+#table_autumn_2016,
 /* =======================2015======================= */
-#table_winter_2015 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_spring_2015 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
-#table_summer_2015 {
-    table-layout: fixed;
-    width: var(--table-size);
-    border-collapse: separate;
-}
+#table_winter_2015,
+#table_spring_2015,
+#table_summer_2015,
 #table_autumn_2015 {
     table-layout: fixed;
     width: var(--table-size);
