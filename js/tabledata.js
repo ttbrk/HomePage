@@ -1,21 +1,21 @@
+AllFileList = ["../index/2023.html",
+               "../index/2022.html",
+               "../index/2021.html",
+               "../index/2020.html",
+               "../index/2019.html",
+               "../index/2018.html",
+               "../index/2017.html",
+               "../index/2016.html",
+               "../index/2015.html"];
+
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
     var td_continuation = 0;
     var td_reair = 0;
     var result = [0, 0, 0];
 
-    AllFileList = ["../index/2023.html",
-                   "../index/2022.html",
-                   "../index/2021.html",
-                   "../index/2020.html",
-                   "../index/2019.html",
-                   "../index/2018.html",
-                   "../index/2017.html",
-                   "../index/2016.html",
-                   "../index/2015.html"];
     for (var i=0; i < AllFileList.length; i++) {
         result = getPage(AllFileList[i], result[0], result[1], result[2]);
-        console.log(result[0], result[1], result[2]);
     }
 
     if (result[0] == 0) {
@@ -42,6 +42,7 @@ function countup_all(count_year_sum, count_year) {
     var all = result[0] + result[1] + result[2];
     text.textContent = "合計視聴数:" + all;
 }
+
 
 function getPage(elm, td_new, td_continuation, td_reair) {
     $.ajax({
