@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/* 変数設定 */
+:root {
+    --header-boder-type: solid;
+    --header-boder-size: 0.1rem;
+    --sidebar-width: 130px;
+    /* 配色設定 */
+    --header-boder-color: rgb(0, 92, 175);
+    --background-color: rgb(255, 255, 255);
+    /* --header-color: linear-gradient(180deg, rgb(0, 92, 175), rgb(255, 42, 212)); */
+    --header-color: linear-gradient(180deg, rgb(32, 32, 32), rgb(32, 32, 32));
+    /* --footer-color: linear-gradient(360deg, rgb(0, 92, 175), rgb(255, 42, 212)); */
+    --footer-color: linear-gradient(360deg, rgb(32, 32, 32), rgb(32, 32, 32));
+}
+/* 画面余白を削除 */
+body {
+    margin: 0px;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--header-color);
+}
+
+
+/* ヘッダー */
+div.header-wrap {
+    display: grid;
+    width: 100%;
+    height: auto;
+}
+div.headerMain {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    border-bottom-style: var(--header-boder-type);
+    border-bottom-width: var(--header-boder-size);
+    border-bottom-color: var(--header-boder-color);
+}
+div.SubItem0 {
+    text-align: center;
+}
+.TitleMain {
+    background: url(../image/favicon/iTunesArtwork.png) no-repeat left center;
+    background-size: contain;
+    text-align: center;
+    font-size: 25px;
+    padding-left: 3rem;
+}
+div.SubItem1 {
+    text-align: center;
+}
+
+div.header {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+}
+div.ArchiveTitle {
+    text-align: right;
+}
+div.SubItem2 {
+    text-align: center;
+}
+div.SubItem3 {
+    text-align: left;
+}
+
+
+/* メイン　コンテナ */
+div.container {
+    background: #3E3E3E;
+    background-image: -webkit-radial-gradient(at 50% -16%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.5) 190%);
+    background-image: radial-gradient(at 50% -16%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.5) 190%);
+    background-blend-mode: normal,multiply;
+    /* background-color: var(--background-color); */
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+div.content {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* サイドバー */
+div.sidebar {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 5rem;
+    z-index: 998;
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: 130px;
+    height: 300px;
+    padding: 10px;
+}
+div.sidebar-header {
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0px;
+    width: var(--sidebar-width);
+    height: 50px;
+}
+div.sidebar-main {
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgb(150, 150, 150);
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: var(--sidebar-width);
+    height: 300px;
+    text-align: center;
+    overflow-y: scroll;
+}
+div.sidebar-footer {
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgb(150, 150, 150);
+    flex-grow: 1;
+    flex-shrink: 0;
+    width: var(--sidebar-width);
+    height: 50px;
+}
+
+
+/* SNS */
+.sub-title {
+    margin-bottom: 30px;
+}
+
+
+/* フッター */
+footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 999;
+    background: var(--footer-color);
+}
+div.footer {
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+    padding: 0px 0;
+}
+div.footer p{
+    color: rgb(255, 255, 255);
+}
