@@ -1,12 +1,12 @@
-AllFileList = ["../index/2023.html",
-               "../index/2022.html",
-               "../index/2021.html",
-               "../index/2020.html",
-               "../index/2019.html",
-               "../index/2018.html",
-               "../index/2017.html",
-               "../index/2016.html",
-               "../index/2015.html"];
+AllFileList = ["../archive/2023.html",
+               "../archive/2022.html",
+               "../archive/2021.html",
+               "../archive/2020.html",
+               "../archive/2019.html",
+               "../archive/2018.html",
+               "../archive/2017.html",
+               "../archive/2016.html",
+               "../archive/2015.html"];
 
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
