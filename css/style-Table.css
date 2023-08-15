@@ -5,6 +5,7 @@
     --table-size: 400px;
     --table-th-size: 100px;
     --table-td-size: 200px;
+    --table-td-size2: 600px;
     --table-boder-type: solid;
     --table-boder-size: 0.1rem;
     /* 配色設定 */
@@ -328,6 +329,7 @@ th.ranking3{
 }
 
 td.ranking1 {
+    width: var(--table-td-size2);
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
     border-left-color: var(--table-boder-color);
@@ -339,6 +341,7 @@ td.ranking1 {
     border-bottom-color: var(--table-boder-color);
 }
 td.ranking2 {
+    width: var(--table-td-size2);
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
     border-left-color: var(--table-boder-color);
@@ -350,6 +353,7 @@ td.ranking2 {
     border-bottom-color: var(--table-boder-color);
 }
 td.ranking3 {
+    width: var(--table-td-size2);
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
     border-left-color: var(--table-boder-color);
@@ -359,4 +363,12 @@ td.ranking3 {
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
+}
+td.ranking-img{
+    width: var(--table-td-size);
+    border: none !important;
+}
+td.ranking-img > img{
+    max-width: 100%;
+    height: auto;
 }
