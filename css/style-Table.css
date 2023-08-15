@@ -339,6 +339,7 @@ td.ranking1 {
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
+    text-align: center;
 }
 td.ranking2 {
     width: var(--table-td-size2);
@@ -351,6 +352,7 @@ td.ranking2 {
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
+    text-align: center;
 }
 td.ranking3 {
     width: var(--table-td-size2);
@@ -363,6 +365,7 @@ td.ranking3 {
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
+    text-align: center;
 }
 td.ranking-img{
     width: var(--table-td-size);
