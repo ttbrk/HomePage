@@ -13,7 +13,8 @@
         <link rel="apple-touch-icon" sizes="152x152" href="image/favicon/apple-touch-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="512x512" href="image/favicon/iTunesArtwork.png">
         <link rel="apple-touch-icon" sizes="1024x1024" href="image/favicon/iTunesArtwork@2x.png">
-        <script src="js/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script src="js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
         <script src="js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
         <title>アニメ備忘録</title>
     </head>
@@ -42,58 +43,73 @@
             <main>
                 <!-- コンテンツ -->
                 <div class="content">
-                    <h2>&emsp; 前期の視聴アニメランキング！！</h2>
+                    <h2>&emsp; ●前期の視聴アニメランキング！！</h2>
 
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking1"><h4>天国大魔境</h4></td>
+                                    <td class="ranking-img"><img src="image/key Visual/2023/ホリミヤ -piece-.jpg">
+                                        <copy-right><font size="1">&copy; HERO・萩原ダイスケ／SQUARE ENIX・「ホリミヤ -piece-」製作委員会</font></copy-right>
+                                    </td>
+                                    <td class="ranking1"><h4>ホリミヤ -piece-</h4></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking2"><h4>僕の心のヤバイやつ</h4></td>
+                                    <td class="ranking-img"><img src="image/key Visual/2023/蒼穹のファフナー THE BEYOND（TV Edition）.jpg">
+                                        <copy-right><font size="1">&copy; XEBEC・FAFNER BEYOND PROJECT</font></copy-right>
+                                    </td>
+                                    <td class="ranking2"><h4>蒼穹のファフナー THE BEYOND（TV Edition）</h4></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking3"><h4>【推しの子】</h4></td>
+                                    <td class="ranking-img"><img src="image/key Visual/2023/無職転生 Ⅱ ～異世界行ったら本気だす～.jpg">
+                                        <copy-right><font size="1">&copy; 理不尽な孫の手/MFブックス/「無職転生Ⅱ」製作委員会</font></copy-right>
+                                    </td>
+                                    <td class="ranking2"><h4>無職転生 Ⅱ ～異世界行ったら本気だす～</h4></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
 
                     <br></br>
-                    <h2>&emsp; 今期の視聴アニメ！！</h2>
-                    <div class="summer">
-                        <h3>2023/07～2023/09</h3>
+                    <h2>&emsp; ●今期の視聴アニメ！！</h2>
+                    <div class="autumn">
+                        <h3>2023/10～2023/12</h3>
                         <div class="detail-caption">
-                            <h4 id="count_summer_2023"></h4>
+                            <h4 id="count_autumn_2023"></h4>
                         </div>
                     </div>
                     <div class="table-wrap">
-                        <table id="table_summer_2023">
+                        <table id="table_autumn_2023">
                             <tr>
                                 <th class="sun">日曜日</th>
-                                <td class="continuation">青のオーケストラ</td>
-                                <td class="new">英雄教室</td>
-                                <td class="new">無職転生 Ⅱ ～異世界行ったら本気だす～</td>
-                                <td class="new">ダークギャザリング</td>
+                                <td class="new">シャングリラ・フロンティア</td>
+                                <td class="new">でこぼこ魔女の親子事情</td>
+                                <td class="reair">ゼーガペイン</td>
+                                <td class="continuation">ダークギャザリング</td>
+                                <td class="none">--</td>
+                                <td class="none">--</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
                             </tr>
                             <tr>
                                 <th class="mon">月曜日</th>
                                 <td class="reair">ゾイド -ZOIDS-</td>
-                                <td class="new">SYNDUALITY Noir</td>
-                                <td class="continuation">もののがたり 第二章</td>
-                                <td class="new">あやかしトライアングル</td>
-                                <td class="new">夢見る男子は現実主義者</td>
+                                <td class="new">星屑テレパス</td>
+                                <td class="new">SHY</td>
+                                <td class="continuation">デッドマウント・デスプレイ 第2クール</td>
+                                <td class="new">私の推しは悪役令嬢。</td>
+                                <td class="new">聖剣学院の魔剣使い</td>
+                                <td class="none">--</td>
                                 <td class="none">--</td>
                             </tr>
                             <tr>
                                 <th class="tue">火曜日</th>
-                                <td class="new">好きな子がめがねを忘れた</td>
+                                <td class="none">--</td>
+                                <td class="none">--</td>
+                                <td class="none">--</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
@@ -102,49 +118,64 @@
                             </tr>
                             <tr>
                                 <th class="wed">水曜日</th>
-                                <td class="new">わたしの幸せな結婚</td>
-                                <td class="new">白聖女と黒牧師</td>
-                                <td class="new">アンデッドガール・マーダーファルス</td>
+                                <td class="new">婚約破棄された令嬢を拾った俺が、イケナイことを教え込む</td>
+                                <td class="new">ブルバスター</td>
+                                <td class="new">陰の実力者になりたくて！ 2nd season</td>
+                                <td class="new">16bitセンセーション ANOTHER LAYER</td>
+                                <td class="none">--</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
                             </tr>
                             <tr>
                                 <th class="thu">木曜日</th>
-                                <td class="continuation">はたらく魔王さま！！ 2nd Season</td>
-                                <td class="new">呪術廻戦 懐玉・玉折（第2期）</td>
-                                <td class="continuation">スパイ教室 2nd season</td>
-                                <td class="new">るろうに剣心 －明治剣客浪漫譚－</td>
+                                <td class="continuation">魔法使いの嫁 SEASON2</td>
+                                <td class="continuation">るろうに剣心 －明治剣客浪漫譚－</td>
+                                <td class="new">冒険者になりたいと都に出て行った娘がSランクになってた</td>
+                                <td class="none">--</td>
+                                <td class="none">--</td>
+                                <td class="none">--</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
                             </tr>
                                 <tr>
                                 <th class="fri">金曜日</th>
-                                <td class="new">七つの魔剣が支配する</td>
-                                <td class="new">スプリガン</td>
-                                <td class="new">彼女、お借りします 第3期</td>
-                                <td class="new">AIの遺電子</td>
+                                <td class="new">ガンダムビルドメタバース</td>
+                                <td class="new">盾の勇者の成り上がり Season3</td>
+                                <td class="new">葬送のフリーレン</td>
+                                <td class="new">経験済みなキミと、経験ゼロなオレが、お付き合いする話。</td>
+                                <td class="new">はめつのおうこく</td>
+                                <td class="new">カノジョも彼女 Season 2</td>
                                 <td class="none">--</td>
                                 <td class="none">--</td>
                             </tr>
                             <tr>
                                 <th class="sat">土曜日</th>
-                                <td class="continuation">MIX MEISEI STORY 2ND SEASON ～二度目の夏、空の向こうへ～</td>
-                                <td class="new">ライアー・ライアー</td>
-                                <td class="new">BLEACH 千年血戦篇ｰ訣別譚ｰ</td>
-                                <td class="new">ホリミヤ -piece-</td>
-                                <td class="new">AYAKA ‐あやか‐</td>
-                                <td class="new">てんぷる</td>
+                                <td class="new">最果てのパラディン 鉄錆の山の王</td>
+                                <td class="new">ひきこまり吸血姫の悶々</td>
+                                <td class="new">SPY×FAMILY Season2</td>
+                                <td class="new">帰還者の魔法は特別です</td>
+                                <td class="new">豚のレバーは加熱しろ</td>
+                                <td class="new">薬屋のひとりごと</td>
+                                <td class="new">僕らの雨いろプロトコル</td>
+                                <td class="new">ラグナクリムゾン</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_summer_2023", "count_summer_2023");</script>
+                        <script> countup_season("table_autumn_2023", "count_autumn_2023");</script>
                     </div>
                     <br></br>
                     <br></br>
-
-
+                    <!-- グラフ -->
+                    <h3>&emsp; ●視聴数推移</h3>
+                    <div>
+                        <canvas id="watch-history"></canvas>
+                        <script> bar_graph();</script>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <!-- Twitter -->
                     <div class="sns-box">
-                        <h2 class="sub-title">&emsp; Twitter</h2>
+                        <h2 class="sub-title">&emsp; ●Twitter</h2>
                         <p2>アニメの感想、gameの感想等々気まぐれに呟いてます！</p2>
                         <br></br>
                         <a class="twitter-timeline" data-width="700" data-height="800" data-theme="dark" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
