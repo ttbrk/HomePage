@@ -13,6 +13,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="../image/favicon/apple-touch-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="512x512" href="../image/favicon/iTunesArtwork.png">
         <link rel="apple-touch-icon" sizes="1024x1024" href="../image/favicon/iTunesArtwork@2x.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <script src="../js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
         <title>2021 視聴アニメ一覧</title>
     </head>
@@ -461,18 +462,26 @@
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <!-- グラフ -->
+                    <h3>&emsp; ●視聴割合</h3>
+                    <div>
+                        <script>
+                            var result = [0, 0, 0];
+                            result = countup_year(["table_winter_2021",
+                                                   "table_spring_2021",
+                                                   "table_summer_2021",
+                                                   "table_autumn_2021"],
+                                                   "count_year_2021",
+                                                   "count_year_sum_2021");
+                        </script>
+                        <canvas id="year-division"></canvas>
+                        <script>doughnut_graph(result);</script>
+                    </div>
 
                     <br></br>
                     <br></br>
                     <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
                 </div>
-                <script> countup_year(["table_winter_2021", "table_spring_2021", "table_summer_2021", "table_autumn_2021"], "count_year_2021", "count_year_sum_2021");</script>
                 
                 <!-- サイドバー -->
                 <div class="sidebar">

@@ -102,6 +102,7 @@ function countup_year(TableIDList, count_year, count_year_sum) {
     var text = document.getElementById(count_year_sum);
     var all = result[0] + result[1] + result[2];
     text.textContent = "合計視聴数:" + all;
+    return [result[0], result[1], result[2]];
 }
 
 
@@ -151,20 +152,21 @@ function table_td_count(table, td_new, td_continuation, td_reair) {
 }
 
 
-function bar_graph() {
+function history_graph() {
     var ctx = document.getElementById("watch-history").getContext('2d');
     // graph_dataは以下の形式
     // 　　　|2015 | 2016 | …2023
     // 新規　|     |      |
     // 継続　|     |      |
     // 再放送|     |      | 
+    // 合計　|     |      | 
     // archiveから集計データを取得しgraph_dataに格納
-    var result = [0, 0, 0];
-    var graph_data = new Array(3);
-    for (var i = 0; i < 3; i++) {
+    var result = [0, 0, 0, 0];
+    var graph_data = new Array(4);
+    for (var i = 0; i < 4; i++) {
         graph_data[i] = new Array(AllFileList.length);
     }
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 4; i++) {
         for (var j = 0; j < AllFileList.length; j++) {
             graph_data[i][j] = 0;
         }
@@ -174,6 +176,7 @@ function bar_graph() {
         graph_data[0][i] = result[0]
         graph_data[1][i] = result[1]
         graph_data[2][i] = result[2]
+        graph_data[3][i] = result[0] + result[1] + result[2]
     }
     var myChart = new Chart(ctx, {
         type: "bar",
@@ -181,22 +184,39 @@ function bar_graph() {
             labels: AllYearList,
             datasets: [
                 {
-                    barPercentage: 0.5,
+                    barPercentage: 0.9,
                     label: "新規",
                     data: graph_data[0],
-                    backgroundColor: "#fb9966"
+                    borderColor: "rgb(251, 153, 102)",
+                    // fill: true,
+                    backgroundColor: "rgb(251, 153, 102, 1.0)"
                 },
                 {
-                    barPercentage: 0.5,
+                    barPercentage: 0.9,
                     label: "継続",
                     data: graph_data[1],
-                    backgroundColor: "#2ea9df"
+                    borderColor: "rgb(46, 169, 223)",
+                    // fill: true,
+                    backgroundColor: "rgb(46, 169, 223, 1.0)"
                 },
                 {
-                    barPercentage: 0.5,
+                    barPercentage: 0.9,
                     label: "再放送",
                     data: graph_data[2],
-                    backgroundColor: "#00aa90"
+                    borderColor: "rgb(0, 170, 144)",
+                    // fill: true,
+                    backgroundColor: "rgb(0, 170, 144, 1.0)"
+                },
+                {
+                    type: "line",
+                    barPercentage: 1.0,
+                    label: "合計",
+                    data: graph_data[3],
+                    lineTension: 0.2,
+                    pointBorderWidth: 7, 
+                    borderColor: "rgb(255, 255, 255)",
+                    fill: true,
+                    backgroundColor: "rgb(200, 200, 200, 0.2)"
                 }
             ]
         },
@@ -212,7 +232,7 @@ function bar_graph() {
             scales: {
                 x: {
                     display: true,
-                    stacked: true,
+                    // stacked: true,
                     grid: {
                         color: "black" 
                     },
@@ -227,7 +247,7 @@ function bar_graph() {
                 },
                 yAxes: {
                     display: true,
-                    stacked: true,
+                    // stacked: true,
                     grid: {
                         color: "black" 
                     },
@@ -251,4 +271,36 @@ function bar_graph() {
             }
         }
     });
+}
+
+
+function doughnut_graph() {
+    var ctx = document.getElementById("year-division").getContext('2d');
+    // 各データののラベル
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["新規", "継続", "再放送"],
+            datasets: [
+                {
+                    backgroundColor: ["rgb(251, 153, 102, 1.0)",
+                                      "rgb(46, 169, 223, 1.0)",
+                                      "rgb(0, 170, 144, 1.0)"],
+                    data: result
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: "white"
+                    }
+                }
+            },
+        }
+    });
+    myChart.canvas.parentNode.style.height = "512px";
+    myChart.canvas.parentNode.style.width = "512px";
 }
