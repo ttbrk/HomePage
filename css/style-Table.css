@@ -11,7 +11,7 @@
     --table-boder-size: 0.1rem;
     /* 配色設定 */
     --background-color: rgb(255, 255, 255);
-    --table-caption-color: linear-gradient(90deg, rgb(0, 92, 175), rgb(30, 30, 30));
+    --table-caption-color: linear-gradient(90deg, rgb(20, 20, 20), rgb(50, 50, 50));
     --table-boder-color: rgb(255, 255, 255);
     --table-char-color: rgb(255, 255, 255);
     --table-sun-color: linear-gradient(90deg, rgb(231, 0, 18), rgb(30, 30, 30));

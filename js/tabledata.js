@@ -152,8 +152,7 @@ function table_td_count(table, td_new, td_continuation, td_reair) {
 }
 
 
-function history_graph() {
-    var ctx = document.getElementById("watch-history").getContext('2d');
+function get_watch_history_all() {
     // graph_dataは以下の形式
     // 　　　|2015 | 2016 | …2023
     // 新規　|     |      |
@@ -178,10 +177,51 @@ function history_graph() {
         graph_data[2][i] = result[2]
         graph_data[3][i] = result[0] + result[1] + result[2]
     }
+    return [AllYearList, graph_data]
+}
+
+
+function get_watch_history_year(year) {
+    // graph_dataは以下の形式
+    // 　　　|20xx冬 | 20xx春 | …20xx秋
+    // 新規　|     　|      　|
+    // 継続　|     　|      　|
+    // 再放送|     　|      　| 
+    // 合計　|     　|      　| 
+    // archiveから集計データを取得しgraph_dataに格納
+    TableIDList = ["table_winter_" + year,
+                   "table_spring_" + year,
+                   "table_summer_" + year,
+                   "table_autumn_" + year]
+    var result = [0, 0, 0, 0];
+    var graph_data = new Array(4);
+    for (var i = 0; i < 4; i++) {
+        graph_data[i] = new Array(TableIDList.length);
+    }
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < TableIDList.length; j++) {
+            graph_data[i][j] = 0;
+        }
+    }
+    for (var i = 0; i < TableIDList.length; i++) {
+        var table = document.getElementById(TableIDList[i]);
+        result = table_td_count(table, graph_data[0][i], graph_data[1][i], graph_data[2][i]);
+        graph_data[0][i] = result[0]
+        graph_data[1][i] = result[1]
+        graph_data[2][i] = result[2]
+        graph_data[3][i] = result[0] + result[1] + result[2]
+    }
+    labellist =[year + "冬", year + "春", year + "夏", year + "秋"]
+    return [labellist, graph_data]
+}
+
+
+function history_graph(x_title, labellist, graph_data) {
+    var ctx = document.getElementById("watch-history").getContext('2d');
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: AllYearList,
+            labels: labellist,
             datasets: [
                 {
                     barPercentage: 0.9,
@@ -239,7 +279,7 @@ function history_graph() {
                     title: {
                         color: "white",
                         display: true,
-                        text: "year"
+                        text: x_title
                     },
                     ticks: {
                         color: "white"
@@ -274,8 +314,8 @@ function history_graph() {
 }
 
 
-function doughnut_graph() {
-    var ctx = document.getElementById("year-division").getContext('2d');
+function category_division_graph() {
+    var ctx = document.getElementById("category-division").getContext('2d');
     // 各データののラベル
     var myChart = new Chart(ctx, {
         type: "doughnut",
@@ -283,9 +323,10 @@ function doughnut_graph() {
             labels: ["新規", "継続", "再放送"],
             datasets: [
                 {
-                    backgroundColor: ["rgb(251, 153, 102, 1.0)",
-                                      "rgb(46, 169, 223, 1.0)",
-                                      "rgb(0, 170, 144, 1.0)"],
+                    backgroundColor: ["rgb(251, 153, 102",
+                                      "rgb(46, 169, 223",
+                                      "rgb(0, 170, 144"],
+                    borderColor: "transparent",
                     data: result
                 }
             ]
@@ -294,6 +335,7 @@ function doughnut_graph() {
             plugins: {
                 legend: {
                     display: true,
+                    position: "right",
                     labels: {
                         color: "white"
                     }
@@ -301,6 +343,69 @@ function doughnut_graph() {
             },
         }
     });
-    myChart.canvas.parentNode.style.height = "512px";
-    myChart.canvas.parentNode.style.width = "512px";
+    // myChart.canvas.parentNode.style.height = "256px";
+    // myChart.canvas.parentNode.style.width = "256px";
+}
+
+
+function get_week_division_year(year) {
+    TableIDList = ["table_winter_" + year,
+                   "table_spring_" + year,
+                   "table_summer_" + year,
+                   "table_autumn_" + year]
+    var graph_data = [0, 0, 0, 0, 0, 0, 0];
+    for (const TableID of TableIDList) {
+        var table = document.getElementById(TableID);
+        for (var i=0; i < table.rows.length; i++) {
+            for (var j=0; j < table.rows[i].cells.length; j++) {
+                var className = table.rows[i].cells[j].className ;
+                if (className == "new" ||
+                    className == "continuation" || 
+                    className == "reair") {
+                    graph_data[i] = graph_data[i] + 1
+                }
+            }
+        }
+    }
+    return graph_data
+}
+
+
+function week_division_graph(graph_data) {
+    var ctx = document.getElementById("week-division").getContext('2d');
+    // 各データののラベル
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+            datasets: [
+                {
+                    backgroundColor: ["rgb(231, 0, 18)",
+                                      "rgb(156, 51, 133)",
+                                      "rgb(240, 131, 0)",
+                                      "rgb(0, 170, 232)",
+                                      "rgb(16, 168, 59)",
+                                      "rgb(249, 190, 0)",
+                                      "rgb(70, 82, 161)"],
+                    borderColor: "transparent",
+                    data: graph_data
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                // responsive: true,
+                // maintainAspectRatio: false,
+                legend: {
+                    display: true,
+                    position: "right",
+                    labels: {
+                        color: "white"
+                    }
+                }
+            },
+        }
+    });
+    // myChart.canvas.parentNode.style.height = "256px";
+    // myChart.canvas.parentNode.style.width = "256px";
 }

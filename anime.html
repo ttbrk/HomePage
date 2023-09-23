@@ -181,7 +181,13 @@
                     <h3>&emsp; ●視聴数推移</h3>
                     <div>
                         <canvas id="watch-history"></canvas>
-                        <script>history_graph();</script>
+                        <script>
+                            x_title = "year"
+                            result = get_watch_history_all();
+                            // result[0]：ラベルリスト
+                            // result[1]：データ
+                            history_graph(x_title, result[0], result[1]);
+                        </script>
                     </div>
                     <br></br>
                     <br></br>
