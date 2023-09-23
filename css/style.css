@@ -97,6 +97,7 @@ div.content {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
+
 /* グラフ */
 div.graph-area {
     flex: 1;

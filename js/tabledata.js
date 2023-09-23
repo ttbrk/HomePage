@@ -254,7 +254,7 @@ function history_graph(x_title, labellist, graph_data) {
                     data: graph_data[3],
                     lineTension: 0.2,
                     pointBorderWidth: 7, 
-                    borderColor: "rgb(255, 255, 255)",
+                    borderColor: "rgb(243, 48, 216)",
                     fill: true,
                     backgroundColor: "rgb(200, 200, 200, 0.2)"
                 }
@@ -262,6 +262,18 @@ function history_graph(x_title, labellist, graph_data) {
         },
         options: {
             plugins: {
+                tooltip: {
+                    enabled: false
+                },
+                datalabels: {
+                    color: "white",
+                    font: {
+                        size: 15,
+                    },
+                    formatter: function(value, context) {
+                        return value.toString();
+                    }
+                },
                 legend: {
                     display: true,
                     labels: {
@@ -309,7 +321,10 @@ function history_graph(x_title, labellist, graph_data) {
                     bottom: 0
                 }
             }
-        }
+        },
+        plugins: [
+            ChartDataLabels,
+        ],
     });
 }
 
@@ -333,6 +348,15 @@ function category_division_graph() {
         },
         options: {
             plugins: {
+                datalabels: {
+                    color: "white",
+                    font: {
+                        size: 15,
+                    },
+                    formatter: function(value, context) {
+                        return value.toString() + "%";
+                    }
+                },
                 legend: {
                     display: true,
                     position: "right",
@@ -341,10 +365,11 @@ function category_division_graph() {
                     }
                 }
             },
-        }
+        },
+        plugins: [
+            ChartDataLabels,
+        ],
     });
-    // myChart.canvas.parentNode.style.height = "256px";
-    // myChart.canvas.parentNode.style.width = "256px";
 }
 
 
@@ -394,8 +419,15 @@ function week_division_graph(graph_data) {
         },
         options: {
             plugins: {
-                // responsive: true,
-                // maintainAspectRatio: false,
+                datalabels: {
+                    color: "white",
+                    font: {
+                        size: 15,
+                    },
+                    formatter: function(value, context) {
+                        return value.toString() + "%";
+                    }
+                },
                 legend: {
                     display: true,
                     position: "right",
@@ -404,8 +436,9 @@ function week_division_graph(graph_data) {
                     }
                 }
             },
-        }
+        },
+        plugins: [
+            ChartDataLabels,
+        ],
     });
-    // myChart.canvas.parentNode.style.height = "256px";
-    // myChart.canvas.parentNode.style.width = "256px";
 }
