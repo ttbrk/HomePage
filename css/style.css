@@ -6,19 +6,29 @@
     --header-boder-size: 0.1rem;
     --sidebar-width: 130px;
     /* 配色設定 */
-    --header-boder-color: rgb(0, 92, 175);
+    --header-boder-color: rgb(0, 0, 0);
+    --char-color: rgb(0, 0, 0);
     --background-color: rgb(255, 255, 255);
-    /* --header-color: linear-gradient(180deg, rgb(0, 92, 175), rgb(255, 42, 212)); */
-    --header-color: linear-gradient(180deg, rgb(32, 32, 32), rgb(32, 32, 32));
-    /* --footer-color: linear-gradient(360deg, rgb(0, 92, 175), rgb(255, 42, 212)); */
-    --footer-color: linear-gradient(360deg, rgb(32, 32, 32), rgb(32, 32, 32));
+    --header-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
+    --footer-color: linear-gradient(360deg, rgb(220, 220, 220), rgb(220, 220, 220));
+    --sidebar-color: rgb(220, 220, 220);
 }
+/* OSの設定または、トグルスイッチがダークモード時のスタイル */
+:root.darkmode {
+    --header-boder-color: rgb(255, 255, 255);
+    --char-color: rgb(255, 255, 255);
+    --background-color: rgb(065, 065, 065);
+    --header-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
+    --footer-color: linear-gradient(360deg, rgb(035, 035, 035), rgb(035, 035, 035));
+    --sidebar-color: rgb(035, 035, 035);
+}
+
 /* 画面余白を削除 */
 body {
     margin: 0px;
     padding: 0;
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    color: rgb(255, 255, 255);
+    color: var(--char-color);
 }
 
 header {
@@ -26,6 +36,7 @@ header {
     top: 0;
     z-index: 999;
     background: var(--header-color);
+    color: var(--char-color);
 }
 
 
@@ -80,11 +91,7 @@ div.SubItem3 {
 
 /* メイン　コンテナ */
 div.container {
-    background: #3E3E3E;
-    background-image: -webkit-radial-gradient(at 50% -16%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.5) 190%);
-    background-image: radial-gradient(at 50% -16%, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.5) 190%);
-    background-blend-mode: normal,multiply;
-    /* background-color: var(--background-color); */
+    background: var(--background-color)
 }
 main {
     flex: 1;
@@ -130,7 +137,7 @@ div.sidebar-header {
 }
 div.sidebar-main {
     border-radius: 10px 10px 0px 0px;
-    background-color: rgb(150, 150, 150);
+    background-color: var(--sidebar-color);
     flex-grow: 1;
     flex-shrink: 0;
     width: var(--sidebar-width);
@@ -140,13 +147,20 @@ div.sidebar-main {
 }
 div.sidebar-footer {
     border-radius: 0px 0px 10px 10px;
-    background-color: rgb(150, 150, 150);
+    background-color: var(--sidebar-color);
     flex-grow: 1;
     flex-shrink: 0;
     width: var(--sidebar-width);
     height: 50px;
 }
 
+/* リンク文字色設定 */
+a {
+    color: var(--char-color);
+}
+/* a:visited {
+    color:rgb(255, 000, 000);
+} */
 
 /* SNS */
 .sub-title {
@@ -168,5 +182,5 @@ div.footer {
     padding: 0px 0;
 }
 div.footer p{
-    color: rgb(255, 255, 255);
+    color: var(--char-color);
 }

@@ -23,6 +23,7 @@
     <body>
         <link rel="stylesheet" href="css/style.css"></link>
         <link rel="stylesheet" href="css/style-Table.css"></link>
+        <link rel="stylesheet" href="css/darkMode_on_off.css"></link>
         <div class="container">
             <!-- ヘッダー定義 -->
             <header>
@@ -30,7 +31,16 @@
                     <div class="headerMain">
                         <div class="SubItem0"></div>
                         <div><p1  class="TitleMain">TTBのアニメ備忘録</p1></div>
-                        <div class="SubItem1"></div>
+                        <div class="SubItem1">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
+                                <label class="onoffswitch-label" for="myonoffswitch">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                            <script src="js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
+                        </div>
                     </div>
                     <div class="header">
                         <div class="ArchiveTitle"><p1>since 2015 to 2023</p1></div>
@@ -88,11 +98,10 @@
 
                     <br></br>
                     <h2>&emsp; ●今期の視聴アニメ！！</h2>
-                    <div class="autumn">
-                        <h3>2023/10～2023/12</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_autumn_2023"></h4>
-                        </div>
+                    <div class="season">
+                        <div class="season-sub1"><h3>秋</h3></div>
+                        <div class="season-sub2"><h4>2023/10～2023/12</h4></div>
+                        <div class="season-sub3"><h4 id="count_autumn_2023"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_autumn_2023">
@@ -179,7 +188,7 @@
                     <br></br>
                     <br></br>
                     <!-- グラフ -->
-                    <h3>&emsp; ●視聴数推移</h3>
+                    <div class="data"><h2>&emsp; ●視聴数推移</h2></div>
                     <div>
                         <canvas id="watch-history"></canvas>
                         <script>
@@ -194,7 +203,7 @@
                     <br></br>
                     <!-- Twitter -->
                     <div class="sns-box">
-                        <h2 class="sub-title">&emsp; ●Twitter</h2>
+                        <div class="data"><h2 class="sub-title">&emsp; ●Twitter</h2></div>
                         <p2>アニメの感想、gameの感想等々気まぐれに呟いてます！</p2>
                         <br></br>
                         <a class="twitter-timeline" data-width="700" data-height="800" data-theme="dark" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

@@ -23,6 +23,7 @@
         <script>year = "2018"</script>
         <link rel="stylesheet" href="../css/style.css"></link>
         <link rel="stylesheet" href="../css/style-Table.css"></link>
+        <link rel="stylesheet" href="../css/darkMode_on_off.css"></link>
         <div class="container">
             <!-- ヘッダー定義 -->
             <header>
@@ -30,7 +31,16 @@
                     <div class="headerMain">
                         <div class="SubItem0"></div>
                         <div><p1  class="TitleMain">TTBのアニメ備忘録</p1></div>
-                        <div class="SubItem1"></div>
+                        <div class="SubItem1">
+                            <div class="onoffswitch">
+                                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
+                                <label class="onoffswitch-label" for="myonoffswitch">
+                                    <span class="onoffswitch-inner"></span>
+                                    <span class="onoffswitch-switch"></span>
+                                </label>
+                            </div>
+                            <script src="../js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
+                        </div>
                     </div>
                     <div class="header">
                         <div class="ArchiveTitle"><p1>Archive-2018</p1></div>
@@ -44,11 +54,10 @@
             <main>
                 <!-- コンテンツ -->
                 <div class="content">
-                    <div class="winter">
-                        <h3>2018/01～2018/03</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_winter_2018"></h4>
-                        </div>
+                    <div class="season">
+                        <div class="season-sub1"><h3>冬</h3></div>
+                        <div class="season-sub2"><h4>2018/01～2018/03</h4></div>
+                        <div class="season-sub3"><h4 id="count_winter_2018"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_winter_2018">
@@ -91,7 +100,7 @@
                         <script> countup_season("table_winter_" + year, "count_winter_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 冬アニメランキング</h2>
+                    <h3>&emsp; ●冬アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
@@ -136,11 +145,10 @@
                     <br></br>
                     <br></br>
 
-                    <div class="spring">
-                        <h3>2018/04～2018/06</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_spring_2018"></h4>
-                        </div>
+                    <div class="season">
+                        <div class="season-sub1"><h3>春</h3></div>
+                        <div class="season-sub2"><h4>2018/04～2018/06</h4></div>
+                        <div class="season-sub3"><h4 id="count_spring_2018"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_spring_2018">
@@ -183,7 +191,7 @@
                         <script> countup_season("table_spring_" + year, "count_spring_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 春アニメランキング</h2>
+                    <h3>&emsp; ●春アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
@@ -228,11 +236,10 @@
                     <br></br>
                     <br></br>
 
-                    <div class="summer">
-                        <h3>2018/07～2018/09</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_summer_2018"></h4>
-                        </div>
+                    <div class="season">
+                        <div class="season-sub1"><h3>夏</h3></div>
+                        <div class="season-sub2"><h4>2018/07～2018/09</h4></div>
+                        <div class="season-sub3"><h4 id="count_summer_2018"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_summer_2018">
@@ -275,7 +282,7 @@
                         <script> countup_season("table_summer_" + year, "count_summer_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 夏アニメランキング</h2>
+                    <h3>&emsp; ●夏アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
@@ -320,11 +327,10 @@
                     <br></br>
                     <br></br>
 
-                    <div class="autumn">
-                        <h3>2018/10～2018/12</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_autumn_2018"></h4>
-                        </div>
+                    <div class="season">
+                        <div class="season-sub1"><h3>秋</h3></div>
+                        <div class="season-sub2"><h4>2018/10～2018/12</h4></div>
+                        <div class="season-sub3"><h4 id="count_autumn_2018"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_autumn_2018">
@@ -381,7 +387,7 @@
                         <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 秋アニメランキング</h2>
+                    <h3>&emsp; ●秋アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
@@ -422,8 +428,10 @@
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
+                    <br></br>
+
                     <!-- グラフ -->
-                    <h3>&emsp; ●年間視聴データ分析</h3>
+                    <div class="data"><h3>&emsp; ●年間視聴データ分析</h3></div>
                     <div class="graph-area">
                         <!-- 円グラフ1 -->
                         <div>

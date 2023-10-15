@@ -11,7 +11,6 @@ AllFileList = ["../archive/2015.html",
 AllYearList = ["2015", "2016", "2017", "2018", "2019",
                "2020", "2021", "2022", "2023"];
 
-
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
     var td_continuation = 0;
@@ -266,7 +265,7 @@ function history_graph(x_title, labellist, graph_data) {
                     enabled: false
                 },
                 datalabels: {
-                    color: "white",
+                    color: window.globalFunction.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -277,7 +276,7 @@ function history_graph(x_title, labellist, graph_data) {
                 legend: {
                     display: true,
                     labels: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 }
             },
@@ -289,12 +288,12 @@ function history_graph(x_title, labellist, graph_data) {
                         color: "black" 
                     },
                     title: {
-                        color: "white",
+                        color: window.globalFunction.set_char_color(),
                         display: true,
                         text: x_title
                     },
                     ticks: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 },
                 yAxes: {
@@ -304,12 +303,12 @@ function history_graph(x_title, labellist, graph_data) {
                         color: "black" 
                     },
                     title: {
-                        color: "white",
+                        color: window.globalFunction.set_char_color(),
                         display: true,
                         text: "視聴数"
                     },
                     ticks: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 },
             },
@@ -349,7 +348,7 @@ function category_division_graph() {
         options: {
             plugins: {
                 datalabels: {
-                    color: "white",
+                    color: window.globalFunction.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -361,7 +360,7 @@ function category_division_graph() {
                     display: true,
                     position: "right",
                     labels: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 }
             },
@@ -420,7 +419,7 @@ function week_division_graph(graph_data) {
         options: {
             plugins: {
                 datalabels: {
-                    color: "white",
+                    color: window.globalFunction.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -432,7 +431,7 @@ function week_division_graph(graph_data) {
                     display: true,
                     position: "right",
                     labels: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 }
             },

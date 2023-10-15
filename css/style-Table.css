@@ -10,53 +10,62 @@
     --table-boder-type: solid;
     --table-boder-size: 0.1rem;
     /* 配色設定 */
-    --background-color: rgb(255, 255, 255);
-    --table-caption-color: linear-gradient(180deg, rgb(32, 32, 32), rgb(32, 32, 32));
+    --table-caption-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
+    --table-boder-color: rgb(0, 0, 0);
+    --table-char-color: rgb(0, 0, 0);
+    --table-sun-color: linear-gradient(90deg, rgb(231, 000, 018), rgb(220, 220, 220));
+    --table-mon-color: linear-gradient(90deg, rgb(156, 051, 133), rgb(220, 220, 220));
+    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 000), rgb(220, 220, 220));
+    --table-wed-color: linear-gradient(90deg, rgb(000, 170, 232), rgb(220, 220, 220));
+    --table-thu-color: linear-gradient(90deg, rgb(016, 168, 059), rgb(220, 220, 220));
+    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 000), rgb(220, 220, 220));
+    --table-sat-color: linear-gradient(90deg, rgb(070, 082, 161), rgb(220, 220, 220));
+}
+/* OSの設定または、トグルスイッチがダークモード時のスタイル */
+:root.darkmode {
+    --table-caption-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
     --table-boder-color: rgb(255, 255, 255);
     --table-char-color: rgb(255, 255, 255);
-    --table-sun-color: linear-gradient(90deg, rgb(231, 0, 18), rgb(30, 30, 30));
-    --table-mon-color: linear-gradient(90deg, rgb(156, 51, 133), rgb(30, 30, 30));
-    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 0), rgb(30, 30, 30));
-    --table-wed-color: linear-gradient(90deg, rgb(0, 170, 232), rgb(30, 30, 30));
-    --table-thu-color: linear-gradient(90deg, rgb(16, 168, 59), rgb(30, 30, 30));
-    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 0), rgb(30, 30, 30));
-    --table-sat-color: linear-gradient(90deg, rgb(70, 82, 161), rgb(30, 30, 30));
+    --table-sun-color: linear-gradient(90deg, rgb(231, 000, 018), rgb(035, 035, 035));
+    --table-mon-color: linear-gradient(90deg, rgb(156, 051, 133), rgb(035, 035, 035));
+    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 000), rgb(035, 035, 035));
+    --table-wed-color: linear-gradient(90deg, rgb(000, 170, 232), rgb(035, 035, 035));
+    --table-thu-color: linear-gradient(90deg, rgb(016, 168, 059), rgb(035, 035, 035));
+    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 000), rgb(035, 035, 035));
+    --table-sat-color: linear-gradient(90deg, rgb(070, 082, 161), rgb(035, 035, 035));
 }
 
-div.winter {
+
+div.season {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: var(--table-th-size) 1fr;
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_winter.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    background-color: var(--table-caption-color);
-    color: white;
-    padding-left: 6rem;
+    background: var(--table-caption-color);
+    color: var(--table-char-color);
 }
-div.spring {
-    border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_spring.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    color: white;
-    padding-left: 6rem;
+div.season-sub1 {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    text-align: center;
+    font-size: 150%;
 }
-div.summer {
-    border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_summer.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    background-color: var(--table-caption-color);
-    color: white;
-    padding-left: 6rem;
+div.season-sub2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    text-align: left;
 }
-div.autumn {
-    border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_autumn.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    background-color: var(--table-caption-color);
-    color: white;
-    padding-left: 6rem;
-}
-div.detail-caption {
+div.season-sub3 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
     text-align: center;
 }
+
+div.data {
+    border-radius: 5px 5px 5px 5px;
+    background: var(--table-caption-color);
+}
+
 /* 表デザイン */
 div.table-wrap {
     overflow-x: scroll;
@@ -173,7 +182,7 @@ th.sun {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-sun-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 table tr:nth-child(2) td {
@@ -194,7 +203,7 @@ th.mon {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-mon-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 table tr:nth-child(3) td {
@@ -215,7 +224,7 @@ th.tue {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-tue-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 table tr:nth-child(4) td {
@@ -236,7 +245,7 @@ th.wed {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-wed-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 table tr:nth-child(5) td {
@@ -257,7 +266,7 @@ th.thu {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-thu-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 table tr:nth-child(6) td {
@@ -278,7 +287,7 @@ th.fri {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-fri-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 table tr:nth-child(7) td {
@@ -299,7 +308,7 @@ th.sat {
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-sat-color);
-    color: white;
+    color: var(--table-char-color);
 }
 
 
