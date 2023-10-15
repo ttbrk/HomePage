@@ -66,8 +66,20 @@ div.SubItem0 {
     padding-left: 3rem;
 }
 div.SubItem1 {
-    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1.5fr 0.1fr 1fr;
 }
+div.SubItem1-Title {
+    grid-row: 1 / 4;
+    grid-column: 1;
+    text-align: right;
+}
+div.SubItem1-swich {
+    grid-row: 2;
+    grid-column: 3;
+}
+
 
 div.header {
     display: grid;
