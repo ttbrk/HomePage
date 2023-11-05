@@ -50,6 +50,7 @@ if (localStorage.getItem("darkMode") === "on") {
     darkModeOff();
 }
 
+window.globalFunction = {};
 // 読み込みは以下
 // window.globalFunction.set_char_color
 function set_char_color() {
@@ -59,5 +60,14 @@ function set_char_color() {
         return "black"
     }
 }
-window.globalFunction = {};
 window.globalFunction.set_char_color = set_char_color;
+
+// window.globalFunction.set_twitter_theme
+function set_twitter_theme() {
+    if (localStorage.getItem("darkMode") === "on") {
+        return "dark"
+    } else if (localStorage.getItem("darkMode") === "off") {
+        return "light"
+    }
+}
+window.globalFunction.set_twitter_theme = set_twitter_theme;

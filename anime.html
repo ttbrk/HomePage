@@ -197,7 +197,7 @@
                     <div>
                         <canvas id="watch-history"></canvas>
                         <script>
-                            x_title = "year"
+                            x_title = "year";
                             result = get_watch_history_all();
                             // result[0]：ラベルリスト
                             // result[1]：データ
@@ -211,7 +211,20 @@
                         <div class="data"><h2 class="sub-title">&emsp; ●Twitter</h2></div>
                         <p2>アニメの感想、gameの感想等々気まぐれに呟いてます！</p2>
                         <br></br>
-                        <a class="twitter-timeline" data-width="700" data-height="800" data-theme="dark" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <a class="twitter-timeline" data-width="700" data-height="800" data-theme="theme" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        <script>
+                            $('.twitter-timeline').attr("data-theme", window.globalFunction.set_twitter_theme());
+                        </script>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <!-- 読書メーター -->
+                    <div class="sns-box">
+                        <div class="data"><h2 class="sub-title">&emsp; ●読書メーター</h2></div>
+                        <p2>小説の感想等々気まぐれに呟いてます！<br></p2>
+                        <p2>ジャンルは主にミステリーやラノベなど<br>&emsp; </p2>
+                        <h2></p4><a href="https://bookmeter.com/users/1293090">読書メータートップページはこちら！</a></h2>
                     </div>
                     <br></br>
                     <br></br>
