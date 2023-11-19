@@ -13,26 +13,44 @@
     --table-caption-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
     --table-boder-color: rgb(0, 0, 0);
     --table-char-color: rgb(0, 0, 0);
-    --table-sun-color: linear-gradient(90deg, rgb(231, 000, 018), rgb(220, 220, 220));
-    --table-mon-color: linear-gradient(90deg, rgb(156, 051, 133), rgb(220, 220, 220));
-    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 000), rgb(220, 220, 220));
-    --table-wed-color: linear-gradient(90deg, rgb(000, 170, 232), rgb(220, 220, 220));
-    --table-thu-color: linear-gradient(90deg, rgb(016, 168, 059), rgb(220, 220, 220));
-    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 000), rgb(220, 220, 220));
-    --table-sat-color: linear-gradient(90deg, rgb(070, 082, 161), rgb(220, 220, 220));
+    --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(220, 220, 220));
+    --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(220, 220, 220));
+    --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(220, 220, 220));
+    --table-wed-color:          linear-gradient(90deg, rgb(000, 170, 232), rgb(220, 220, 220));
+    --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(220, 220, 220));
+    --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(220, 220, 220));
+    --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(220, 220, 220));
+    --table-new-color:          linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  35%, 
+                                                       rgb(251, 153, 102)  35%, rgb(251, 153, 102)  65%, 
+                                                       rgb(255, 255, 255)  65%, rgb(255, 255, 255) 100%);
+    --table-continuation-color: linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  35%, 
+                                                       rgb(046, 169, 223)  35%, rgb(046, 169, 223)  65%, 
+                                                       rgb(255, 255, 255)  65%, rgb(255, 255, 255) 100%);
+    --table-reair-color:        linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  35%, 
+                                                       rgb(000, 170, 144)  35%, rgb(000, 170, 144)  65%, 
+                                                       rgb(255, 255, 255)  65%, rgb(255, 255, 255) 100%);
 }
 /* OSの設定または、トグルスイッチがダークモード時のスタイル */
 :root.darkmode {
     --table-caption-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
     --table-boder-color: rgb(255, 255, 255);
     --table-char-color: rgb(255, 255, 255);
-    --table-sun-color: linear-gradient(90deg, rgb(231, 000, 018), rgb(035, 035, 035));
-    --table-mon-color: linear-gradient(90deg, rgb(156, 051, 133), rgb(035, 035, 035));
-    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 000), rgb(035, 035, 035));
-    --table-wed-color: linear-gradient(90deg, rgb(000, 170, 232), rgb(035, 035, 035));
-    --table-thu-color: linear-gradient(90deg, rgb(016, 168, 059), rgb(035, 035, 035));
-    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 000), rgb(035, 035, 035));
-    --table-sat-color: linear-gradient(90deg, rgb(070, 082, 161), rgb(035, 035, 035));
+    --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(035, 035, 035));
+    --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(035, 035, 035));
+    --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(035, 035, 035));
+    --table-wed-color:          linear-gradient(90deg, rgb(000, 170, 232), rgb(035, 035, 035));
+    --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(035, 035, 035));
+    --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(035, 035, 035));
+    --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(035, 035, 035));
+    --table-new-color:          linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  35%, 
+                                                       rgb(251, 153, 102)  35%, rgb(251, 153, 102)  65%, 
+                                                       rgb(065, 065, 065)  65%, rgb(065, 065, 065) 100%);
+    --table-continuation-color: linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  35%, 
+                                                       rgb(046, 169, 223)  35%, rgb(046, 169, 223)  65%, 
+                                                       rgb(065, 065, 065)  65%, rgb(065, 065, 065) 100%);
+    --table-reair-color:        linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  35%, 
+                                                       rgb(000, 170, 144)  35%, rgb(000, 170, 144)  65%, 
+                                                       rgb(065, 065, 065)  65%, rgb(065, 065, 065) 100%);
 }
 
 
@@ -128,54 +146,82 @@ table.table {
 }
 
 
-
-
-td.none {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
-    padding-bottom: 0.4rem;
-    width: var(--table-td-size);
-    color: var(--table-char-color);
-}
-/* アイコン設定 */
+/* テーブル種別アイコン設定 */
 td.new {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
-    padding-bottom: 0.4rem;
-    width: var(--table-td-size);
-    background: url(../image/icon_new.png) no-repeat left center;
-    color: var(--table-char-color);
-}
-td.continuation {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
-    padding-bottom: 0.4rem;
-    width: var(--table-td-size);
-    background: url(../image/icon_continuation.png) no-repeat left center;
-    color: var(--table-char-color);
-}
-td.reair {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
-    padding-bottom: 0.4rem;
-    width: var(--table-td-size);
-    background: url(../image/icon_reair.png) no-repeat left center;
-    color: var(--table-char-color);
-}
-
-
-table tr:nth-child(1) td {
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 0px 0px 5px;
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
     border-left-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+    padding-top: 0.4rem;
+    padding-left: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 20px;
+    background:var(--table-new-color);
+    color: var(--table-char-color);
+}
+td.continuation {
+    border-radius: 5px 0px 0px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+    padding-top: 0.4rem;
+    padding-left: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 20px;
+    background:var(--table-continuation-color);
+    color: var(--table-char-color);
+}
+td.reair {
+    border-radius: 5px 0px 0px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+    padding-top: 0.4rem;
+    padding-left: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 20px;
+    background:var(--table-reair-color);
+    color: var(--table-char-color);
+}
+td.none {
+    border-radius: 5px 0px 0px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+    padding-top: 0.4rem;
+    padding-left: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 20px;
+    color: var(--table-char-color);
+}
+
+/* テーブル本文設定 */
+td.title {
+    border-radius: 0px 5px 5px 0px;
     border-right-style: var(--table-boder-type);
     border-right-width: var(--table-boder-size);
     border-right-color: var(--table-boder-color);
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: var(--table-td-size);
+    color: var(--table-char-color);
 }
+
 th.sun {
     width: var(--table-th-size);
     position: sticky;
@@ -183,19 +229,6 @@ th.sun {
     border-radius: 5px 5px 5px 5px;
     background: var(--table-sun-color);
     color: var(--table-char-color);
-}
-
-table tr:nth-child(2) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
 }
 th.mon {
     width: var(--table-th-size);
@@ -205,19 +238,6 @@ th.mon {
     background: var(--table-mon-color);
     color: var(--table-char-color);
 }
-
-table tr:nth-child(3) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
 th.tue {
     width: var(--table-th-size);
     position: sticky;
@@ -225,19 +245,6 @@ th.tue {
     border-radius: 5px 5px 5px 5px;
     background: var(--table-tue-color);
     color: var(--table-char-color);
-}
-
-table tr:nth-child(4) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
 }
 th.wed {
     width: var(--table-th-size);
@@ -247,19 +254,6 @@ th.wed {
     background: var(--table-wed-color);
     color: var(--table-char-color);
 }
-
-table tr:nth-child(5) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
 th.thu {
     width: var(--table-th-size);
     position: sticky;
@@ -267,19 +261,6 @@ th.thu {
     border-radius: 5px 5px 5px 5px;
     background: var(--table-thu-color);
     color: var(--table-char-color);
-}
-
-table tr:nth-child(6) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
 }
 th.fri {
     width: var(--table-th-size);
@@ -289,19 +270,6 @@ th.fri {
     background: var(--table-fri-color);
     color: var(--table-char-color);
 }
-
-table tr:nth-child(7) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
 th.sat {
     width: var(--table-th-size);
     position: sticky;
@@ -310,6 +278,7 @@ th.sat {
     background: var(--table-sat-color);
     color: var(--table-char-color);
 }
+
 
 
 th.ranking1{

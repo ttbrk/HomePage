@@ -337,9 +337,9 @@ function category_division_graph() {
             labels: ["新規", "継続", "再放送"],
             datasets: [
                 {
-                    backgroundColor: ["rgb(251, 153, 102",
-                                      "rgb(46, 169, 223",
-                                      "rgb(0, 170, 144"],
+                    backgroundColor: ["rgb(251, 153, 102)",
+                                      "rgb(46, 169, 223)",
+                                      "rgb(0, 170, 144)"],
                     borderColor: "transparent",
                     data: result
                 }
