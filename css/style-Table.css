@@ -5,6 +5,7 @@
     --table-rank-img-size: 150px;
     --table-size: 400px;
     --table-th-size: 100px;
+    --table-label-size: 20px;
     --table-td-size: 200px;
     --table-td-size2: 200px;
     --table-boder-type: solid;
@@ -157,51 +158,9 @@ table.table {
 
 
 /* テーブル種別アイコン設定 */
-td.new {
-    border-radius: 5px 0px 0px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    padding-top: 0.4rem;
-    padding-left: 0.4rem;
-    padding-bottom: 0.4rem;
-    width: 20px;
-    background:var(--table-new-color);
-    color: var(--table-char-color);
-}
-td.continuation {
-    border-radius: 5px 0px 0px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    padding-top: 0.4rem;
-    padding-left: 0.4rem;
-    padding-bottom: 0.4rem;
-    width: 20px;
-    background:var(--table-continuation-color);
-    color: var(--table-char-color);
-}
-td.reair {
-    border-radius: 5px 0px 0px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    padding-top: 0.4rem;
-    padding-left: 0.4rem;
-    padding-bottom: 0.4rem;
-    width: 20px;
-    background:var(--table-reair-color);
-    color: var(--table-char-color);
-}
+td.new,
+td.continuation,
+td.reair,
 td.none {
     border-radius: 5px 0px 0px 5px;
     border-left-style: var(--table-boder-type);
@@ -213,16 +172,23 @@ td.none {
     padding-top: 0.4rem;
     padding-left: 0.4rem;
     padding-bottom: 0.4rem;
-    width: 20px;
+    width: var(--table-label-size);
     color: var(--table-char-color);
+}
+
+td.new {
+    background:var(--table-new-color);
+}
+td.continuation {
+    background:var(--table-continuation-color);
+}
+td.reair {
+    background:var(--table-reair-color);
 }
 
 /* テーブル本文設定 */
 td.title {
     border-radius: 0px 5px 5px 0px;
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
     border-bottom-style: var(--table-boder-type);
     border-bottom-width: var(--table-boder-size);
     border-bottom-color: var(--table-boder-color);
