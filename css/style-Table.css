@@ -107,61 +107,31 @@ table.table {
 }
 
 /* =======================2023======================= */
-#table_winter_2023,
-#table_spring_2023,
-#table_summer_2023,
-#table_autumn_2023,
+#table_winter_2023, #table_spring_2023, #table_summer_2023, #table_autumn_2023,
 /* =======================2022======================= */
-#table_winter_2022,
-#table_spring_2022,
-#table_summer_2022,
-#table_autumn_2022,
+#table_winter_2022, #table_spring_2022, #table_summer_2022, #table_autumn_2022,
 /* =======================2021======================= */
-#table_winter_2021,
-#table_spring_2021,
-#table_summer_2021,
-#table_autumn_2021,
+#table_winter_2021, #table_spring_2021, #table_summer_2021, #table_autumn_2021,
 /* =======================2020======================= */
-#table_winter_2020,
-#table_spring_2020,
-#table_summer_2020,
-#table_autumn_2020,
+#table_winter_2020, #table_spring_2020, #table_summer_2020, #table_autumn_2020,
 /* =======================2019======================= */
-#table_winter_2019,
-#table_spring_2019,
-#table_summer_2019,
-#table_autumn_2019,
+#table_winter_2019, #table_spring_2019, #table_summer_2019, #table_autumn_2019,
 /* =======================2018======================= */
-#table_winter_2018,
-#table_spring_2018,
-#table_summer_2018,
-#table_autumn_2018,
+#table_winter_2018, #table_spring_2018, #table_summer_2018, #table_autumn_2018,
 /* =======================2017======================= */
-#table_winter_2017,
-#table_spring_2017,
-#table_summer_2017,
-#table_autumn_2017,
+#table_winter_2017, #table_spring_2017, #table_summer_2017, #table_autumn_2017,
 /* =======================2016======================= */
-#table_winter_2016,
-#table_spring_2016,
-#table_summer_2016,
-#table_autumn_2016,
+#table_winter_2016, #table_spring_2016, #table_summer_2016, #table_autumn_2016,
 /* =======================2015======================= */
-#table_winter_2015,
-#table_spring_2015,
-#table_summer_2015,
-#table_autumn_2015 {
+#table_winter_2015, #table_spring_2015, #table_summer_2015, #table_autumn_2015 {
     table-layout: fixed;
     width: var(--table-size);
     border-collapse: separate;
 }
 
 
-/* テーブル種別アイコン設定 */
-td.new,
-td.continuation,
-td.reair,
-td.none {
+/* テーブル種別アイコン共通設定 */
+td.new, td.continuation, td.reair, td.none {
     border-radius: 5px 0px 0px 5px;
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
@@ -175,7 +145,7 @@ td.none {
     width: var(--table-label-size);
     color: var(--table-char-color);
 }
-
+/* テーブル種別アイコンカラー設定 */
 td.new {
     background:var(--table-new-color);
 }
@@ -198,55 +168,8 @@ td.title {
     color: var(--table-char-color);
 }
 
-th.sun {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-sun-color);
-    color: var(--table-char-color);
-}
-th.mon {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-mon-color);
-    color: var(--table-char-color);
-}
-th.tue {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-tue-color);
-    color: var(--table-char-color);
-}
-th.wed {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-wed-color);
-    color: var(--table-char-color);
-}
-th.thu {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-thu-color);
-    color: var(--table-char-color);
-}
-th.fri {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-fri-color);
-    color: var(--table-char-color);
-}
-th.sat {
+/* テーブル曜日共通設定 */
+th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
     width: var(--table-th-size);
     position: sticky;
     left: 0;
@@ -254,36 +177,50 @@ th.sat {
     background: var(--table-sat-color);
     color: var(--table-char-color);
 }
-
-
-
-th.ranking1{
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
-    background-size: contain;
+/* テーブル曜日カラー設定 */
+th.sun {
+    background: var(--table-sun-color);
+}
+th.mon {
+    background: var(--table-mon-color);
+}
+th.tue {
+    background: var(--table-tue-color);
+}
+th.wed {
+    background: var(--table-wed-color);
+}
+th.thu {
+    background: var(--table-thu-color);
+}
+th.fri {
+    background: var(--table-fri-color);
+}
+th.sat {
+    background: var(--table-sat-color);
 }
 
-th.ranking2{
+/* ランキングth共通設定 */
+th.ranking1, th.ranking2, th.ranking3{
     width: var(--table-th-size);
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
-    background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
     background-size: contain;
+}
+/* ランキングthカラー設定 */
+th.ranking1{
+    background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
+}
+th.ranking2{
+    background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
 }
 th.ranking3{
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
     background: linear-gradient(45deg, #a57e65 0%, #a57e65 45%, #f3cfb8 70%, #a57e65 85%, #a57e65 90% 100%);
-    background-size: contain;
 }
 
-td.ranking1 {
+/* ランキングtd共通設定 */
+td.ranking1, td.ranking2, td.ranking3 {
     border: none !important;
     width: var(--table-td-size2);
     border-left-style: var(--table-boder-type);
@@ -297,67 +234,27 @@ td.ranking1 {
     border-bottom-color: var(--table-boder-color);
     text-align: center;
 }
-td.ranking1 h4 {
+
+/* ランキングh4共通設定 */
+td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 {
     display: inline;
-    background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
     background-repeat: no-repeat;
     background-size: 100% 40%;
 	background-position: bottom;
     transition: all 0.25s ease-in;
 }
-td.ranking1 h4:hover{
-    background-size: 100% 100%;
-}
-
-td.ranking2 {
-    border: none !important;
-    width: var(--table-td-size2);
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    text-align: center;
+/* ランキングh4カラー設定 */
+td.ranking1 h4 {
+    background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
 }
 td.ranking2 h4 {
-    display: inline;
     background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 40%;
-	background-position: bottom;
-    transition: all 0.25s ease-in;
-}
-td.ranking2 h4:hover{
-    background-size: 100% 100%;
-}
-
-td.ranking3 {
-    border: none !important;
-    width: var(--table-td-size2);
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    text-align: center;
 }
 td.ranking3 h4 {
-    display: inline;
     background: linear-gradient(45deg, #a57e65 0%, #a57e65 45%, #f3cfb8 70%, #a57e65 85%, #a57e65 90% 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 40%;
-	background-position: bottom;
-    transition: all 0.25s ease-in;
 }
-td.ranking3 h4:hover{
+/* ランキングh4hover共通設定 */
+td.ranking1 h4:hover, td.ranking2 h4:hover, td.ranking3 h4:hover{
     background-size: 100% 100%;
 }
 
