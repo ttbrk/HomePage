@@ -20,15 +20,20 @@
     --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(220, 220, 220));
     --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(220, 220, 220));
     --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(220, 220, 220));
-    --table-new-color:          linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  35%, 
-                                                       rgb(251, 153, 102)  35%, rgb(251, 153, 102)  65%, 
-                                                       rgb(255, 255, 255)  65%, rgb(255, 255, 255) 100%);
-    --table-continuation-color: linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  35%, 
-                                                       rgb(046, 169, 223)  35%, rgb(046, 169, 223)  65%, 
-                                                       rgb(255, 255, 255)  65%, rgb(255, 255, 255) 100%);
-    --table-reair-color:        linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  35%, 
-                                                       rgb(000, 170, 144)  35%, rgb(000, 170, 144)  65%, 
-                                                       rgb(255, 255, 255)  65%, rgb(255, 255, 255) 100%);
+    --table-new-color:          linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
+                                                       rgb(251, 153, 102)  30%, rgb(220, 220, 220)  45%, 
+                                                       rgb(220, 220, 220)  45%, rgb(251, 153, 102)  70%, 
+                                                       rgb(255, 255, 255)  70%, rgb(255, 255, 255) 100%);
+
+    --table-continuation-color: linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
+                                                       rgb(046, 169, 223)  30%, rgb(220, 220, 220)  45%, 
+                                                       rgb(220, 220, 220)  45%, rgb(046, 169, 223)  70%, 
+                                                       rgb(255, 255, 255)  70%, rgb(255, 255, 255) 100%);
+
+    --table-reair-color:        linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
+                                                       rgb(000, 170, 144)  30%, rgb(220, 220, 220)  45%, 
+                                                       rgb(220, 220, 220)  45%, rgb(000, 170, 144)  70%, 
+                                                       rgb(255, 255, 255)  70%, rgb(255, 255, 255) 100%);
 }
 /* OSの設定または、トグルスイッチがダークモード時のスタイル */
 :root.darkmode {
@@ -42,15 +47,20 @@
     --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(035, 035, 035));
     --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(035, 035, 035));
     --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(035, 035, 035));
-    --table-new-color:          linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  35%, 
-                                                       rgb(251, 153, 102)  35%, rgb(251, 153, 102)  65%, 
-                                                       rgb(065, 065, 065)  65%, rgb(065, 065, 065) 100%);
-    --table-continuation-color: linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  35%, 
-                                                       rgb(046, 169, 223)  35%, rgb(046, 169, 223)  65%, 
-                                                       rgb(065, 065, 065)  65%, rgb(065, 065, 065) 100%);
-    --table-reair-color:        linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  35%, 
-                                                       rgb(000, 170, 144)  35%, rgb(000, 170, 144)  65%, 
-                                                       rgb(065, 065, 065)  65%, rgb(065, 065, 065) 100%);
+    --table-new-color:          linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
+                                                       rgb(251, 153, 102)  30%, rgb(035, 035, 035)  45%, 
+                                                       rgb(035, 035, 035)  45%, rgb(251, 153, 102)  70%, 
+                                                       rgb(065, 065, 065)  70%, rgb(065, 065, 065) 100%);
+
+    --table-continuation-color: linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
+                                                       rgb(046, 169, 223)  30%, rgb(035, 035, 035)  45%, 
+                                                       rgb(035, 035, 035)  45%, rgb(046, 169, 223)  70%, 
+                                                       rgb(065, 065, 065)  70%, rgb(065, 065, 065) 100%);
+
+    --table-reair-color:        linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
+                                                       rgb(000, 170, 144)  30%, rgb(035, 035, 035)  45%, 
+                                                       rgb(035, 035, 035)  45%, rgb(000, 170, 144)  70%, 
+                                                       rgb(065, 065, 065)  70%, rgb(065, 065, 065) 100%);
 }
 
 
