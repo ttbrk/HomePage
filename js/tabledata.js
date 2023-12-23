@@ -6,10 +6,11 @@ AllFileList = ["../archive/2015.html",
                "../archive/2020.html",
                "../archive/2021.html",
                "../archive/2022.html",
-               "../archive/2023.html"];
+               "../archive/2023.html",
+               "../archive/2024.html"];
 
 AllYearList = ["2015", "2016", "2017", "2018", "2019",
-               "2020", "2021", "2022", "2023"];
+               "2020", "2021", "2022", "2023", "2024"];
 
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
@@ -153,7 +154,7 @@ function table_td_count(table, td_new, td_continuation, td_reair) {
 
 function get_watch_history_all() {
     // graph_dataは以下の形式
-    // 　　　|2015 | 2016 | …2023
+    // 　　　|2015 | 2016 | …202x
     // 新規　|     |      |
     // 継続　|     |      |
     // 再放送|     |      | 
