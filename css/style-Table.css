@@ -3,6 +3,7 @@
 /* 変数設定 */
 :root {
     --table-rank-img-size: 150px;
+    --table-archive-img-size: 100px;
     --table-size: 400px;
     --table-th-size: 100px;
     --table-label-size: 20px;
@@ -260,11 +261,39 @@ td.ranking1 h4:hover, td.ranking2 h4:hover, td.ranking3 h4:hover{
     background-size: 100% 100%;
 }
 
-td.ranking-img{
+td.ranking-img {
     width: var(--table-rank-img-size);
     border: none !important;
 }
 td.ranking-img > img{
     max-width: 100%;
     height: auto;
+}
+
+div.archive-title {
+    background: var(--table-caption-color);
+    color: var(--table-char-color);
+    /* position: relative; */
+}
+/* div.archive-title a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+} */
+td.archive-img {
+    width: var(--table-archive-img-size);
+    /* border: none !important; */
+}
+td.archive-img > img{
+    max-width: var(--table-archive-img-size);
+    /* height: auto; */
+}
+td.archive-title {
+    width: var(--table-archive-img-size);
+    height: var(--table-archive-img-size);
+    vertical-align: top;
+    font-size: 10% !important;
 }

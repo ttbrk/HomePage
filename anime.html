@@ -5,6 +5,10 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8" />
+        <!-- 下記コメントアウトするとスマホ対応可能だがデザイン崩れる -->
+        <!-- 要スマホサイズ対応b -->
+        <!-- <meta name="viewport" content="width=device-width"> -->
+
         <link rel="icon" href="/image/favicon/favicon.ico">
         <link rel="apple-touch-icon" sizes="57x57" href="/image/favicon/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/image/favicon/apple-touch-icon-60x60.png">
@@ -26,6 +30,7 @@
     <body>
         <script>year = "2024"</script>
         <link rel="stylesheet" href="/css/style.css"></link>
+        <link rel="stylesheet" href="/css/menu.css"></link>
         <link rel="stylesheet" href="/css/style-Table.css"></link>
         <link rel="stylesheet" href="/css/darkMode_on_off.css"></link>
         <div class="container">
@@ -33,13 +38,11 @@
             <header>
                 <div class="header-wrap">
                     <div class="headerMain">
-                        <div class="SubItem0"></div>
-                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
-                        <div class="SubItem1">
-                            <div class="SubItem1-Title">
+                        <div class="SubItem0">
+                            <div class="SubItem0-Title">
                                 <p>ダークモード</p>
                             </div>
-                            <div class="SubItem1-swich">
+                            <div class="SubItem0-swich">
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
                                     <label class="onoffswitch-label" for="myonoffswitch">
@@ -49,6 +52,35 @@
                                 </div>
                             </div>
                             <script src="/js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
+                        </div>
+                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
+                        <div class="SubItem1">
+                            <div class="hamburger-menu">
+                                <input type="checkbox" id="menu-btn-check">
+                                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                                <div class="menu-content">
+                                    <ul>
+                                        <li><a href="/anime.html">Top</a></li>
+                                        <!-- <details>
+                                            <summary><li>Archive</li></summary>
+                                            <li><p4><a href="/archive/archivetop.html">archivetop</a></p4></li>
+                                            <li><p4><a href="/archive/2024.html">2024</a></p4></li>
+                                            <li><p4><a href="/archive/2023.html">2023</a></p4></li>
+                                            <li><p4><a href="/archive/2022.html">2022</a></p4></li>
+                                            <li><p4><a href="/archive/2021.html">2021</a></p4></li>
+                                            <li><p4><a href="/archive/2020.html">2020</a></p4></li>
+                                            <li><p4><a href="/archive/2019.html">2019</a></p4></li>
+                                            <li><p4><a href="/archive/2018.html">2018</a></p4></li>
+                                            <li><p4><a href="/archive/2017.html">2017</a></p4></li>
+                                            <li><p4><a href="/archive/2016.html">2016</a></p4></li>
+                                            <li><p4><a href="/archive/2015.html">2015</a></p4></li>
+                                        </details> -->
+                                        <li><a href="/archive/archivetop.html">Archive</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">Setting</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="header">
@@ -226,26 +258,12 @@
                 <script> countup_all("count_year_sum_all", "count_year_all");</script>
 
                 <!-- サイドバー -->
-                <div class="sidebar">
-                    <div class="sidebar-header">
-                        <h3>Archive</h3>
-                    </div>
-                    <div class="sidebar-main">
-                        <br></br>
-                        <li><p4><a href="/archive/2024.html">2024</a></p4></li>
-                        <li><p4><a href="/archive/2023.html">2023</a></p4></li>
-                        <li><p4><a href="/archive/2022.html">2022</a></p4></li>
-                        <li><p4><a href="/archive/2021.html">2021</a></p4></li>
-                        <li><p4><a href="/archive/2020.html">2020</a></p4></li>
-                        <li><p4><a href="/archive/2019.html">2019</a></p4></li>
-                        <li><p4><a href="/archive/2018.html">2018</a></p4></li>
-                        <li><p4><a href="/archive/2017.html">2017</a></p4></li>
-                        <li><p4><a href="/archive/2016.html">2016</a></p4></li>
-                        <li><p4><a href="/archive/2015.html">2015</a></p4></li>
-                    </div>
-                    <div class="sidebar-footer">
-
-                    </div>
+                <div id="sidebar" class="sidebar"></div>
+                <script>
+                    fetch("/common/sidebar.html")
+                    .then((response) => response.text())
+                    .then((data) => document.querySelector("#sidebar").innerHTML = data);
+                </script>
                 </div>
             </main>
 

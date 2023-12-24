@@ -8,6 +8,7 @@
     /* 配色設定 */
     --header-boder-color: rgb(0, 0, 0);
     --char-color: rgb(0, 0, 0);
+    --menu-background: rgb(220, 220, 220);
     --background-color: rgb(255, 255, 255);
     --header-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
     --footer-color: linear-gradient(360deg, rgb(220, 220, 220), rgb(220, 220, 220));
@@ -17,6 +18,7 @@
 :root.darkmode {
     --header-boder-color: rgb(255, 255, 255);
     --char-color: rgb(255, 255, 255);
+    --menu-background: rgb(035, 035, 035);
     --background-color: rgb(065, 065, 065);
     --header-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
     --footer-color: linear-gradient(360deg, rgb(035, 035, 035), rgb(035, 035, 035));
@@ -56,6 +58,20 @@ div.headerMain {
     border-bottom-color: var(--header-boder-color);
 }
 div.SubItem0 {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1.5fr 0.1fr 1fr;
+}
+div.SubItem0-Title {
+    grid-row: 1 / 4;
+    grid-column: 1;
+    text-align: right;
+}
+div.SubItem0-swich {
+    grid-row: 2;
+    grid-column: 3;
+}
+div.SubItem1 {
     text-align: center;
 }
 .TitleMain {
@@ -65,20 +81,7 @@ div.SubItem0 {
     font-size: 35px;
     padding-left: 3rem;
 }
-div.SubItem1 {
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: 1.5fr 0.1fr 1fr;
-}
-div.SubItem1-Title {
-    grid-row: 1 / 4;
-    grid-column: 1;
-    text-align: right;
-}
-div.SubItem1-swich {
-    grid-row: 2;
-    grid-column: 3;
-}
+
 
 
 div.header {
@@ -116,6 +119,21 @@ div.content {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
+
+div.archivecontent {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+div.archivecontent-sub0 {
+    grid-column: 0;
+}
+div.archivecontent-sub1 {
+    grid-column: 2;
+}
+
 
 /* グラフ */
 div.graph-area {

@@ -25,6 +25,7 @@
     <body>
         <script>year = "2015"</script>
         <link rel="stylesheet" href="/css/style.css"></link>
+        <link rel="stylesheet" href="/css/menu.css"></link>
         <link rel="stylesheet" href="/css/style-Table.css"></link>
         <link rel="stylesheet" href="/css/darkMode_on_off.css"></link>
         <div class="container">
@@ -32,13 +33,11 @@
             <header>
                 <div class="header-wrap">
                     <div class="headerMain">
-                        <div class="SubItem0"></div>
-                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
-                        <div class="SubItem1">
-                            <div class="SubItem1-Title">
+                        <div class="SubItem0">
+                            <div class="SubItem0-Title">
                                 <p>ダークモード</p>
                             </div>
-                            <div class="SubItem1-swich">
+                            <div class="SubItem0-swich">
                                 <div class="onoffswitch">
                                     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
                                     <label class="onoffswitch-label" for="myonoffswitch">
@@ -48,6 +47,21 @@
                                 </div>
                             </div>
                             <script src="/js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
+                        </div>
+                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
+                        <div class="SubItem1">
+                            <div class="hamburger-menu">
+                                <input type="checkbox" id="menu-btn-check">
+                                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                                <div class="menu-content">
+                                    <ul>
+                                        <li><a href="/anime.html">Top</a></li>
+                                        <li><a href="/archive/archivetop.html">Archive</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">Setting</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="header">
