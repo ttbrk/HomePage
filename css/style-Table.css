@@ -4,6 +4,7 @@
 :root {
     --table-rank-img-size: 150px;
     --table-archive-img-size: 100px;
+    --table-archive-season-size: 10px;
     --table-size: 400px;
     --table-th-size: 100px;
     --table-label-size: 20px;
@@ -15,6 +16,22 @@
     --table-caption-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
     --table-boder-color: rgb(0, 0, 0);
     --table-char-color: rgb(0, 0, 0);
+    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(255, 255, 255)  25%, 
+                                                          rgb(255, 255, 255)  25%, rgb(075, 005, 075)  50%, 
+                                                          rgb(075, 005, 075)  50%, rgb(255, 255, 255)  75%, 
+                                                          rgb(255, 255, 255)  75%, rgb(075, 005, 075) 100%);
+    --table-spring-color:          linear-gradient(45deg, rgb(210, 220, 000)   0%, rgb(255, 255, 255)  25%, 
+                                                          rgb(255, 255, 255)  25%, rgb(210, 220, 000)  50%, 
+                                                          rgb(210, 220, 000)  50%, rgb(255, 255, 255)  75%, 
+                                                          rgb(255, 255, 255)  75%, rgb(210, 220, 000) 100%);
+    --table-summer-color:          linear-gradient(45deg, rgb(231, 036, 032)   0%, rgb(255, 255, 255)  25%, 
+                                                          rgb(255, 255, 255)  25%, rgb(231, 036, 032)  50%, 
+                                                          rgb(231, 036, 032)  50%, rgb(255, 255, 255)  75%, 
+                                                          rgb(255, 255, 255)  75%, rgb(231, 036, 032) 100%);
+    --table-autumn-color:          linear-gradient(45deg, rgb(202, 100, 000)   0%, rgb(255, 255, 255)  25%, 
+                                                          rgb(255, 255, 255)  25%, rgb(202, 100, 000)  50%, 
+                                                          rgb(202, 100, 000)  50%, rgb(255, 255, 255)  75%, 
+                                                          rgb(255, 255, 255)  75%, rgb(202, 100, 000) 100%);
     --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(220, 220, 220));
     --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(220, 220, 220));
     --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(220, 220, 220));
@@ -42,6 +59,22 @@
     --table-caption-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
     --table-boder-color: rgb(255, 255, 255);
     --table-char-color: rgb(255, 255, 255);
+    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(065, 065, 065)  25%, 
+                                                          rgb(065, 065, 065)  25%, rgb(075, 005, 075)  50%, 
+                                                          rgb(075, 005, 075)  50%, rgb(065, 065, 065)  75%, 
+                                                          rgb(065, 065, 065)  75%, rgb(075, 005, 075) 100%);
+    --table-spring-color:          linear-gradient(45deg, rgb(210, 220, 000)   0%, rgb(065, 065, 065)  25%, 
+                                                          rgb(065, 065, 065)  25%, rgb(210, 220, 000)  50%, 
+                                                          rgb(210, 220, 000)  50%, rgb(065, 065, 065)  75%, 
+                                                          rgb(065, 065, 065)  75%, rgb(210, 220, 000) 100%);
+    --table-summer-color:          linear-gradient(45deg, rgb(231, 036, 032)   0%, rgb(065, 065, 065)  25%, 
+                                                          rgb(065, 065, 065)  25%, rgb(231, 036, 032)  50%, 
+                                                          rgb(231, 036, 032)  50%, rgb(065, 065, 065)  75%, 
+                                                          rgb(065, 065, 065)  75%, rgb(231, 036, 032) 100%);
+    --table-autumn-color:          linear-gradient(45deg, rgb(202, 100, 000)   0%, rgb(065, 065, 065)  25%, 
+                                                          rgb(065, 065, 065)  25%, rgb(202, 100, 000)  50%, 
+                                                          rgb(202, 100, 000)  50%, rgb(065, 065, 065)  75%, 
+                                                          rgb(065, 065, 065)  75%, rgb(202, 100, 000) 100%);
     --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(035, 035, 035));
     --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(035, 035, 035));
     --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(035, 035, 035));
@@ -283,17 +316,31 @@ div.archive-title {
     height:100%;
     width: 100%;
 } */
+td.archive-winter {
+    width: var(--table-archive-season-size);
+    background: var(--table-winter-color);
+}
+td.archive-spring {
+    width: var(--table-archive-season-size);
+    background: var(--table-spring-color);
+}
+td.archive-summer {
+    width: var(--table-archive-season-size);
+    background: var(--table-summer-color);
+}
+td.archive-autumn {
+    width: var(--table-archive-season-size);
+    background: var(--table-autumn-color);
+}
 td.archive-img {
     width: var(--table-archive-img-size);
-    /* border: none !important; */
 }
 td.archive-img > img{
     max-width: var(--table-archive-img-size);
-    /* height: auto; */
 }
 td.archive-title {
     width: var(--table-archive-img-size);
-    height: var(--table-archive-img-size);
+    height: 20;
     vertical-align: top;
     font-size: 10% !important;
 }
