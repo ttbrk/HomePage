@@ -2,36 +2,41 @@
 
 /* 変数設定 */
 :root {
-    --table-rank-img-size: 150px;
+
     --table-archive-img-size: 100px;
-    --table-archive-season-size: 10px;
+    --table-archive-season-size: 20px;
     --table-size: 400px;
-    --table-th-size: 100px;
+    --table-th-size: 60px;
     --table-label-size: 20px;
     --table-td-size: 200px;
-    --table-td-size2: 200px;
+    --table-rank-img-size: 180px;
+    /* ↑pcの場合は250にする */
+    --table-ranktitle-td-size: 100px;
+    /* ↑pcの場合は150にする */
     --table-boder-type: solid;
     --table-boder-size: 0.1rem;
     /* 配色設定 */
     --table-caption-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
+    /* クール毎表タイトル配色 */
+    --table-caption-winter-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(075, 005, 075) 100%);
+    --table-caption-spring-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(145, 234, 202) 100%);
+    --table-caption-summer-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(235, 061, 031) 100%);
+    --table-caption-autumn-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(120, 066, 063) 100%);
     --table-boder-color: rgb(0, 0, 0);
     --table-char-color: rgb(0, 0, 0);
-    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(255, 255, 255)  25%, 
-                                                          rgb(255, 255, 255)  25%, rgb(075, 005, 075)  50%, 
-                                                          rgb(075, 005, 075)  50%, rgb(255, 255, 255)  75%, 
-                                                          rgb(255, 255, 255)  75%, rgb(075, 005, 075) 100%);
-    --table-spring-color:          linear-gradient(45deg, rgb(210, 220, 000)   0%, rgb(255, 255, 255)  25%, 
-                                                          rgb(255, 255, 255)  25%, rgb(210, 220, 000)  50%, 
-                                                          rgb(210, 220, 000)  50%, rgb(255, 255, 255)  75%, 
-                                                          rgb(255, 255, 255)  75%, rgb(210, 220, 000) 100%);
-    --table-summer-color:          linear-gradient(45deg, rgb(231, 036, 032)   0%, rgb(255, 255, 255)  25%, 
-                                                          rgb(255, 255, 255)  25%, rgb(231, 036, 032)  50%, 
-                                                          rgb(231, 036, 032)  50%, rgb(255, 255, 255)  75%, 
-                                                          rgb(255, 255, 255)  75%, rgb(231, 036, 032) 100%);
-    --table-autumn-color:          linear-gradient(45deg, rgb(202, 100, 000)   0%, rgb(255, 255, 255)  25%, 
-                                                          rgb(255, 255, 255)  25%, rgb(202, 100, 000)  50%, 
-                                                          rgb(202, 100, 000)  50%, rgb(255, 255, 255)  75%, 
-                                                          rgb(255, 255, 255)  75%, rgb(202, 100, 000) 100%);
+    /* アーカイブクール配色 */
+    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(075, 005, 075) 100%);
+    --table-spring-color:          linear-gradient(45deg, rgb(145, 234, 202)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(145, 234, 202) 100%);
+    --table-summer-color:          linear-gradient(45deg, rgb(235, 061, 031)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(235, 061, 031) 100%);
+    --table-autumn-color:          linear-gradient(45deg, rgb(120, 066, 063)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(120, 066, 063) 100%);
     --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(220, 220, 220));
     --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(220, 220, 220));
     --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(220, 220, 220));
@@ -57,24 +62,26 @@
 /* OSの設定または、トグルスイッチがダークモード時のスタイル */
 :root.darkmode {
     --table-caption-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
+    /* クール毎表タイトル配色 */
+    --table-caption-winter-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(075, 005, 075) 100%);
+    --table-caption-spring-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(145, 234, 202) 100%);
+    --table-caption-summer-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(235, 061, 031) 100%);
+    --table-caption-autumn-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(120, 066, 063) 100%);
     --table-boder-color: rgb(255, 255, 255);
     --table-char-color: rgb(255, 255, 255);
-    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(065, 065, 065)  25%, 
-                                                          rgb(065, 065, 065)  25%, rgb(075, 005, 075)  50%, 
-                                                          rgb(075, 005, 075)  50%, rgb(065, 065, 065)  75%, 
-                                                          rgb(065, 065, 065)  75%, rgb(075, 005, 075) 100%);
-    --table-spring-color:          linear-gradient(45deg, rgb(210, 220, 000)   0%, rgb(065, 065, 065)  25%, 
-                                                          rgb(065, 065, 065)  25%, rgb(210, 220, 000)  50%, 
-                                                          rgb(210, 220, 000)  50%, rgb(065, 065, 065)  75%, 
-                                                          rgb(065, 065, 065)  75%, rgb(210, 220, 000) 100%);
-    --table-summer-color:          linear-gradient(45deg, rgb(231, 036, 032)   0%, rgb(065, 065, 065)  25%, 
-                                                          rgb(065, 065, 065)  25%, rgb(231, 036, 032)  50%, 
-                                                          rgb(231, 036, 032)  50%, rgb(065, 065, 065)  75%, 
-                                                          rgb(065, 065, 065)  75%, rgb(231, 036, 032) 100%);
-    --table-autumn-color:          linear-gradient(45deg, rgb(202, 100, 000)   0%, rgb(065, 065, 065)  25%, 
-                                                          rgb(065, 065, 065)  25%, rgb(202, 100, 000)  50%, 
-                                                          rgb(202, 100, 000)  50%, rgb(065, 065, 065)  75%, 
-                                                          rgb(065, 065, 065)  75%, rgb(202, 100, 000) 100%);
+    /* アーカイブクール配色 */
+    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(075, 005, 075) 100%);
+    --table-spring-color:          linear-gradient(45deg, rgb(145, 234, 202)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(145, 234, 202) 100%);
+    --table-summer-color:          linear-gradient(45deg, rgb(235, 061, 031)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(235, 061, 031) 100%);
+    --table-autumn-color:          linear-gradient(45deg, rgb(120, 066, 063)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(120, 066, 063) 100%);
     --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(035, 035, 035));
     --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(035, 035, 035));
     --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(035, 035, 035));
@@ -107,6 +114,32 @@ div.season {
     background: var(--table-caption-color);
     color: var(--table-char-color);
 }
+/* クール毎表タイトル設定（共通） */
+div.season-winter ,
+div.season-spring ,
+div.season-summer ,
+div.season-autumn {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: var(--table-th-size) 1fr;
+    border-radius: 5px 5px 5px 5px;
+    color: var(--table-char-color);
+}
+/* クール毎表タイトル設定（個別） */
+div.season-winter {
+    background: var(--table-caption-winter-color);
+}
+div.season-spring {
+    background: var(--table-caption-spring-color);
+}
+div.season-summer {
+    background: var(--table-caption-summer-color);
+}
+div.season-autumn {
+    background: var(--table-caption-autumn-color);
+}
+
+
 div.season-sub1 {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
@@ -137,6 +170,7 @@ div.table-wrap {
 table.table {
     table-layout: fixed;
     width: 3 * var(--table-size);
+    width: var(--table-size);
     border-collapse: separate;
 }
 
@@ -238,7 +272,7 @@ th.sat {
 
 /* ランキングth共通設定 */
 th.ranking1, th.ranking2, th.ranking3{
-    width: var(--table-th-size);
+    width: 20px;
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
@@ -258,7 +292,7 @@ th.ranking3{
 /* ランキングtd共通設定 */
 td.ranking1, td.ranking2, td.ranking3 {
     border: none !important;
-    width: var(--table-td-size2);
+    width: var(--table-ranktitle-td-size);
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
     border-left-color: var(--table-boder-color);
@@ -302,6 +336,17 @@ td.ranking-img > img{
     max-width: 100%;
     height: auto;
 }
+/* td.ranking-copyright {
+    width: var(--table-rank-img-size);
+} */
+
+td.ranking-copyright > div {
+    width: var(--table-rank-img-size);
+    font-size: 10% !important;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
 
 div.archive-title {
     background: var(--table-caption-color);
@@ -319,19 +364,24 @@ div.archive-title {
 td.archive-winter {
     width: var(--table-archive-season-size);
     background: var(--table-winter-color);
+    text-align: center;
 }
 td.archive-spring {
     width: var(--table-archive-season-size);
     background: var(--table-spring-color);
+    text-align: center;
 }
 td.archive-summer {
     width: var(--table-archive-season-size);
     background: var(--table-summer-color);
+    text-align: center;
 }
 td.archive-autumn {
     width: var(--table-archive-season-size);
     background: var(--table-autumn-color);
+    text-align: center;
 }
+
 td.archive-img {
     width: var(--table-archive-img-size);
 }
@@ -340,7 +390,12 @@ td.archive-img > img{
 }
 td.archive-title {
     width: var(--table-archive-img-size);
-    height: 20;
     vertical-align: top;
     font-size: 10% !important;
+}
+td.archive-title > div {
+    width: var(--table-archive-img-size);
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }
