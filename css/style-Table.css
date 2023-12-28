@@ -2,61 +2,166 @@
 
 /* 変数設定 */
 :root {
-    --table-rank-img-size: 150px;
+
+    --table-archive-img-size: 100px;
+    --table-archive-season-size: 20px;
     --table-size: 400px;
-    --table-th-size: 100px;
+    --table-th-size: 60px;
+    --table-label-size: 20px;
     --table-td-size: 200px;
-    --table-td-size2: 600px;
+    --table-rank-img-size: 180px;
+    /* ↑pcの場合は250にする */
+    --table-ranktitle-td-size: 100px;
+    /* ↑pcの場合は150にする */
     --table-boder-type: solid;
     --table-boder-size: 0.1rem;
     /* 配色設定 */
-    --background-color: rgb(255, 255, 255);
-    --table-caption-color: linear-gradient(90deg, rgb(0, 92, 175), rgb(30, 30, 30));
+    --table-caption-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
+    /* クール毎表タイトル配色 */
+    --table-caption-winter-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(075, 005, 075) 100%);
+    --table-caption-spring-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(145, 234, 202) 100%);
+    --table-caption-summer-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(235, 061, 031) 100%);
+    --table-caption-autumn-color: linear-gradient(15deg, rgb(220, 220, 220)   0%, rgb(220, 220, 220) 70%,
+                                                         rgb(220, 220, 220)  70%, rgb(120, 066, 063) 100%);
+    --table-boder-color: rgb(0, 0, 0);
+    --table-char-color: rgb(0, 0, 0);
+    /* アーカイブクール配色 */
+    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(075, 005, 075) 100%);
+    --table-spring-color:          linear-gradient(45deg, rgb(145, 234, 202)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(145, 234, 202) 100%);
+    --table-summer-color:          linear-gradient(45deg, rgb(235, 061, 031)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(235, 061, 031) 100%);
+    --table-autumn-color:          linear-gradient(45deg, rgb(120, 066, 063)   0%, rgb(220, 220, 220)  30%, 
+                                                          rgb(220, 220, 220)  70%, rgb(120, 066, 063) 100%);
+    --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(220, 220, 220));
+    --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(220, 220, 220));
+    --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(220, 220, 220));
+    --table-wed-color:          linear-gradient(90deg, rgb(000, 170, 232), rgb(220, 220, 220));
+    --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(220, 220, 220));
+    --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(220, 220, 220));
+    --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(220, 220, 220));
+    --table-new-color:          linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
+                                                       rgb(251, 153, 102)  30%, rgb(220, 220, 220)  45%, 
+                                                       rgb(220, 220, 220)  45%, rgb(251, 153, 102)  70%, 
+                                                       rgb(255, 255, 255)  70%, rgb(255, 255, 255) 100%);
+
+    --table-continuation-color: linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
+                                                       rgb(046, 169, 223)  30%, rgb(220, 220, 220)  45%, 
+                                                       rgb(220, 220, 220)  45%, rgb(046, 169, 223)  70%, 
+                                                       rgb(255, 255, 255)  70%, rgb(255, 255, 255) 100%);
+
+    --table-reair-color:        linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
+                                                       rgb(000, 170, 144)  30%, rgb(220, 220, 220)  45%, 
+                                                       rgb(220, 220, 220)  45%, rgb(000, 170, 144)  70%, 
+                                                       rgb(255, 255, 255)  70%, rgb(255, 255, 255) 100%);
+}
+/* OSの設定または、トグルスイッチがダークモード時のスタイル */
+:root.darkmode {
+    --table-caption-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
+    /* クール毎表タイトル配色 */
+    --table-caption-winter-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(075, 005, 075) 100%);
+    --table-caption-spring-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(145, 234, 202) 100%);
+    --table-caption-summer-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(235, 061, 031) 100%);
+    --table-caption-autumn-color: linear-gradient(15deg, rgb(035, 035, 035)   0%, rgb(035, 035, 035) 70%,
+                                                         rgb(035, 035, 035)  70%, rgb(120, 066, 063) 100%);
     --table-boder-color: rgb(255, 255, 255);
     --table-char-color: rgb(255, 255, 255);
-    --table-sun-color: linear-gradient(90deg, rgb(231, 0, 18), rgb(30, 30, 30));
-    --table-mon-color: linear-gradient(90deg, rgb(156, 51, 133), rgb(30, 30, 30));
-    --table-tue-color: linear-gradient(90deg, rgb(240, 131, 0), rgb(30, 30, 30));
-    --table-wed-color: linear-gradient(90deg, rgb(0, 170, 232), rgb(30, 30, 30));
-    --table-thu-color: linear-gradient(90deg, rgb(16, 168, 59), rgb(30, 30, 30));
-    --table-fri-color: linear-gradient(90deg, rgb(249, 190, 0), rgb(30, 30, 30));
-    --table-sat-color: linear-gradient(90deg, rgb(70, 82, 161), rgb(30, 30, 30));
+    /* アーカイブクール配色 */
+    --table-winter-color:          linear-gradient(45deg, rgb(075, 005, 075)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(075, 005, 075) 100%);
+    --table-spring-color:          linear-gradient(45deg, rgb(145, 234, 202)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(145, 234, 202) 100%);
+    --table-summer-color:          linear-gradient(45deg, rgb(235, 061, 031)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(235, 061, 031) 100%);
+    --table-autumn-color:          linear-gradient(45deg, rgb(120, 066, 063)   0%, rgb(035, 035, 035)  30%, 
+                                                          rgb(035, 035, 035)  70%, rgb(120, 066, 063) 100%);
+    --table-sun-color:          linear-gradient(90deg, rgb(231, 000, 018), rgb(035, 035, 035));
+    --table-mon-color:          linear-gradient(90deg, rgb(156, 051, 133), rgb(035, 035, 035));
+    --table-tue-color:          linear-gradient(90deg, rgb(240, 131, 000), rgb(035, 035, 035));
+    --table-wed-color:          linear-gradient(90deg, rgb(000, 170, 232), rgb(035, 035, 035));
+    --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(035, 035, 035));
+    --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(035, 035, 035));
+    --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(035, 035, 035));
+    --table-new-color:          linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
+                                                       rgb(251, 153, 102)  30%, rgb(035, 035, 035)  45%, 
+                                                       rgb(035, 035, 035)  45%, rgb(251, 153, 102)  70%, 
+                                                       rgb(065, 065, 065)  70%, rgb(065, 065, 065) 100%);
+
+    --table-continuation-color: linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
+                                                       rgb(046, 169, 223)  30%, rgb(035, 035, 035)  45%, 
+                                                       rgb(035, 035, 035)  45%, rgb(046, 169, 223)  70%, 
+                                                       rgb(065, 065, 065)  70%, rgb(065, 065, 065) 100%);
+
+    --table-reair-color:        linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
+                                                       rgb(000, 170, 144)  30%, rgb(035, 035, 035)  45%, 
+                                                       rgb(035, 035, 035)  45%, rgb(000, 170, 144)  70%, 
+                                                       rgb(065, 065, 065)  70%, rgb(065, 065, 065) 100%);
 }
 
-div.winter {
+
+div.season {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: var(--table-th-size) 1fr;
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_winter.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    background-color: var(--table-caption-color);
-    color: white;
-    padding-left: 6rem;
+    background: var(--table-caption-color);
+    color: var(--table-char-color);
 }
-div.spring {
+/* クール毎表タイトル設定（共通） */
+div.season-winter ,
+div.season-spring ,
+div.season-summer ,
+div.season-autumn {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: var(--table-th-size) 1fr;
     border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_spring.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    color: white;
-    padding-left: 6rem;
+    color: var(--table-char-color);
 }
-div.summer {
-    border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_summer.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    background-color: var(--table-caption-color);
-    color: white;
-    padding-left: 6rem;
+/* クール毎表タイトル設定（個別） */
+div.season-winter {
+    background: var(--table-caption-winter-color);
 }
-div.autumn {
-    border-radius: 5px 5px 5px 5px;
-    background: url(../image/icon_autumn.png) no-repeat left center, var(--table-caption-color);
-    background-size: contain;
-    background-color: var(--table-caption-color);
-    color: white;
-    padding-left: 6rem;
+div.season-spring {
+    background: var(--table-caption-spring-color);
 }
-div.detail-caption {
+div.season-summer {
+    background: var(--table-caption-summer-color);
+}
+div.season-autumn {
+    background: var(--table-caption-autumn-color);
+}
+
+
+div.season-sub1 {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    text-align: center;
+    font-size: 150%;
+}
+div.season-sub2 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    text-align: left;
+}
+div.season-sub3 {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
     text-align: center;
 }
+
+div.data {
+    border-radius: 5px 5px 5px 5px;
+    background: var(--table-caption-color);
+}
+
 /* 表デザイン */
 div.table-wrap {
     overflow-x: scroll;
@@ -65,272 +170,129 @@ div.table-wrap {
 table.table {
     table-layout: fixed;
     width: 3 * var(--table-size);
+    width: var(--table-size);
     border-collapse: separate;
 }
 
+/* =======================2024======================= */
+#table_winter_2024, #table_spring_2024, #table_summer_2024, #table_autumn_2024,
 /* =======================2023======================= */
-#table_winter_2023,
-#table_spring_2023,
-#table_summer_2023,
-#table_autumn_2023,
+#table_winter_2023, #table_spring_2023, #table_summer_2023, #table_autumn_2023,
 /* =======================2022======================= */
-#table_winter_2022,
-#table_spring_2022,
-#table_summer_2022,
-#table_autumn_2022,
+#table_winter_2022, #table_spring_2022, #table_summer_2022, #table_autumn_2022,
 /* =======================2021======================= */
-#table_winter_2021,
-#table_spring_2021,
-#table_summer_2021,
-#table_autumn_2021,
+#table_winter_2021, #table_spring_2021, #table_summer_2021, #table_autumn_2021,
 /* =======================2020======================= */
-#table_winter_2020,
-#table_spring_2020,
-#table_summer_2020,
-#table_autumn_2020,
+#table_winter_2020, #table_spring_2020, #table_summer_2020, #table_autumn_2020,
 /* =======================2019======================= */
-#table_winter_2019,
-#table_spring_2019,
-#table_summer_2019,
-#table_autumn_2019,
+#table_winter_2019, #table_spring_2019, #table_summer_2019, #table_autumn_2019,
 /* =======================2018======================= */
-#table_winter_2018,
-#table_spring_2018,
-#table_summer_2018,
-#table_autumn_2018,
+#table_winter_2018, #table_spring_2018, #table_summer_2018, #table_autumn_2018,
 /* =======================2017======================= */
-#table_winter_2017,
-#table_spring_2017,
-#table_summer_2017,
-#table_autumn_2017,
+#table_winter_2017, #table_spring_2017, #table_summer_2017, #table_autumn_2017,
 /* =======================2016======================= */
-#table_winter_2016,
-#table_spring_2016,
-#table_summer_2016,
-#table_autumn_2016,
+#table_winter_2016, #table_spring_2016, #table_summer_2016, #table_autumn_2016,
 /* =======================2015======================= */
-#table_winter_2015,
-#table_spring_2015,
-#table_summer_2015,
-#table_autumn_2015 {
+#table_winter_2015, #table_spring_2015, #table_summer_2015, #table_autumn_2015 {
     table-layout: fixed;
     width: var(--table-size);
     border-collapse: separate;
 }
 
 
-
-
-td.none {
+/* テーブル種別アイコン共通設定 */
+td.new, td.continuation, td.reair, td.none {
+    border-radius: 5px 0px 0px 5px;
+    border-left-style: var(--table-boder-type);
+    border-left-width: var(--table-boder-size);
+    border-left-color: var(--table-boder-color);
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
     padding-top: 0.4rem;
-    padding-left: 3rem;
+    padding-left: 0.4rem;
     padding-bottom: 0.4rem;
-    width: var(--table-td-size);
+    width: var(--table-label-size);
     color: var(--table-char-color);
 }
-/* アイコン設定 */
+/* テーブル種別アイコンカラー設定 */
 td.new {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
-    padding-bottom: 0.4rem;
-    width: var(--table-td-size);
-    background: url(../image/icon_new.png) no-repeat left center;
-    color: var(--table-char-color);
+    background:var(--table-new-color);
 }
 td.continuation {
-    padding-top: 0.4rem;
-    padding-left: 3rem;
-    padding-bottom: 0.4rem;
-    width: var(--table-td-size);
-    background: url(../image/icon_continuation.png) no-repeat left center;
-    color: var(--table-char-color);
+    background:var(--table-continuation-color);
 }
 td.reair {
+    background:var(--table-reair-color);
+}
+
+/* テーブル本文設定 */
+td.title {
+    border-radius: 0px 5px 5px 0px;
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
     padding-top: 0.4rem;
-    padding-left: 3rem;
     padding-bottom: 0.4rem;
     width: var(--table-td-size);
-    background: url(../image/icon_reair.png) no-repeat left center;
     color: var(--table-char-color);
 }
 
-
-table tr:nth-child(1) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.sun {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-sun-color);
-    color: white;
-}
-
-table tr:nth-child(2) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.mon {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-mon-color);
-    color: white;
-}
-
-table tr:nth-child(3) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.tue {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-tue-color);
-    color: white;
-}
-
-table tr:nth-child(4) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.wed {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-wed-color);
-    color: white;
-}
-
-table tr:nth-child(5) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.thu {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-thu-color);
-    color: white;
-}
-
-table tr:nth-child(6) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.fri {
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-fri-color);
-    color: white;
-}
-
-table tr:nth-child(7) td {
-    border-radius: 5px 5px 5px 5px;
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-}
-th.sat {
+/* テーブル曜日共通設定 */
+th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
     width: var(--table-th-size);
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-sat-color);
-    color: white;
+    color: var(--table-char-color);
+}
+/* テーブル曜日カラー設定 */
+th.sun {
+    background: var(--table-sun-color);
+}
+th.mon {
+    background: var(--table-mon-color);
+}
+th.tue {
+    background: var(--table-tue-color);
+}
+th.wed {
+    background: var(--table-wed-color);
+}
+th.thu {
+    background: var(--table-thu-color);
+}
+th.fri {
+    background: var(--table-fri-color);
+}
+th.sat {
+    background: var(--table-sat-color);
 }
 
-
+/* ランキングth共通設定 */
+th.ranking1, th.ranking2, th.ranking3{
+    width: 20px;
+    position: sticky;
+    left: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-size: contain;
+}
+/* ランキングthカラー設定 */
 th.ranking1{
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
     background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
-    background-size: contain;
 }
-
 th.ranking2{
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
     background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
-    background-size: contain;
 }
 th.ranking3{
-    width: var(--table-th-size);
-    position: sticky;
-    left: 0;
-    border-radius: 5px 5px 5px 5px;
     background: linear-gradient(45deg, #a57e65 0%, #a57e65 45%, #f3cfb8 70%, #a57e65 85%, #a57e65 90% 100%);
-    background-size: contain;
 }
 
-td.ranking1 {
-    width: var(--table-td-size2);
+/* ランキングtd共通設定 */
+td.ranking1, td.ranking2, td.ranking3 {
+    border: none !important;
+    width: var(--table-ranktitle-td-size);
     border-left-style: var(--table-boder-type);
     border-left-width: var(--table-boder-size);
     border-left-color: var(--table-boder-color);
@@ -342,37 +304,98 @@ td.ranking1 {
     border-bottom-color: var(--table-boder-color);
     text-align: center;
 }
-td.ranking2 {
-    width: var(--table-td-size2);
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    text-align: center;
+
+/* ランキングh4共通設定 */
+td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 {
+    display: inline;
+    background-repeat: no-repeat;
+    background-size: 100% 40%;
+	background-position: bottom;
+    transition: all 0.25s ease-in;
 }
-td.ranking3 {
-    width: var(--table-td-size2);
-    border-left-style: var(--table-boder-type);
-    border-left-width: var(--table-boder-size);
-    border-left-color: var(--table-boder-color);
-    border-right-style: var(--table-boder-type);
-    border-right-width: var(--table-boder-size);
-    border-right-color: var(--table-boder-color);
-    border-bottom-style: var(--table-boder-type);
-    border-bottom-width: var(--table-boder-size);
-    border-bottom-color: var(--table-boder-color);
-    text-align: center;
+/* ランキングh4カラー設定 */
+td.ranking1 h4 {
+    background: linear-gradient(45deg, #DAAF08 0%, #DAAF08 45%, #FEE9A0 70%, #DAAF08 85%, #DAAF08 90% 100%);
 }
-td.ranking-img{
+td.ranking2 h4 {
+    background: linear-gradient(45deg, #757575 0%, #9E9E9E 45%, #E8E8E8 70%, #9E9E9E 85%, #757575 90% 100%);
+}
+td.ranking3 h4 {
+    background: linear-gradient(45deg, #a57e65 0%, #a57e65 45%, #f3cfb8 70%, #a57e65 85%, #a57e65 90% 100%);
+}
+/* ランキングh4hover共通設定 */
+td.ranking1 h4:hover, td.ranking2 h4:hover, td.ranking3 h4:hover{
+    background-size: 100% 100%;
+}
+
+td.ranking-img {
     width: var(--table-rank-img-size);
     border: none !important;
 }
 td.ranking-img > img{
     max-width: 100%;
     height: auto;
+}
+/* td.ranking-copyright {
+    width: var(--table-rank-img-size);
+} */
+
+td.ranking-copyright > div {
+    width: var(--table-rank-img-size);
+    font-size: 10% !important;
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+div.archive-title {
+    background: var(--table-caption-color);
+    color: var(--table-char-color);
+    /* position: relative; */
+}
+/* div.archive-title a {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+} */
+td.archive-winter {
+    width: var(--table-archive-season-size);
+    background: var(--table-winter-color);
+    text-align: center;
+}
+td.archive-spring {
+    width: var(--table-archive-season-size);
+    background: var(--table-spring-color);
+    text-align: center;
+}
+td.archive-summer {
+    width: var(--table-archive-season-size);
+    background: var(--table-summer-color);
+    text-align: center;
+}
+td.archive-autumn {
+    width: var(--table-archive-season-size);
+    background: var(--table-autumn-color);
+    text-align: center;
+}
+
+td.archive-img {
+    width: var(--table-archive-img-size);
+}
+td.archive-img > img{
+    max-width: var(--table-archive-img-size);
+}
+td.archive-title {
+    width: var(--table-archive-img-size);
+    vertical-align: top;
+    font-size: 10% !important;
+}
+td.archive-title > div {
+    width: var(--table-archive-img-size);
+    white-space: nowrap;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }

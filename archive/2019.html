@@ -1,33 +1,69 @@
+<!-- 更新日付 -->
+    <!-- 2023/12/28 -->
+
 <!doctype html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" href="../image/favicon/favicon.ico">
-        <link rel="apple-touch-icon" sizes="57x57" href="../image/favicon/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="../image/favicon/apple-touch-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="../image/favicon/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="../image/favicon/apple-touch-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="../image/favicon/apple-touch-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="../image/favicon/apple-touch-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="../image/favicon/apple-touch-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="../image/favicon/apple-touch-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="512x512" href="../image/favicon/iTunesArtwork.png">
-        <link rel="apple-touch-icon" sizes="1024x1024" href="../image/favicon/iTunesArtwork@2x.png">
-        <script src="../js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="/image/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/image/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/image/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/image/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/image/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/image/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/image/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/image/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="/image/favicon/iTunesArtwork.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="/image/favicon/iTunesArtwork@2x.png">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
         <title>2019 視聴アニメ一覧</title>
     </head>
 
     <body>
-        <link rel="stylesheet" href="../css/style.css"></link>
-        <link rel="stylesheet" href="../css/style-Table.css"></link>
+        <script>year = "2019"</script>
+        <link rel="stylesheet" href="/css/style.css"></link>
+        <link rel="stylesheet" href="/css/menu.css"></link>
+        <link rel="stylesheet" href="/css/style-Table.css"></link>
+        <link rel="stylesheet" href="/css/darkMode_on_off.css"></link>
         <div class="container">
             <!-- ヘッダー定義 -->
             <header>
                 <div class="header-wrap">
                     <div class="headerMain">
-                        <div class="SubItem0"></div>
-                        <div><p1  class="TitleMain">TTBのアニメ備忘録</p1></div>
-                        <div class="SubItem1"></div>
+                        <div class="SubItem0">
+                            <div class="SubItem0-Title">
+                                <p>ダークモード</p>
+                            </div>
+                            <div class="SubItem0-swich">
+                                <div class="onoffswitch">
+                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
+                                    <label class="onoffswitch-label" for="myonoffswitch">
+                                        <span class="onoffswitch-inner"></span>
+                                        <span class="onoffswitch-switch"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <script src="/js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
+                        </div>
+                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
+                        <div class="SubItem1">
+                            <div class="hamburger-menu">
+                                <input type="checkbox" id="menu-btn-check">
+                                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                                <div class="menu-content">
+                                    <ul>
+                                        <li><a href="/anime.html">Top</a></li>
+                                        <li><a href="/archive/archivetop.html">Archive</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="#">Setting</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="header">
                         <div class="ArchiveTitle"><p1>Archive-2019</p1></div>
@@ -41,84 +77,104 @@
             <main>
                 <!-- コンテンツ -->
                 <div class="content">
-                    <div class="winter">
-                        <h3>2019/01～2019/03</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_winter_2019"></h4>
-                        </div>
+                    <div class="season-winter">
+                        <div class="season-sub1"><h3>冬</h3></div>
+                        <div class="season-sub2"><h4>2019/01～2019/03</h4></div>
+                        <div class="season-sub3"><h4 id="count_winter_2019"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_winter_2019">
                             <tr>
-                                <th class="sun">日曜日</th>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="sun">日曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="mon">月曜日</th>
-                                <td class="new">エガオノダイカ</td>
-                                <td class="new">上野さんは不器用</td>
-                                <td class="none">--</td>
+                                <th class="mon">月曜</th>
+                                <td class="new">新</td><td class="title">エガオノダイカ</td>
+                                <td class="new">新</td><td class="title">上野さんは不器用</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="tue">火曜日</th>
-                                <td class="new">私に天使が舞い降りた！</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="tue">火曜</th>
+                                <td class="new">新</td><td class="title">私に天使が舞い降りた！</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="wed">水曜日</th>
-                                <td class="new">revisions リヴィジョンズ</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="wed">水曜</th>
+                                <td class="new">新</td><td class="title">revisions リヴィジョンズ</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="thu">木曜日</th>
-                                <td class="new">同居人はひざ、時々、頭のうえ</td>
-                                <td class="new">五等分の花嫁</td>
-                                <td class="none">--</td>
+                                <th class="thu">木曜</th>
+                                <td class="new">新</td><td class="title">同居人はひざ、時々、頭のうえ</td>
+                                <td class="new">新</td><td class="title">五等分の花嫁</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                                 <tr>
-                                <th class="fri">金曜日</th>
-                                <td class="new">ブギーポップは笑わない</td>
-                                <td class="new">ドメスティックな彼女</td>
-                                <td class="new">魔法少女特殊戦あすか</td>
+                                <th class="fri">金曜</th>
+                                <td class="new">新</td><td class="title">ブギーポップは笑わない</td>
+                                <td class="new">新</td><td class="title">ドメスティックな彼女</td>
+                                <td class="new">新</td><td class="title">魔法少女特殊戦あすか</td>
                             </tr>
                             <tr>
-                                <th class="sat">土曜日</th>
-                                <td class="continuation">ソードアート・オンライン アリシゼーション</td>
-                                <td class="new">かぐや様は告らせたい～天才たちの恋愛頭脳戦～</td>
-                                <td class="none">--</td>
+                                <th class="sat">土曜</th>
+                                <td class="continuation">継</td><td class="title">ソードアート・オンライン アリシゼーション</td>
+                                <td class="new">新</td><td class="title">かぐや様は告らせたい～天才たちの恋愛頭脳戦～</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_winter_2019", "count_winter_2019");</script>
+                        <script> countup_season("table_winter_" + year, "count_winter_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 冬アニメランキング</h2>
+                    <h3>&emsp; ●冬アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/かぐや様は告らせたい～天才たちの恋愛頭脳戦～.jpg">
-                                        <copy-right><font size="1">&copy; 赤坂アカ/集英社・かぐや様は告らせたい製作委員会</font></copy-right>
-                                    </td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/かぐや様は告らせたい～天才たちの恋愛頭脳戦～.jpg"></td>
                                     <td class="ranking1"><h4>かぐや様は告らせたい～天才たちの恋愛頭脳戦～</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/エガオノダイカ.jpg"></td>
+                                    <td class="ranking1"><h4>エガオノダイカ</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 赤坂アカ/集英社・かぐや様は告らせたい製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; タツノコプロ／エガオノダイカ製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/エガオノダイカ.jpg">
-                                        <copy-right><font size="1">&copy; タツノコプロ／エガオノダイカ製作委員会</font></copy-right>
-                                    </td>
-                                    <td class="ranking2"><h4>エガオノダイカ</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ブギーポップは笑わない.jpg"></td>
+                                    <td class="ranking2"><h4>ブギーポップは笑わない</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/同居人はひざ、時々、頭のうえ。.jpg"></td>
+                                    <td class="ranking2"><h4>同居人はひざ、時々、頭のうえ</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 2018 上遠野浩平／ＫＡＤＯＫＡＷＡ　アスキー・メディアワークス／ブギーポップは笑わない製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; みなつき・二ツ家あす・COMICポラリス/ひざうえ製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/ブギーポップは笑わない.jpg">
-                                        <copy-right><font size="1">&copy; 2018 上遠野浩平／ＫＡＤＯＫＡＷＡ　アスキー・メディアワークス／ブギーポップは笑わない製作委員会</font></copy-right>
-                                    </td>
-                                    <td class="ranking3"><h4>ブギーポップは笑わない</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ドメスティックな彼女.jpg"></td>
+                                    <td class="ranking3"><h4>ドメスティックな彼女</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/上野さんは不器用.jpg"></td>
+                                    <td class="ranking3"><h4>上野さんは不器用</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 流石景・講談社／ドメカノ製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; tugeneko・白泉社／上野さんは不器用製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </div>
@@ -128,91 +184,111 @@
                     <br></br>
                     <br></br>
 
-                    <div class="spring">
-                        <h3>2019/04～2019/06</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_spring_2019"></h4>
-                        </div>
+                    <div class="season-spring">
+                        <div class="season-sub1"><h3>春</h3></div>
+                        <div class="season-sub2"><h4>2019/04～2019/06</h4></div>
+                        <div class="season-sub3"><h4 id="count_spring_2019"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_spring_2019">
                             <tr>
-                                <th class="sun">日曜日</th>
-                                <td class="new">消滅都市</td>
-                                <td class="new">Fairy goneフェアリーゴーン</td>
-                                <td class="new">機動戦士ガンダムORIGIN前夜 赤い彗星</td>
-                                <td class="new">八月のシンデレラナイン</td>
+                                <th class="sun">日曜</th>
+                                <td class="new">新</td><td class="title">消滅都市</td>
+                                <td class="new">新</td><td class="title">Fairy goneフェアリーゴーン</td>
+                                <td class="new">新</td><td class="title">機動戦士ガンダムORIGIN前夜 赤い彗星</td>
+                                <td class="new">新</td><td class="title">八月のシンデレラナイン</td>
                             </tr>
                             <tr>
-                                <th class="mon">月曜日</th>
-                                <td class="new">女子かう生</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="mon">月曜</th>
+                                <td class="new">新</td><td class="title">女子かう生</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="tue">火曜日</th>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="tue">火曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="wed">水曜日</th>
-                                <td class="new">世話やきキツネの仙狐さん</td>
-                                <td class="new">この世の果てで恋を唄う少女YU-NO</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="wed">水曜</th>
+                                <td class="new">新</td><td class="title">世話やきキツネの仙狐さん</td>
+                                <td class="new">新</td><td class="title">この世の果てで恋を唄う少女YU-NO</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="thu">木曜日</th>
-                                <td class="reair">けいおん！</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="thu">木曜</th>
+                                <td class="reair">再</td><td class="title">けいおん！</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                                 <tr>
-                                <th class="fri">金曜日</th>
-                                <td class="new">フルーツバスケット1st season</td>
-                                <td class="new">川柳少女</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="fri">金曜</th>
+                                <td class="new">新</td><td class="title">フルーツバスケット1st season</td>
+                                <td class="new">新</td><td class="title">川柳少女</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="sat">土曜日</th>
-                                <td class="new">MIX</td>
-                                <td class="new">この音とまれ！</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="sat">土曜</th>
+                                <td class="new">新</td><td class="title">MIX</td>
+                                <td class="new">新</td><td class="title">この音とまれ！</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_spring_2019", "count_spring_2019");</script>
+                        <script> countup_season("table_spring_" + year, "count_spring_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 春アニメランキング</h2>
+                    <h3>&emsp; ●春アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/フルーツバスケット 1st season.jpg">
-                                        <copy-right><font size="1">&copy; 高屋奈月・白泉社／フルーツバスケット製作委員会</font></copy-right>
-                                    </td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/フルーツバスケット 1st season.jpg"></td>
                                     <td class="ranking1"><h4>フルーツバスケット1st season</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/この音とまれ！.jpg"></td>
+                                    <td class="ranking1"><h4>この音とまれ！</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 高屋奈月・白泉社／フルーツバスケット製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; アミュー/集英社・この音とまれ!製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/この音とまれ！.jpg">
-                                        <copy-right><font size="1">&copy; アミュー/集英社・この音とまれ!製作委員会</font></copy-right>
-                                    </td>
-                                    <td class="ranking2"><h4>この音とまれ！</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/この世の果てで恋を唄う少女YU-NO.jpg"></td>
+                                    <td class="ranking2"><h4>この世の果てで恋を唄う少女YU-NO</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/世話やきキツネの仙狐さん.jpg"></td>
+                                    <td class="ranking2"><h4>世話やきキツネの仙狐さん</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; MAGES./5pb./GENCO</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 2019 リムコロ／KADOKAWA／世話やきキツネの仙狐さん製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/この世の果てで恋を唄う少女YU-NO.jpg">
-                                        <copy-right><font size="1">&copy; MAGES./5pb./GENCO</font></copy-right>
-                                    </td>
-                                    <td class="ranking3"><h4>この世の果てで恋を唄う少女YU-NO</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/八月のシンデレラナイン.jpg"></td>
+                                    <td class="ranking3"><h4>八月のシンデレラナイン</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/MIX.jpg"></td>
+                                    <td class="ranking3"><h4>MIX</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; Akatsuki Inc. / アニメ「八月のシンデレラナイン」製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; あだち充・小学館／読売テレビ・ShoPro</div></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </div>
@@ -222,91 +298,111 @@
                     <br></br>
                     <br></br>
 
-                    <div class="summer">
-                        <h3>2019/07～2019/09</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_summer_2019"></h4>
-                        </div>
+                    <div class="season-summer">
+                        <div class="season-sub1"><h3>夏</h3></div>
+                        <div class="season-sub2"><h4>2019/07～2019/09</h4></div>
+                        <div class="season-sub3"><h4 id="count_summer_2019"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_summer_2019">
                             <tr>
-                                <th class="sun">日曜日</th>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="sun">日曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="mon">月曜日</th>
-                                <td class="new">胡蝶綺～若き信長～</td>
-                                <td class="new">ありふれた職業で世界最強</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="mon">月曜</th>
+                                <td class="new">新</td><td class="title">胡蝶綺～若き信長～</td>
+                                <td class="new">新</td><td class="title">ありふれた職業で世界最強</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="tue">火曜日</th>
-                                <td class="new">ソウナンですか？</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="tue">火曜</th>
+                                <td class="new">新</td><td class="title">ソウナンですか？</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="wed">水曜日</th>
-                                <td class="continuation">この世の果てで恋を唄う少女YU-NO</td>
-                                <td class="new">ダンベル何キロ持てる？</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="wed">水曜</th>
+                                <td class="continuation">継</td><td class="title">この世の果てで恋を唄う少女YU-NO</td>
+                                <td class="new">新</td><td class="title">ダンベル何キロ持てる？</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="thu">木曜日</th>
-                                <td class="reair">SHIROBAKO</td>
-                                <td class="new">うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="thu">木曜</th>
+                                <td class="reair">再</td><td class="title">SHIROBAKO</td>
+                                <td class="new">新</td><td class="title">うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                                 <tr>
-                                <th class="fri">金曜日</th>
-                                <td class="new">ダンジョンに出会いを求めるのは間違っているだろうかII</td>
-                                <td class="continuation">フルーツバスケット1st season</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="fri">金曜</th>
+                                <td class="new">新</td><td class="title">ダンジョンに出会いを求めるのは間違っているだろうかII</td>
+                                <td class="continuation">継</td><td class="title">フルーツバスケット1st season</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="sat">土曜日</th>
-                                <td class="continuation">MIX</td>
-                                <td class="reair">魔法少女まどか☆マギカ</td>
-                                <td class="new">戦姫絶唱シンフォギアXV</td>
-                                <td class="reair">あの日見た花の名前を僕達はまだ知らない。</td>
+                                <th class="sat">土曜</th>
+                                <td class="continuation">継</td><td class="title">MIX</td>
+                                <td class="reair">再</td><td class="title">魔法少女まどか☆マギカ</td>
+                                <td class="new">新</td><td class="title">戦姫絶唱シンフォギアXV</td>
+                                <td class="reair">再</td><td class="title">あの日見た花の名前を僕達はまだ知らない。</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_summer_2019", "count_summer_2019");</script>
+                        <script> countup_season("table_summer_" + year, "count_summer_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 夏アニメランキング</h2>
+                    <h3>&emsp; ●夏アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/戦姫絶唱シンフォギアXV.jpg">
-                                        <copy-right><font size="1">&copy; Project シンフォギアXV</font></copy-right>
-                                    </td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/戦姫絶唱シンフォギアXV.jpg"></td>
                                     <td class="ranking1"><h4>戦姫絶唱シンフォギアXV</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ダンジョンに出会いを求めるのは間違っているだろうかII.jpg"></td>
+                                    <td class="ranking1"><h4>ダンジョンに出会いを求めるのは間違っているだろうかII</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; Project シンフォギアXV</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 大森藤ノ・SBクリエイティブ/ダンまち2製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/ダンベル何キロ持てる？.jpg">
-                                        <copy-right><font size="1">&copy; 2019 サンドロビッチ・ヤバ子，MAAM・小学館／シルバーマンジ</font></copy-right>
-                                    </td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ダンベル何キロ持てる？.jpg"></td>
                                     <td class="ranking2"><h4>ダンベル何キロ持てる？</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ソウナンですか？.jpg"></td>
+                                    <td class="ranking2"><h4>ソウナンですか？</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 2019 サンドロビッチ・ヤバ子，MAAM・小学館／シルバーマンジ</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 岡本健太郎・さがら梨々・講談社／ソウナンですか？製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/ダンジョンに出会いを求めるのは間違っているだろうかII.jpg">
-                                        <copy-right><font size="1">&copy; ダンジョンに出会いを求めるのは間違っているだろうかII</font></copy-right>
-                                    </td>
-                                    <td class="ranking3"><h4>ダンジョンに出会いを求めるのは間違っているだろうかII</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。.jpg"></td>
+                                    <td class="ranking3"><h4>うちの娘の為ならば、俺はもしかしたら魔王も倒せるかもしれない。</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ありふれた職業で世界最強.jpg"></td>
+                                    <td class="ranking3"><h4>ありふれた職業で世界最強</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; CHIROLU・ホビージャパン／白金の妖精姫を見守る会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 白米良/オーバーラップ</div></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </div>
@@ -316,130 +412,166 @@
                     <br></br>
                     <br></br>
 
-                    <div class="autumn">
-                        <h3>2019/10～2019/12</h3>
-                        <div class="detail-caption">
-                            <h4 id="count_autumn_2019"></h4>
-                        </div>
+                    <div class="season-autumn">
+                        <div class="season-sub1"><h3>秋</h3></div>
+                        <div class="season-sub2"><h4>2019/10～2019/12</h4></div>
+                        <div class="season-sub3"><h4 id="count_autumn_2019"></h4></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_autumn_2019">
                             <tr>
-                                <th class="sun">日曜日</th>
-                                <td class="new">警視庁 特務部 特殊凶悪犯対策室 第七課-トクナナ-</td>
-                                <td class="continuation">Fairy goneフェアリーゴーン</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="sun">日曜</th>
+                                <td class="new">新</td><td class="title">警視庁 特務部 特殊凶悪犯対策室 第七課-トクナナ-</td>
+                                <td class="continuation">継</td><td class="title">Fairy goneフェアリーゴーン</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="mon">月曜日</th>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="mon">月曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="tue">火曜日</th>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="tue">火曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="wed">水曜日</th>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="wed">水曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="thu">木曜日</th>
-                                <td class="new">ガンダムビルドダイバーズRe:RISE</td>
-                                <td class="reair">SHIROBAKO</td>
-                                <td class="new">アサシンズプライド</td>
-                                <td class="new">PSYCHO-PASS3</td>
+                                <th class="thu">木曜</th>
+                                <td class="new">新</td><td class="title">ガンダムビルドダイバーズRe:RISE</td>
+                                <td class="reair">再</td><td class="title">SHIROBAKO</td>
+                                <td class="new">新</td><td class="title">アサシンズプライド</td>
+                                <td class="new">新</td><td class="title">PSYCHO-PASS3</td>
                             </tr>
                                 <tr>
-                                <th class="fri">金曜日</th>
-                                <td class="new">GRANDBLUE FANTASY The Animation season2</td>
-                                <td class="new">歌舞伎町シャーロック</td>
-                                <td class="none">--</td>
-                                <td class="none">--</td>
+                                <th class="fri">金曜</th>
+                                <td class="new">新</td><td class="title">GRANDBLUE FANTASY The Animation season2</td>
+                                <td class="new">新</td><td class="title">歌舞伎町シャーロック</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="sat">土曜日</th>
-                                <td class="new">ソードアート・オンライン アリシゼーションWar of Underworld</td>
-                                <td class="continuation">この音とまれ！</td>
-                                <td class="new">戦×恋(ヴァルラブ)</td>
-                                <td class="none">--</td>
+                                <th class="sat">土曜</th>
+                                <td class="new">新</td><td class="title">ソードアート・オンライン アリシゼーションWar of Underworld</td>
+                                <td class="continuation">継</td><td class="title">この音とまれ！</td>
+                                <td class="new">新</td><td class="title">戦×恋(ヴァルラブ)</td>
+                                <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_autumn_2019", "count_autumn_2019");</script>
+                        <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
                     </div>
 
-                    <h2>&emsp; 秋アニメランキング</h2>
+                    <h3>&emsp; ●秋アニメランキング</h3>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/PSYCHO-PASS サイコパス 3.jpg">
-                                        <copy-right><font size="1">&copy; PSYCHO-PASS サイコパス 3</font></copy-right>
-                                    </td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/PSYCHO-PASS サイコパス 3.jpg"></td>
                                     <td class="ranking1"><h4>PSYCHO-PASS3</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ガンダムビルドダイバーズReRISE.jpg"></td>
+                                    <td class="ranking1"><h4>ガンダムビルドダイバーズRe:RISE</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; サイコパス製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 創通・サンライズ</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/ガンダムビルドダイバーズReRISE.jpg">
-                                        <copy-right><font size="1">&copy; 創通・サンライズ</font></copy-right>
-                                    </td>
-                                    <td class="ranking2"><h4>ガンダムビルドダイバーズRe:RISE</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/ソードアート・オンライン アリシゼーション War of Underworld.jpg"></td>
+                                    <td class="ranking2"><h4>ソードアート・オンライン アリシゼーションWar of Underworld</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/歌舞伎町シャーロック.jpg"></td>
+                                    <td class="ranking2"><h4>歌舞伎町シャーロック</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 2017 川原 礫／ＫＡＤＯＫＡＷＡ　アスキー・メディアワークス／SAO-A Project</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 歌舞伎町シャーロック製作委員会</div></td>
+                                    <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="../image/key Visual/2019/ソードアート・オンライン アリシゼーション War of Underworld.jpg">
-                                        <copy-right><font size="1">&copy; 2017 川原 礫／ＫＡＤＯＫＡＷＡ　アスキー・メディアワークス／SAO-A Project</font></copy-right>
-                                    </td>
-                                    <td class="ranking3"><h4>ソードアート・オンライン アリシゼーションWar of Underworld</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/アサシンズプライド.jpg"></td>
+                                    <td class="ranking3"><h4>アサシンズプライド</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2019/警視庁 特務部 特殊凶悪犯対策室 第七課 -トクナナ-.jpg"></td>
+                                    <td class="ranking3"><h4>警視庁 特務部 特殊凶悪犯対策室 第七課-トクナナ-</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 2019 天城ケイ・ニノモトニノ／株式会社KADOKAWA／アサシンズプライド 製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 特殊凶悪犯対策室 第七課</div></td>
+                                    <td></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
                     <br></br>
-                    <br></br>
-                    <br></br>
+
+                    <!-- グラフ -->
+                    <div class="data"><h3>&emsp; ●年間視聴データ分析</h3></div>
+                    <div class="graph-area">
+                        <!-- 円グラフ1 -->
+                        <div>
+                            <canvas id="category-division"></canvas>
+                            <script>
+                                var result = [0, 0, 0];
+                                result = countup_year(["table_winter_" + year,
+                                                       "table_spring_" + year,
+                                                       "table_summer_" + year,
+                                                       "table_autumn_" + year],
+                                                       "count_year_" + year,
+                                                       "count_year_sum_" + year);
+                                category_division_graph(result);
+                            </script>
+                        </div>
+                        <!-- 円グラフ2 -->
+                        <div>
+                            <canvas id="week-division"></canvas>
+                            <script>
+                                result = get_week_division_year(year);
+                                week_division_graph(result);
+                            </script>
+                        </div>
+                    </div>
+                    <!-- 棒グラフ -->
+                    <div>
+                        <canvas id="watch-history"></canvas>
+                        <script>
+                            x_title = year + "_season"
+                            result = get_watch_history_year(year)
+                            history_graph(x_title, result[0], result[1]);
+                        </script>
+                    </div>
 
                     <br></br>
                     <br></br>
                     <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
                 </div>
-                <script> countup_year(["table_winter_2019", "table_spring_2019", "table_summer_2019", "table_autumn_2019"], "count_year_2019", "count_year_sum_2019");</script>
 
                 <!-- サイドバー -->
-                <div class="sidebar">
-                    <div class="sidebar-header">
-                        <h3>Archive</h3>
-                    </div>
-                    <div class="sidebar-main">
-                        <br></br>
-                        <li><p4><a href="../archive/2023.html">2023</a></p4></li>
-                        <li><p4><a href="../archive/2022.html">2022</a></p4></li>
-                        <li><p4><a href="../archive/2021.html">2021</a></p4></li>
-                        <li><p4><a href="../archive/2020.html">2020</a></p4></li>
-                        <li><p4><a href="2019.html">2019</a></p4></li>
-                        <li><p4><a href="../archive/2018.html">2018</a></p4></li>
-                        <li><p4><a href="../archive/2017.html">2017</a></p4></li>
-                        <li><p4><a href="../archive/2016.html">2016</a></p4></li>
-                        <li><p4><a href="../archive/2015.html">2015</a></p4></li>
-                    </div>
-                    <div class="sidebar-footer">
-                        <a href="../anime.html"><h4>TOPページに戻る</h4></a>
-                    </div>
-                </div>
+                <div id="sidebar" class="sidebar"></div>
+                <script>
+                    fetch("/common/sidebar.html")
+                    .then((response) => response.text())
+                    .then((data) => document.querySelector("#sidebar").innerHTML = data);
+                </script>
             </main>
 
             <!-- フッター定義 -->

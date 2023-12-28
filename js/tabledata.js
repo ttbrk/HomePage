@@ -6,11 +6,11 @@ AllFileList = ["../archive/2015.html",
                "../archive/2020.html",
                "../archive/2021.html",
                "../archive/2022.html",
-               "../archive/2023.html"];
+               "../archive/2023.html",
+               "../archive/2024.html"];
 
 AllYearList = ["2015", "2016", "2017", "2018", "2019",
-               "2020", "2021", "2022", "2023"];
-
+               "2020", "2021", "2022", "2023", "2024"];
 
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
@@ -102,6 +102,7 @@ function countup_year(TableIDList, count_year, count_year_sum) {
     var text = document.getElementById(count_year_sum);
     var all = result[0] + result[1] + result[2];
     text.textContent = "合計視聴数:" + all;
+    return [result[0], result[1], result[2]];
 }
 
 
@@ -151,20 +152,20 @@ function table_td_count(table, td_new, td_continuation, td_reair) {
 }
 
 
-function bar_graph() {
-    var ctx = document.getElementById("watch-history").getContext('2d');
+function get_watch_history_all() {
     // graph_dataは以下の形式
-    // 　　　|2015 | 2016 | …2023
+    // 　　　|2015 | 2016 | …202x
     // 新規　|     |      |
     // 継続　|     |      |
     // 再放送|     |      | 
+    // 合計　|     |      | 
     // archiveから集計データを取得しgraph_dataに格納
-    var result = [0, 0, 0];
-    var graph_data = new Array(3);
-    for (var i = 0; i < 3; i++) {
+    var result = [0, 0, 0, 0];
+    var graph_data = new Array(4);
+    for (var i = 0; i < 4; i++) {
         graph_data[i] = new Array(AllFileList.length);
     }
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < 4; i++) {
         for (var j = 0; j < AllFileList.length; j++) {
             graph_data[i][j] = 0;
         }
@@ -174,70 +175,141 @@ function bar_graph() {
         graph_data[0][i] = result[0]
         graph_data[1][i] = result[1]
         graph_data[2][i] = result[2]
+        graph_data[3][i] = result[0] + result[1] + result[2]
     }
+    return [AllYearList, graph_data]
+}
+
+
+function get_watch_history_year(year) {
+    // graph_dataは以下の形式
+    // 　　　|20xx冬 | 20xx春 | …20xx秋
+    // 新規　|     　|      　|
+    // 継続　|     　|      　|
+    // 再放送|     　|      　| 
+    // 合計　|     　|      　| 
+    // archiveから集計データを取得しgraph_dataに格納
+    TableIDList = ["table_winter_" + year,
+                   "table_spring_" + year,
+                   "table_summer_" + year,
+                   "table_autumn_" + year]
+    var result = [0, 0, 0, 0];
+    var graph_data = new Array(4);
+    for (var i = 0; i < 4; i++) {
+        graph_data[i] = new Array(TableIDList.length);
+    }
+    for (var i = 0; i < 4; i++) {
+        for (var j = 0; j < TableIDList.length; j++) {
+            graph_data[i][j] = 0;
+        }
+    }
+    for (var i = 0; i < TableIDList.length; i++) {
+        var table = document.getElementById(TableIDList[i]);
+        result = table_td_count(table, graph_data[0][i], graph_data[1][i], graph_data[2][i]);
+        graph_data[0][i] = result[0]
+        graph_data[1][i] = result[1]
+        graph_data[2][i] = result[2]
+        graph_data[3][i] = result[0] + result[1] + result[2]
+    }
+    labellist =[year + "冬", year + "春", year + "夏", year + "秋"]
+    return [labellist, graph_data]
+}
+
+
+function history_graph(x_title, labellist, graph_data) {
+    var ctx = document.getElementById("watch-history").getContext('2d');
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-            labels: AllYearList,
+            labels: labellist,
             datasets: [
                 {
-                    barPercentage: 0.5,
+                    barPercentage: 0.9,
                     label: "新規",
                     data: graph_data[0],
-                    backgroundColor: "#fb9966"
+                    borderColor: "rgb(251, 153, 102)",
+                    // fill: true,
+                    backgroundColor: "rgb(251, 153, 102, 1.0)"
                 },
                 {
-                    barPercentage: 0.5,
+                    barPercentage: 0.9,
                     label: "継続",
                     data: graph_data[1],
-                    backgroundColor: "#2ea9df"
+                    borderColor: "rgb(46, 169, 223)",
+                    // fill: true,
+                    backgroundColor: "rgb(46, 169, 223, 1.0)"
                 },
                 {
-                    barPercentage: 0.5,
+                    barPercentage: 0.9,
                     label: "再放送",
                     data: graph_data[2],
-                    backgroundColor: "#00aa90"
+                    borderColor: "rgb(0, 170, 144)",
+                    // fill: true,
+                    backgroundColor: "rgb(0, 170, 144, 1.0)"
+                },
+                {
+                    type: "line",
+                    barPercentage: 1.0,
+                    label: "合計",
+                    data: graph_data[3],
+                    lineTension: 0.2,
+                    pointBorderWidth: 7, 
+                    borderColor: "rgb(243, 48, 216)",
+                    fill: true,
+                    backgroundColor: "rgb(200, 200, 200, 0.2)"
                 }
             ]
         },
         options: {
             plugins: {
+                tooltip: {
+                    enabled: false
+                },
+                datalabels: {
+                    color: window.globalFunction.set_char_color(),
+                    font: {
+                        size: 15,
+                    },
+                    formatter: function(value, context) {
+                        return value.toString();
+                    }
+                },
                 legend: {
                     display: true,
                     labels: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 }
             },
             scales: {
                 x: {
                     display: true,
-                    stacked: true,
+                    // stacked: true,
                     grid: {
                         color: "black" 
                     },
                     title: {
-                        color: "white",
+                        color: window.globalFunction.set_char_color(),
                         display: true,
-                        text: "year"
+                        text: x_title
                     },
                     ticks: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 },
                 yAxes: {
                     display: true,
-                    stacked: true,
+                    // stacked: true,
                     grid: {
                         color: "black" 
                     },
                     title: {
-                        color: "white",
+                        color: window.globalFunction.set_char_color(),
                         display: true,
                         text: "視聴数"
                     },
                     ticks: {
-                        color: "white"
+                        color: window.globalFunction.set_char_color()
                     }
                 },
             },
@@ -249,6 +321,124 @@ function bar_graph() {
                     bottom: 0
                 }
             }
+        },
+        plugins: [
+            ChartDataLabels,
+        ],
+    });
+}
+
+
+function category_division_graph() {
+    var ctx = document.getElementById("category-division").getContext('2d');
+    // 各データののラベル
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["新規", "継続", "再放送"],
+            datasets: [
+                {
+                    backgroundColor: ["rgb(251, 153, 102)",
+                                      "rgb(46, 169, 223)",
+                                      "rgb(0, 170, 144)"],
+                    borderColor: "transparent",
+                    data: result
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                datalabels: {
+                    color: window.globalFunction.set_char_color(),
+                    font: {
+                        size: 15,
+                    },
+                    formatter: function(value, context) {
+                        return value.toString() + "%";
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: "right",
+                    labels: {
+                        color: window.globalFunction.set_char_color()
+                    }
+                }
+            },
+        },
+        plugins: [
+            ChartDataLabels,
+        ],
+    });
+}
+
+
+function get_week_division_year(year) {
+    TableIDList = ["table_winter_" + year,
+                   "table_spring_" + year,
+                   "table_summer_" + year,
+                   "table_autumn_" + year]
+    var graph_data = [0, 0, 0, 0, 0, 0, 0];
+    for (const TableID of TableIDList) {
+        var table = document.getElementById(TableID);
+        for (var i=0; i < table.rows.length; i++) {
+            for (var j=0; j < table.rows[i].cells.length; j++) {
+                var className = table.rows[i].cells[j].className ;
+                if (className == "new" ||
+                    className == "continuation" || 
+                    className == "reair") {
+                    graph_data[i] = graph_data[i] + 1
+                }
+            }
         }
+    }
+    return graph_data
+}
+
+
+function week_division_graph(graph_data) {
+    var ctx = document.getElementById("week-division").getContext('2d');
+    // 各データののラベル
+    var myChart = new Chart(ctx, {
+        type: "doughnut",
+        data: {
+            labels: ["日曜", "月曜", "火曜", "水曜", "木曜", "金曜", "土曜"],
+            datasets: [
+                {
+                    backgroundColor: ["rgb(231, 0, 18)",
+                                      "rgb(156, 51, 133)",
+                                      "rgb(240, 131, 0)",
+                                      "rgb(0, 170, 232)",
+                                      "rgb(16, 168, 59)",
+                                      "rgb(249, 190, 0)",
+                                      "rgb(70, 82, 161)"],
+                    borderColor: "transparent",
+                    data: graph_data
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                datalabels: {
+                    color: window.globalFunction.set_char_color(),
+                    font: {
+                        size: 15,
+                    },
+                    formatter: function(value, context) {
+                        return value.toString() + "%";
+                    }
+                },
+                legend: {
+                    display: true,
+                    position: "right",
+                    labels: {
+                        color: window.globalFunction.set_char_color()
+                    }
+                }
+            },
+        },
+        plugins: [
+            ChartDataLabels,
+        ],
     });
 }
