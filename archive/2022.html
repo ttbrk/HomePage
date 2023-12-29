@@ -1,5 +1,5 @@
 <!-- 更新日付 -->
-    <!-- 2023/12/28 -->
+    <!-- 2023/12/29 -->
 
     <!doctype html>
 <html lang="ja">
@@ -17,8 +17,10 @@
         <link rel="apple-touch-icon" sizes="152x152" href="/image/favicon/apple-touch-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="512x512" href="/image/favicon/iTunesArtwork.png">
         <link rel="apple-touch-icon" sizes="1024x1024" href="/image/favicon/iTunesArtwork@2x.png">
+        <!-- jsファイルの読み込み -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
         <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
         <title>2022 視聴アニメ一覧</title>
     </head>
@@ -33,40 +35,14 @@
             <!-- ヘッダー定義 -->
             <header>
                 <div class="header-wrap">
-                    <div class="headerMain">
-                        <div class="SubItem0">
-                            <div class="SubItem0-Title">
-                                <p>ダークモード</p>
-                            </div>
-                            <div class="SubItem0-swich">
-                                <div class="onoffswitch">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
-                                    <label class="onoffswitch-label" for="myonoffswitch">
-                                        <span class="onoffswitch-inner"></span>
-                                        <span class="onoffswitch-switch"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <script src="/js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
-                        </div>
-                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
-                        <div class="SubItem1">
-                            <div class="hamburger-menu">
-                                <input type="checkbox" id="menu-btn-check">
-                                <label for="menu-btn-check" class="menu-btn"><span></span></label>
-                                <div class="menu-content">
-                                    <ul>
-                                        <li><a href="/anime.html">Top</a></li>
-                                        <li><a href="/archive/archivetop.html">Archive</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                        <li><a href="#">Setting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="headerMain" class="headerMain"></div>
+                    <script>
+                        $("#headerMain").load("/common/hamburger-menu.html",function(){
+                           $("nav").hide();
+                        });
+                    </script>
                     <div class="header">
-                        <div class="ArchiveTitle"><p1>Archive-2022</p1></div>
+                        <div class="ArchiveTitle"><p1>2022</p1></div>
                         <div class="SubItem2"><p1 id="count_year_sum_2022"></p1></div>
                         <div class="SubItem3"><p1 id="count_year_2022"></p1></div>
                     </div>
@@ -78,9 +54,9 @@
                 <!-- コンテンツ -->
                 <div class="content">
                     <div class="season-winter">
-                        <div class="season-sub1"><h3>冬</h3></div>
-                        <div class="season-sub2"><h4>2022/01～2022/03</h4></div>
-                        <div class="season-sub3"><h4 id="count_winter_2022"></h4></div>
+                        <div class="season-sub1">冬</div>
+                        <div class="season-sub2">&nbsp;[2022/01～2022/03]</div>
+                        <div class="season-sub3" id="count_winter_2022"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_winter_2022">
@@ -199,9 +175,9 @@
                     <br></br>
 
                     <div class="season-spring">
-                        <div class="season-sub1"><h3>春</h3></div>
-                        <div class="season-sub2"><h4>2022/04～2022/06</h4></div>
-                        <div class="season-sub3"><h4 id="count_spring_2022"></h4></div>
+                        <div class="season-sub1">春</div>
+                        <div class="season-sub2">&nbsp;[2022/04～2022/06]</div>
+                        <div class="season-sub3" id="count_spring_2022"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_spring_2022">
@@ -320,9 +296,9 @@
                     <br></br>
 
                     <div class="season-summer">
-                        <div class="season-sub1"><h3>夏</h3></div>
-                        <div class="season-sub2"><h4>2022/07～2022/09</h4></div>
-                        <div class="season-sub3"><h4 id="count_summer_2022"></h4></div>
+                        <div class="season-sub1">夏</div>
+                        <div class="season-sub2">&nbsp;[2022/07～2022/09]</div>
+                        <div class="season-sub3" id="count_summer_2022"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_summer_2022">
@@ -448,9 +424,9 @@
                     <br></br>
 
                     <div class="season-autumn">
-                        <div class="season-sub1"><h3>秋</h3></div>
-                        <div class="season-sub2"><h4>2022/10～2022/12</h4></div>
-                        <div class="season-sub3"><h4 id="count_autumn_2022"></h4></div>
+                        <div class="season-sub1">秋</div>
+                        <div class="season-sub2">&nbsp;[2022/10～2022/12]</div>
+                        <div class="season-sub3" id="count_autumn_2022"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_autumn_2022">

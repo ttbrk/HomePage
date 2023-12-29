@@ -442,3 +442,25 @@ function week_division_graph(graph_data) {
         ],
     });
 }
+
+window.globalFunction = {};
+
+// Dark Mode時のグラフ文字色設定
+function set_char_color() {
+    if (localStorage.getItem("darkMode") === "on") {
+        return "white"
+    } else if (localStorage.getItem("darkMode") === "off") {
+        return "black"
+    }
+}
+window.globalFunction.set_char_color = set_char_color;
+
+// Dark Mode時のTwitterカラーテーマ設定
+function set_twitter_theme() {
+    if (localStorage.getItem("darkMode") === "on") {
+        return "dark"
+    } else if (localStorage.getItem("darkMode") === "off") {
+        return "light"
+    }
+}
+window.globalFunction.set_twitter_theme = set_twitter_theme;
