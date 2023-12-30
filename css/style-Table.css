@@ -5,12 +5,18 @@
     --table-archive-img-size: 100px;
     --table-archive-season-size: 20px;
     --table-size: 400px;
-    --table-th-size: 60px;
-    --table-label-size: 20px;
-    --table-td-size: 200px;
+    --table-th-size-pc: 100px;
+    --table-th-size-sp: 45px;
+
+    --table-label-size-pc: 30px;
+    --table-label-size-sp: 15px;
+
+    --table-td-size-pc: 400px;
+    --table-td-size-sp: 200px;
+
     --table-rank-img-size-pc: 300px;
     --table-rank-img-size-sp: 180px;
-    /* ↑pcの場合は250にする */
+
     --table-ranktitle-td-size-pc: 300px;
     --table-ranktitle-td-size-sp: 100px;
 
@@ -112,14 +118,14 @@
 }
 
 
-div.season {
+/* div.season {
     display: grid;
     grid-template-rows: 50px 50px;
     grid-template-columns: var(--table-th-size) 1fr;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-caption-color);
     color: var(--table-char-color);
-}
+} */
 /* クール毎表タイトル設定（共通） */
 div.season-winter ,
 div.season-spring ,
@@ -127,12 +133,12 @@ div.season-summer ,
 div.season-autumn {
     display: grid;
     grid-template-rows: 50px 50px;
-    grid-template-columns: var(--table-th-size) 1fr;
+    grid-template-columns: var(--table-th-size-pc) 1fr;
     border-radius: 5px 5px 5px 5px;
     color: var(--table-char-color);
 }
-@media screen and (max-width: 768px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; } }
-@media screen and (max-width: 480px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; } }
+@media screen and (max-width: 768px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; grid-template-columns: var(--table-th-size-sp) 1fr;} }
+@media screen and (max-width: 480px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; grid-template-columns: var(--table-th-size-sp) 1fr;} }
 
 /* クール毎表タイトル設定（個別） */
 div.season-winter {
@@ -228,9 +234,13 @@ td.new, td.continuation, td.reair, td.none {
     padding-top: 0.4rem;
     padding-left: 0.4rem;
     padding-bottom: 0.4rem;
-    width: var(--table-label-size);
+    width: var(--table-label-size-pc);
     color: var(--table-char-color);
+    font-size: 25px;
 }
+@media screen and (max-width: 768px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
+@media screen and (max-width: 480px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
+
 /* テーブル種別アイコンカラー設定 */
 td.new {
     background:var(--table-new-color);
@@ -250,19 +260,26 @@ td.title {
     border-bottom-color: var(--table-boder-color);
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
-    width: var(--table-td-size);
+    width: var(--table-td-size-pc);
     color: var(--table-char-color);
+    font-size: 25px;
 }
+@media screen and (max-width: 768px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
+@media screen and (max-width: 480px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
 
 /* テーブル曜日共通設定 */
 th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
-    width: var(--table-th-size);
+    width: var(--table-th-size-pc);
     position: sticky;
     left: 0;
     border-radius: 5px 5px 5px 5px;
     background: var(--table-sat-color);
     color: var(--table-char-color);
+    font-size: 30px;
 }
+@media screen and (max-width: 768px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
+@media screen and (max-width: 480px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
+
 /* テーブル曜日カラー設定 */
 th.sun {
     background: var(--table-sun-color);
