@@ -69,7 +69,7 @@ div.TitleMain {
     text-align-last: justify;
     font-size: 35px;
 }
-@media screen and (max-width: 768px) { div.TitleMain { font-size: 25px; } }
+@media screen and (max-width: 834px) { div.TitleMain { font-size: 25px; } }
 @media screen and (max-width: 480px) { div.TitleMain { font-size: 20px; } }
 div.hamburger-menu {
     grid-column: 3;
@@ -87,21 +87,21 @@ div.ArchiveTitle {
     vertical-align: bottom;
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { div.ArchiveTitle { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.ArchiveTitle { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.ArchiveTitle { font-size: 10px; } }
 
 div.SubItem2 {
     text-align: center;
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { div.SubItem2 { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.SubItem2 { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.SubItem2 { font-size: 10px; } }
 
 div.SubItem3 {
     text-align: left;
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { div.SubItem3 { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.SubItem3 { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.SubItem3 { font-size: 10px; } }
 
 /* メイン　コンテナ */
@@ -147,6 +147,28 @@ div.graph-area {
     width: 100%;
     /* height: 200px; */
 }
+div.scroll-year-history {
+    position: relative;
+}
+/* スクロール可能グラフを囲む div */
+div.scroll-year-history > div {
+    position: relative;
+    overflow-x: scroll;
+}
+/* スクロール可能グラフを囲む div */
+div.scroll-year-history #watch-history {
+    height: 550;
+}
+@media screen and (max-width: 834px) { div.scroll-year-history > #watch-history { height: 350; } }
+@media screen and (max-width: 480px) { div.scroll-year-history > #watch-history { height: 350; } }
+
+/* スクロール可能グラフを囲む div */
+div.scroll-year-history > canvas {
+    position: absolute;   /* これにより、上の div と重なる位置に canvas が配置される */
+    left: 0;
+    top: 0;
+    background-color: var(--background-color);
+}
 
 /* サイドバー */
 div.sidebar {
@@ -171,7 +193,7 @@ div.sidebar-header {
     vertical-align: bottom;
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { div.sidebar-header { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.sidebar-header { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.sidebar-header { font-size: 15px; } }
 
 div.sidebar-main {
@@ -185,7 +207,7 @@ div.sidebar-main {
     overflow-y: scroll;
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { div.sidebar-main { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.sidebar-main { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.sidebar-main { font-size: 15px; } }
 
 div.sidebar-footer {
@@ -211,13 +233,17 @@ div.caption {
     background: var(--table-caption-color);
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { div.caption { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.caption { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.caption { font-size: 15px; } }
 /* SNS */
 div.sns-box {
     font-size: 25px;
+    display: grid;
+    /* Twitter埋め込みのAPIが最小表示幅300pxなので、div.sns-boxもレスポンシブ対応の横並び時の最小値を300pxに設定する */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
 }
-@media screen and (max-width: 768px) { div.sns-box { font-size: 12px; } }
+@media screen and (max-width: 834px) { div.sns-box { font-size: 12px; } }
 @media screen and (max-width: 480px) { div.sns-box { font-size: 12px; } }
 
 
@@ -248,5 +274,5 @@ div.footercopyright {
     font-size: 25px;
     color: var(--char-color);
 }
-@media screen and (max-width: 768px) { div.footercopyright { font-size: 12px; } }
+@media screen and (max-width: 834px) { div.footercopyright { font-size: 12px; } }
 @media screen and (max-width: 480px) { div.footercopyright { font-size: 12px; } }

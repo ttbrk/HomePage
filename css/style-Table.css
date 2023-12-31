@@ -137,7 +137,7 @@ div.season-autumn {
     border-radius: 5px 5px 5px 5px;
     color: var(--table-char-color);
 }
-@media screen and (max-width: 768px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; grid-template-columns: var(--table-th-size-sp) 1fr;} }
+@media screen and (max-width: 834px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; grid-template-columns: var(--table-th-size-sp) 1fr;} }
 @media screen and (max-width: 480px) { div.season-winter, div.season-spring, div.season-summer, div.season-autumn { grid-template-rows: 30px 30px; grid-template-columns: var(--table-th-size-sp) 1fr;} }
 
 /* クール毎表タイトル設定（個別） */
@@ -161,7 +161,7 @@ div.season-sub1 {
     text-align: center;
     font-size: 50px;
 }
-@media screen and (max-width: 768px) { div.season-sub1 { font-size: 30px; } }
+@media screen and (max-width: 834px) { div.season-sub1 { font-size: 30px; } }
 @media screen and (max-width: 480px) { div.season-sub1 { font-size: 30px; } }
 
 div.season-sub2 {
@@ -176,7 +176,7 @@ div.season-sub3 {
     text-align: center;
     font-size: 25px;
 }
-@media screen and (max-width: 768px) { div.season-sub2, div.season-sub3 { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.season-sub2, div.season-sub3 { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.season-sub2, div.season-sub3 { font-size: 15px; } }
 
 div.data {
@@ -238,7 +238,7 @@ td.new, td.continuation, td.reair, td.none {
     color: var(--table-char-color);
     font-size: 25px;
 }
-@media screen and (max-width: 768px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
+@media screen and (max-width: 834px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
 @media screen and (max-width: 480px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
 
 /* テーブル種別アイコンカラー設定 */
@@ -264,7 +264,7 @@ td.title {
     color: var(--table-char-color);
     font-size: 25px;
 }
-@media screen and (max-width: 768px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
+@media screen and (max-width: 834px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
 @media screen and (max-width: 480px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
 
 /* テーブル曜日共通設定 */
@@ -277,7 +277,7 @@ th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
     color: var(--table-char-color);
     font-size: 30px;
 }
-@media screen and (max-width: 768px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
+@media screen and (max-width: 834px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
 @media screen and (max-width: 480px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
 
 /* テーブル曜日カラー設定 */
@@ -337,7 +337,7 @@ td.ranking1, td.ranking2, td.ranking3 {
     border-bottom-color: var(--table-boder-color);
     text-align: center;
 }
-@media screen and (max-width: 768px) { td.ranking1, td.ranking2, td.ranking3 { width: var(--table-ranktitle-td-size-sp); } }
+@media screen and (max-width: 834px) { td.ranking1, td.ranking2, td.ranking3 { width: var(--table-ranktitle-td-size-sp); } }
 @media screen and (max-width: 480px) { td.ranking1, td.ranking2, td.ranking3 { width: var(--table-ranktitle-td-size-sp); } }
 
 /* ランキングh4共通設定 */
@@ -349,7 +349,7 @@ td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 {
     transition: all 0.25s ease-in;
     font-size: 30px
 }
-@media screen and (max-width: 768px) { td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 { font-size: 15px; } }
+@media screen and (max-width: 834px) { td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 { font-size: 15px; } }
 @media screen and (max-width: 480px) { td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 { font-size: 15px; } }
 
 /* ランキングh4カラー設定 */
@@ -383,7 +383,7 @@ td.ranking-copyright > div {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
 }
-@media screen and (max-width: 768px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
+@media screen and (max-width: 834px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
 @media screen and (max-width: 480px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
 
 
