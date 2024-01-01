@@ -175,7 +175,7 @@ div.sidebar {
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 4rem;
+    top: 5rem;
     z-index: 998;
     flex-grow: 1;
     flex-shrink: 0;
