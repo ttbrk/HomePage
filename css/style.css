@@ -175,49 +175,44 @@ div.sidebar {
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 5rem;
+    top: 4rem;
     z-index: 998;
     flex-grow: 1;
     flex-shrink: 0;
-    /* width: 130px;
-    width: 100%; */
-    height: 300px;
-    padding: 10px;
+    height: 500px;
+    padding: 4px;
 }
-div.sidebar-header {
-    flex-grow: 1;
-    flex-shrink: 0;
-    padding: 0px;
-    /* width: var(--sidebar-width); */
-    height: auto;
-    vertical-align: bottom;
+
+div.sidebar-title {
     font-size: 30px;
 }
-@media screen and (max-width: 834px) { div.sidebar-header { font-size: 15px; } }
-@media screen and (max-width: 480px) { div.sidebar-header { font-size: 15px; } }
+@media screen and (max-width: 834px) { div.sidebar-title { font-size: 15px; } }
+@media screen and (max-width: 480px) { div.sidebar-title { font-size: 15px; } }
+
+div.sidebar-archive {
+    border-radius: 4px 4px 4px 4px;
+    background-color: var(--sidebar-color);
+    padding: 0px;
+    text-align: center;
+    font-size: 30px;
+}
+@media screen and (max-width: 834px) { div.sidebar-archive { font-size: 15px; } }
+@media screen and (max-width: 480px) { div.sidebar-archive { font-size: 15px; } }
 
 div.sidebar-main {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 4px 4px 4px 4px;
     background-color: var(--sidebar-color);
-    flex-grow: 1;
-    flex-shrink: 0;
-    /* width: var(--sidebar-width); */
-    height: 500px;
-    text-align: center;
+    /* flex-grow: 1;
+    flex-shrink: 0; */
+    height: 200px;
+    height: auto;
+    /* text-align: center; */
+    padding: 0px;
     overflow-y: scroll;
-    font-size: 30px;
+    font-size: 25px;
 }
-@media screen and (max-width: 834px) { div.sidebar-main { font-size: 15px; } }
-@media screen and (max-width: 480px) { div.sidebar-main { font-size: 15px; } }
-
-div.sidebar-footer {
-    border-radius: 0px 0px 10px 10px;
-    background-color: var(--sidebar-color);
-    flex-grow: 1;
-    flex-shrink: 0;
-    /* width: var(--sidebar-width); */
-    height: 50px;
-}
+@media screen and (max-width: 834px) { div.sidebar-main { font-size: 10px; } }
+@media screen and (max-width: 480px) { div.sidebar-main { font-size: 10px; } }
 
 /* リンク文字色設定 */
 a {
@@ -249,7 +244,7 @@ div.sns-box {
 
 /* フッター */
 footer {
-    position: sticky;
+    /* position: sticky; */
     bottom: 0;
     z-index: 999;
     background: var(--footer-color);
