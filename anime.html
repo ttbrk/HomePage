@@ -1,5 +1,5 @@
 <!-- 更新日付 -->
-    <!-- 2024/1/1 -->
+    <!-- 2024/1/3 -->
 
 <!doctype html>
 <html lang="ja">
@@ -22,6 +22,8 @@
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
         <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
         <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <title>アニメ備忘録</title>
 
     </head>
@@ -43,17 +45,19 @@
                         });
                     </script>
                     <div class="header">
-                        <div class="ArchiveTitle">2015~2024</div>
+                        <div class="HeaderTitle">2015~2024</div>
                         <div class="SubItem2"><p1 id="count_year_sum_all"></p1></div>
                         <div class="SubItem3"><p1 id="count_year_all"></p1></div>
                     </div>
                 </div>
             </header>
-            <br></br>
+
             <!-- メイン -->
             <main>
                 <!-- コンテンツ -->
                 <div class="content">
+                    <br></br>
+
                     <div class="caption">&emsp; ●前期の視聴アニメランキング！！</div>
                     <!-- <h2>&emsp; ●前期の視聴アニメランキング！！</h2> -->
 
@@ -208,10 +212,10 @@
                             <div class="caption">&emsp; ●X（旧Twitter）</div>
                             アニメの感想、gameの感想等々気まぐれに呟いてます！
                             <br></br>
-                            <a class="twitter-timeline" data-width="100%" data-height="800px" data-theme="theme" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a>
+                            <a class="twitter-timeline" data-width="100%" data-height="600px" data-theme="theme" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a>
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                             <script>
-                                $('.twitter-timeline').attr("data-theme", window.globalFunction.set_twitter_theme());
+                                $(".twitter-timeline").attr("data-theme", window.globalFunction.set_twitter_theme());
                             </script>
                         </div>
                         <!-- 読書メーター -->

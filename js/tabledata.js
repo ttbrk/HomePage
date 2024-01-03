@@ -223,7 +223,7 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
     // X軸の1データ当たりの幅（PC:120 sp:60）
     if (window.matchMedia("(max-width: 834px)").matches) {
         // ウィンドウサイズ834px以下のときの処理
-        var xAxisStepSize = 60;
+        var xAxisStepSize = 70;
     } else {
         // それ以外の処理
         var xAxisStepSize = 120;

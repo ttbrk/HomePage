@@ -118,14 +118,6 @@
 }
 
 
-/* div.season {
-    display: grid;
-    grid-template-rows: 50px 50px;
-    grid-template-columns: var(--table-th-size) 1fr;
-    border-radius: 5px 5px 5px 5px;
-    background: var(--table-caption-color);
-    color: var(--table-char-color);
-} */
 /* クール毎表タイトル設定（共通） */
 div.season-winter ,
 div.season-spring ,
@@ -187,7 +179,6 @@ div.data {
 /* 表デザイン */
 div.table-wrap {
     overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 table.table {
     table-layout: fixed;
@@ -381,7 +372,6 @@ td.ranking-copyright > div {
     font-size: 10% !important;
     white-space: nowrap;
     overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
 }
 @media screen and (max-width: 834px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
 @media screen and (max-width: 480px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
@@ -431,5 +421,4 @@ td.archive-title > div {
     width: var(--table-archive-img-size);
     white-space: nowrap;
     overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
 }
