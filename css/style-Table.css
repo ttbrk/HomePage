@@ -369,12 +369,12 @@ td.ranking-img > img{
 
 td.ranking-copyright > div {
     width: var(--table-rank-img-size-pc);
-    font-size: 10% !important;
+    font-size: 10px;
     white-space: nowrap;
     overflow-x: scroll;
 }
-@media screen and (max-width: 834px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
-@media screen and (max-width: 480px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); } }
+@media screen and (max-width: 834px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); font-size: 8px; } }
+@media screen and (max-width: 480px) { td.ranking-img, td.ranking-copyright > div { width: var(--table-rank-img-size-sp); font-size: 8px; } }
 
 
 /* div.archive-title a {
@@ -415,8 +415,10 @@ td.archive-img > img{
 td.archive-title {
     width: var(--table-archive-img-size);
     vertical-align: top;
-    font-size: 10% !important;
+    font-size: 10px;
 }
+@media screen and (max-width: 834px) { td.archive-title { font-size: 8px; } }
+@media screen and (max-width: 480px) { td.archive-title { font-size: 8px; } }
 td.archive-title > div {
     width: var(--table-archive-img-size);
     white-space: nowrap;

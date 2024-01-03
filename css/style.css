@@ -310,6 +310,7 @@ div.footerPagetop > b {
     background-color: var(--scroll-border-title-color);
     border: 2px solid var(--scroll-border-color);
     color: var(--char-color);
+    text-align: center;
 }
 @media screen and (max-width: 834px) { .footerPagetopButton { width: 30px; height: 30px; } }
 @media screen and (max-width: 480px) { .footerPagetopButton { width: 30px; height: 30px; } }
