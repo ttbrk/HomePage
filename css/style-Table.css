@@ -5,19 +5,19 @@
     --table-archive-img-size: 100px;
     --table-archive-season-size: 20px;
     --table-size: 400px;
-    --table-th-size-pc: 100px;
+    --table-th-size-pc: 60px;
     --table-th-size-sp: 35px;
 
-    --table-label-size-pc: 30px;
+    --table-label-size-pc: 25px;
     --table-label-size-sp: 15px;
 
-    --table-td-size-pc: 400px;
+    --table-td-size-pc: 300px;
     --table-td-size-sp: 150px;
 
-    --table-rank-img-size-pc: 300px;
+    --table-rank-img-size-pc: 200px;
     --table-rank-img-size-sp: 100px;
 
-    --table-ranktitle-td-size-pc: 300px;
+    --table-ranktitle-td-size-pc: 200px;
     --table-ranktitle-td-size-sp: 100px;
 
 
@@ -124,7 +124,7 @@ div.season-spring ,
 div.season-summer ,
 div.season-autumn {
     display: grid;
-    grid-template-rows: 50px 50px;
+    grid-template-rows: 40px 40px;
     grid-template-columns: var(--table-th-size-pc) 1fr;
     border-radius: 5px 5px 5px 5px;
     color: var(--table-char-color);
@@ -151,7 +151,7 @@ div.season-sub1 {
     grid-row: 1 / 3;
     grid-column: 1 / 2;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
 }
 @media screen and (max-width: 834px) { div.season-sub1 { font-size: 30px; } }
 @media screen and (max-width: 480px) { div.season-sub1 { font-size: 30px; } }
@@ -160,13 +160,13 @@ div.season-sub2 {
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     text-align: left;
-    font-size: 25px;
+    font-size: 20px;
 }
 div.season-sub3 {
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.season-sub2, div.season-sub3 { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.season-sub2, div.season-sub3 { font-size: 15px; } }
@@ -227,7 +227,7 @@ td.new, td.continuation, td.reair, td.none {
     padding-bottom: 0.4rem;
     width: var(--table-label-size-pc);
     color: var(--table-char-color);
-    font-size: 25px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
 @media screen and (max-width: 480px) { td.new, td.continuation, td.reair, td.none { width: var(--table-label-size-sp); font-size: 12px;} }
@@ -253,7 +253,7 @@ td.title {
     padding-bottom: 0.4rem;
     width: var(--table-td-size-pc);
     color: var(--table-char-color);
-    font-size: 25px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
 @media screen and (max-width: 480px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
@@ -266,7 +266,7 @@ th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
     border-radius: 5px 5px 5px 5px;
     background: var(--table-sat-color);
     color: var(--table-char-color);
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
 @media screen and (max-width: 480px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
@@ -338,7 +338,7 @@ td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 {
     background-size: 100% 40%;
 	background-position: bottom;
     transition: all 0.25s ease-in;
-    font-size: 30px
+    font-size: 20px
 }
 @media screen and (max-width: 834px) { td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 { font-size: 15px; } }
 @media screen and (max-width: 480px) { td.ranking1 h4, td.ranking2 h4, td.ranking3 h4 { font-size: 15px; } }

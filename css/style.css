@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 変数設定 */
+/* ===========================変数設定=========================== */
 :root {
     --header-boder-type: solid;
     --header-boder-size: 0.1rem;
@@ -50,7 +50,7 @@ header {
 }
 
 
-/* ヘッダー */
+/* ===========================ヘッダー=========================== */
 div.header-wrap {
     display: grid;
     width: 100%;
@@ -60,7 +60,7 @@ div.TitleHeader {
     display: grid;
     width: 100%;
     height: auto;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3.5fr 1fr;
     border-bottom-style: var(--header-boder-type);
     border-bottom-width: var(--header-boder-size);
     border-bottom-color: var(--header-boder-color);
@@ -75,7 +75,7 @@ div.TitleMain {
     grid-column: 2;
     text-align:justify;
     text-align-last: justify;
-    font-size: 35px;
+    font-size: 30px;
 }
 @media screen and (max-width: 834px) { div.TitleMain { font-size: 25px; } }
 @media screen and (max-width: 480px) { div.TitleMain { font-size: 20px; } }
@@ -92,26 +92,27 @@ div.header {
 div.HeaderTitle {
     text-align: right;
     vertical-align: bottom;
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.HeaderTitle { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.HeaderTitle { font-size: 10px; } }
 
 div.SubItem2 {
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.SubItem2 { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.SubItem2 { font-size: 10px; } }
 
 div.SubItem3 {
     text-align: left;
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.SubItem3 { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.SubItem3 { font-size: 10px; } }
 
-/* メイン　コンテナ */
+
+/* ===========================メイン　コンテナ=========================== */
 div.container {
     background: var(--background-color);
 }
@@ -143,7 +144,8 @@ div.archive-title {
     text-align-last: justify;
 }
 
-/* グラフ */
+
+/* ===========================グラフ=========================== */
 div.graph-area {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -160,7 +162,7 @@ div.scroll-year-history > div {
 }
 /* スクロール可能グラフを囲む div */
 div.scroll-year-history #watch-history {
-    height: 550;
+    height: 450;
 }
 @media screen and (max-width: 834px) { div.scroll-year-history > #watch-history { height: 350; } }
 @media screen and (max-width: 480px) { div.scroll-year-history > #watch-history { height: 350; } }
@@ -173,7 +175,8 @@ div.scroll-year-history > canvas {
     background-color: var(--background-color);
 }
 
-/* サイドバー */
+
+/* ===========================サイドバー=========================== */
 div.sidebar {
     display: flex;
     flex-direction: column;
@@ -182,7 +185,7 @@ div.sidebar {
     z-index: 998;
     flex-grow: 1;
     flex-shrink: 0;
-    height: 500px;
+    height: 550px;
     padding: 4px;
 }
 @media screen and (max-width: 834px) { div.sidebar { top: 62px; } }
@@ -190,7 +193,7 @@ div.sidebar {
 @media screen and (max-width: 334px) { div.sidebar { top: 91px; } }
 
 div.sidebar-title {
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.sidebar-title { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.sidebar-title { font-size: 15px; } }
@@ -200,7 +203,7 @@ div.sidebar-archive {
     background-color: var(--sidebar-color);
     padding: 0px;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.sidebar-archive { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.sidebar-archive { font-size: 15px; } }
@@ -212,10 +215,35 @@ div.sidebar-main {
     height: auto;
     padding: 0px;
     overflow-y: scroll;
-    font-size: 20px;
+    font-size: 15px;
 }
 @media screen and (max-width: 834px) { div.sidebar-main { font-size: 10px; } }
 @media screen and (max-width: 480px) { div.sidebar-main { font-size: 10px; } }
+
+input[type="text"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0px;
+}
+
+input[type="submit"] {
+    height: 30px;
+    background-color: var(--scroll-border-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--scroll-border-title-color);
+}
+
+
+
 
 /* ページトップに繊維する際の速度をゆっくりにする */
 html {
@@ -237,13 +265,13 @@ li{
 div.caption {
     border-radius: 5px 5px 5px 5px;
     background: var(--table-caption-color);
-    font-size: 30px;
+    font-size: 25px;
 }
 @media screen and (max-width: 834px) { div.caption { font-size: 15px; } }
 @media screen and (max-width: 480px) { div.caption { font-size: 15px; } }
 /* SNS */
 div.sns-box {
-    font-size: 25px;
+    font-size: 20px;
     display: grid;
     /* Twitter埋め込みのAPIが最小表示幅300pxなので、div.sns-boxもレスポンシブ対応の横並び時の最小値を300pxに設定する */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -253,7 +281,7 @@ div.sns-box {
 @media screen and (max-width: 480px) { div.sns-box { font-size: 12px; } }
 
 
-/* フッター */
+/* ===========================フッター=========================== */
 footer {
     bottom: 0;
     z-index: 999;
@@ -265,7 +293,7 @@ div.footer {
     height: 100%;
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto auto auto auto auto;
-    font-size: 25px;
+    font-size: 20px;
     color: var(--char-color);
     text-align: center;
 }
@@ -305,8 +333,8 @@ div.footerPagetop > b {
 
 .footerPagetopButton {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: var(--scroll-border-title-color);
     border: 2px solid var(--scroll-border-color);
     color: var(--char-color);
@@ -316,7 +344,7 @@ div.footerPagetop > b {
 @media screen and (max-width: 480px) { .footerPagetopButton { width: 30px; height: 30px; } }
 
 div.footerLogo {
-    height: 50px;
+    height: 40px;
     grid-row: 4;
     grid-column: 5;
     background: url(/image/favicon/iTunesArtwork.png) no-repeat center;
@@ -331,10 +359,11 @@ div.footercopyright {
     text-align: center;
 }
 
-/* スクロールバーデザイン */
+
+/* ===========================スクロールバーデザイン=========================== */
 ::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
 }
 @media screen and (max-width: 834px) { ::-webkit-scrollbar { width: 5px; height: 5px;} }
 @media screen and (max-width: 480px) { ::-webkit-scrollbar { width: 5px; height: 5px;} }
