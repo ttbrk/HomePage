@@ -120,7 +120,7 @@ main {
     display: grid;
     width: 100%;
     height: auto;
-    grid-template-columns: 1.0fr minmax(150px, 20%);
+    grid-template-columns: 1.0fr minmax(120px, 20%);
 }
 div.content {
     display: flex;
@@ -196,7 +196,7 @@ div.sidebar-title {
     font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.sidebar-title { font-size: 15px; } }
-@media screen and (max-width: 480px) { div.sidebar-title { font-size: 15px; } }
+@media screen and (max-width: 480px) { div.sidebar-title { font-size: 10px; } }
 
 div.sidebar-archive {
     border-radius: 4px 4px 4px 4px;
@@ -206,7 +206,7 @@ div.sidebar-archive {
     font-size: 20px;
 }
 @media screen and (max-width: 834px) { div.sidebar-archive { font-size: 15px; } }
-@media screen and (max-width: 480px) { div.sidebar-archive { font-size: 15px; } }
+@media screen and (max-width: 480px) { div.sidebar-archive { font-size: 10px; } }
 
 div.sidebar-main {
     border-radius: 4px 4px 4px 4px;
@@ -218,31 +218,54 @@ div.sidebar-main {
     font-size: 15px;
 }
 @media screen and (max-width: 834px) { div.sidebar-main { font-size: 10px; } }
-@media screen and (max-width: 480px) { div.sidebar-main { font-size: 10px; } }
+@media screen and (max-width: 480px) { div.sidebar-main { font-size: 8px; } }
 
+div.search {
+    display: grid;
+    grid-template-columns: 3% 45% 4% 45% 3%;
+}
 input[type="text"] {
-    width: 100%;
-    height: 30px;
-    border: 1px solid #ccc;
+    height: 200px;
+    background-color: var(--background-color);
+    border: 2px solid var(--scroll-border-color);
     border-radius: 5px;
     padding: 0px;
+    color: var(--char-color);
+    font-size: 15px;
+}
+@media screen and (max-width: 834px) { input[type="text"] { height: 100px; font-size: 10px; } }
+@media screen and (max-width: 480px) { input[type="text"] { height: 60px; font-size: 10px; } }
+
+input[type="button"]:hover {
+    background-color: var(--scroll-border-title-color);
+    border: 2px solid var(--scroll-border-color);
 }
 
-input[type="submit"] {
+input.btn_prev {
+    grid-column: 2;
+}
+input.btn_next {
+    grid-column: 4;
+}
+input.btn_search,
+input.btn_prev,
+input.btn_next,
+input.btn_remove {
+    width: 100%;
     height: 30px;
-    background-color: var(--scroll-border-color);
-    color: white;
-    border: none;
+    background-color: var(--background-color);
+    border: 2px solid var(--char-color);
     border-radius: 5px;
     cursor: pointer;
-    padding: 0 15px;
+    padding: 0px;
+    margin: 2px 0px;
+    color: var(--char-color);
+    font-size: 20px;
+    vertical-align: middle;
+    text-align: center;
 }
-
-input[type="submit"]:hover {
-    background-color: var(--scroll-border-title-color);
-}
-
-
+@media screen and (max-width: 834px) { input.btn_search, input.btn_prev, input.btn_next, input.btn_remove { height: 25px; font-size: 15px; } }
+@media screen and (max-width: 480px) { input.btn_search, input.btn_prev, input.btn_next, input.btn_remove { height: 20px;  font-size: 10px; } }
 
 
 /* ページトップに繊維する際の速度をゆっくりにする */
@@ -335,13 +358,17 @@ div.footerPagetop > b {
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: var(--scroll-border-title-color);
-    border: 2px solid var(--scroll-border-color);
+    background-color: var(--background-color);
+    border: 2px solid var(--char-color);
     color: var(--char-color);
     text-align: center;
 }
 @media screen and (max-width: 834px) { .footerPagetopButton { width: 30px; height: 30px; } }
 @media screen and (max-width: 480px) { .footerPagetopButton { width: 30px; height: 30px; } }
+.footerPagetopButton:hover {
+    background-color: var(--scroll-border-title-color);
+    border: 2px solid var(--scroll-border-color);
+}
 
 div.footerLogo {
     height: 40px;
@@ -384,4 +411,10 @@ td.archive-title ::-webkit-scrollbar {
 td.archive-title ::-webkit-scrollbar-thumb,
 td.ranking-copyright ::-webkit-scrollbar-thumb {
     border: 1px solid var(--scroll-border-title-color);
+}
+
+
+
+.highlight {
+    background-color:yellow;
 }

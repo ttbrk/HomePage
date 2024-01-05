@@ -3,7 +3,7 @@
 視聴履歴や、視聴数等をまとめたホームページ用のリポジトリです。
 
 ## ディレクトリ構成
-[anime.html](/anime.html)  
+[index.html](/index.html)  
 　　トップページ  
 [archive](/archive/)  
 　　[アーカイブトップページ](/archive/archivetop.html)  、各種アーカイブ用htmlファイルを格納  
@@ -27,7 +27,11 @@
 　　　　・[source](/js/source/)：jqueryオフラインファイル格納用ディレクトリ  
 　　　　・[darkMode_on_off.js](/js/darkMode_on_off.js)：ダークモードスイッチ制御用JavaScript  
 　　　　・[tabledata.js](/js/tabledata.js)：グラフ描画制御用JavaScript  
+　　　　・[search.js](/js/search.js)：ページ内検索用JavaScript  
+[sitemap.xml](/sitemap.xml)  
+　　サイトマップ  
 
 ## 更新履歴
-2024/01/03：フッター更新、スクロールバーデザイン変更  
-2023/12/31：レスポンシブ対応
+[2024/1/5]&emsp;ページ内検索ボタン実装  
+[2024/1/3]&emsp;フッター更新、スクロールバーデザイン変更  
+[2023/12/31]&emsp;レスポンシブ対応
