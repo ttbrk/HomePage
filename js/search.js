@@ -15,7 +15,9 @@ $(function(){
         var p = $(".highlight").offset();
         // スクロール後にハイライト文字が固定表示ヘッダーに隠れないように-100オフセット
         var ptop = p.top - 100;
-        $("html,body").animate({ scrollTop: ptop }, "fast");
+        var pleft = p.left - 80;
+        $("html,.table-wrap").animate({ scrollLeft: pleft}, "fast");
+        $("html,body").animate({ scrollTop: ptop}, "fast");
         highlightPos = 0;
         return false;
     });
@@ -32,8 +34,9 @@ $(function() {
         var p = $(".highlight").eq(highlightPos).offset();
         // スクロール後にハイライト文字が固定表示ヘッダーに隠れないように-100オフセット
         var ptop = p.top - 100;
-        $("html,body").animate({ scrollTop: ptop }, "fast");
-
+        var pleft = p.left - 80;
+        $("html,.table-wrap").animate({ scrollLeft: pleft}, "fast");
+        $("html,body").animate({ scrollTop: ptop}, "fast");
         return false;
     });
 });
@@ -49,8 +52,10 @@ $(function() {
         var p = $(".highlight").eq(highlightPos).offset();
         // スクロール後にハイライト文字が固定表示ヘッダーに隠れないように-100オフセット
         var ptop = p.top - 100;
-        $("html,body").animate({ scrollTop: ptop }, "fast");
-        
+        var pleft = p.left - 80;
+        $("html,.table-wrap").animate({ scrollLeft: pleft}, "fast");
+        $("html,body").animate({ scrollTop: ptop}, "fast");
+        // console.log(highlightPos)
         return false;
     });
 });
