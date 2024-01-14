@@ -1,5 +1,17 @@
-var highlightPos = 0;
-var highlightLen = 0;
+var iHighlightPos = 0;
+var iHighlightLen = 0;
+var aryLeftValue = [];
+var aryTopValue = [];
+
+// ウィンドウサイズ834px以下のときの処理（表の目次の横幅が異なるため）
+var iLeftOffset = 0;
+if (window.matchMedia("(max-width: 834px)").matches) {
+    var iLeftOffset = 70;
+} else {
+    var iLeftOffset = 100;
+}
+var iToptOffset = 100;
+
 
 $(function(){
     $(".btn_search").click(function(){ //.btn_searchをクリックした時
@@ -9,53 +21,61 @@ $(function(){
         $(".content").highlight(word);
 
         // 検索結果数を保存
-        highlightLen = $(".highlight").length;
+        iHighlightLen = $(".highlight").length;
+        // 検索結果位置を保存
+        iHighlightPos = 0;
 
-        // 検索結果先頭に移動
-        var p = $(".highlight").offset();
+        for (i = 0; i < iHighlightLen; i++) {
+            p = $(".highlight").eq(i).offset();
+            aryLeftValue.push(p.left);
+            aryTopValue.push(p.top);
+        }
+
         // スクロール後にハイライト文字が固定表示ヘッダーに隠れないように-100オフセット
-        var ptop = p.top - 100;
-        var pleft = p.left - 80;
-        $("html,.table-wrap").animate({ scrollLeft: pleft}, "fast");
-        $("html,body").animate({ scrollTop: ptop}, "fast");
-        highlightPos = 0;
+        iTopValue = aryTopValue[iHighlightPos] - iToptOffset;
+        iLeftValue = aryLeftValue[iHighlightPos] - iLeftOffset;
+
+        $("html,.table-wrap").animate({ scrollLeft: iLeftValue}, "fast");
+        $("html,body").animate({ scrollTop: iTopValue}, "fast");
         return false;
     });
 })
 
 $(function() {
     $(".btn_next").click(function () { //.btn_nextをクリックしたとき
-        if ( (highlightLen -1) <= highlightPos ) {
-            highlightPos = 0;
+        if ( (iHighlightLen -1) <= iHighlightPos ) {
+            pre = iHighlightLen -1;
+            iHighlightPos = 0;
         } else {
-            highlightPos = highlightPos + 1;
+            pre = iHighlightPos;
+            iHighlightPos = iHighlightPos + 1;
         }
 
-        var p = $(".highlight").eq(highlightPos).offset();
         // スクロール後にハイライト文字が固定表示ヘッダーに隠れないように-100オフセット
-        var ptop = p.top - 100;
-        var pleft = p.left - 80;
-        $("html,.table-wrap").animate({ scrollLeft: pleft}, "fast");
-        $("html,body").animate({ scrollTop: ptop}, "fast");
+        iTopValue = aryTopValue[iHighlightPos] - iToptOffset;
+        iLeftValue = aryLeftValue[iHighlightPos] - iLeftOffset;
+
+        $("html,.table-wrap").animate({ scrollLeft: iLeftValue}, "fast");
+        // $("html,.table-wrap").scrollLeft(iLeftValue);
+        $("html,body").animate({ scrollTop: iTopValue}, "fast");
         return false;
     });
 });
 
 $(function() {
     $(".btn_prev").click(function () { //.btn_prevをクリックしたとき
-        if ( highlightPos <= 0 ) {
-            highlightPos = (highlightLen -1);
+        if ( iHighlightPos <= 0 ) {
+            iHighlightPos = (iHighlightLen -1);
         } else {
-            highlightPos = highlightPos - 1;
+            iHighlightPos = iHighlightPos - 1;
         }
 
-        var p = $(".highlight").eq(highlightPos).offset();
         // スクロール後にハイライト文字が固定表示ヘッダーに隠れないように-100オフセット
-        var ptop = p.top - 100;
-        var pleft = p.left - 80;
-        $("html,.table-wrap").animate({ scrollLeft: pleft}, "fast");
-        $("html,body").animate({ scrollTop: ptop}, "fast");
-        // console.log(highlightPos)
+        iTopValue = aryTopValue[iHighlightPos] - iToptOffset;
+        iLeftValue = aryLeftValue[iHighlightPos] - iLeftOffset;
+
+        $("html,.table-wrap").animate({ scrollLeft: iLeftValue}, "fast");
+        $("html,body").animate({ scrollTop: iTopValue}, "fast");
         return false;
     });
 });
@@ -64,7 +84,9 @@ $(function(){
     $(".btn_remove").click(function(){ //.btn_removeをクリックした時
         $(".content").removeHighlight(); //ハイライト削除
         $("#word").val(""); //#wordを空欄に
-        highlightPos = 0;
-        highlightLen = 0;
+        iHighlightPos = 0;
+        iHighlightLen = 0;
+        aryLeftValue = [];
+        aryTopValue = [];
     });
 })
