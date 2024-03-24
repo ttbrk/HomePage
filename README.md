@@ -32,6 +32,8 @@
 　　サイトマップ  
 
 ## 更新履歴
+[2024/03/24]&emsp;2024冬ランキング追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024春アニメ追加   
 [2024/02/25]&emsp;2024冬アニメリスト修正  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;削除：百妖譜、追加：機動戦士ガンダムSEED HDリマスター   
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;視聴映画を追加  
