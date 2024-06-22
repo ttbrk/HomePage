@@ -32,6 +32,9 @@
 　　サイトマップ  
 
 ## 更新履歴
+[2024/06/22]&emsp;2024視聴映画追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024春ランキング追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024夏アニメ追加  
 [2024/05/11]&emsp;2024視聴映画追加  
 [2024/04/27]&emsp;2024春アニメリスト修正  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;削除：声優ラジオのウラオモテ、Re:Monster   
