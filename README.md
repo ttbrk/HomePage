@@ -32,6 +32,7 @@
 　　サイトマップ  
 
 ## 更新履歴
+[2024/07/14]&emsp;2024視聴映画追加  
 [2024/06/22]&emsp;2024視聴映画追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024春ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024夏アニメ追加  
