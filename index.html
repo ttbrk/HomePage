@@ -1,5 +1,5 @@
 <!-- 更新日付 -->
-    <!-- 2024/6/22 -->
+    <!-- 2024/8/15 -->
 
 <!doctype html>
 <html lang="ja">
@@ -23,6 +23,7 @@
         <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
         <script src="/js/source/jquery.highlight-5.js" type="text/javascript" charset="UTF-8"></script>
         <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="/js/movieGraph.js" type="text/javascript" charset="UTF-8"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <title>アニメ備忘録</title>
     </head>
@@ -186,7 +187,7 @@
                     <br>
                     <br>
                     <!-- グラフ -->
-                    <div class="caption">&emsp; ●視聴数推移</div>
+                    <div class="caption">&emsp; ●アニメ視聴数推移</div>
                     <!-- スクロール用div -->
                     <div class="scroll-year-history">
                         <!-- グラフ描画用div -->
@@ -199,10 +200,37 @@
                             result = get_watch_history_all();
                             // result[0]：ラベルリスト
                             // result[1]：データ
-                            history_graph(x_title, result[0], result[1], false);
+                            myHistoryChart = history_graph(x_title, result[0], result[1], false);
+                        </script>
+                    </div>
+                    <script>
+                        copyYAxisImage(myHistoryChart, "watch-history", "yAxis");
+                    </script>
+
+                    <br>
+                    <br>
+                    <!-- グラフ -->
+                    <div class="caption">&emsp; ●映画視聴数推移</div>
+                    <!-- スクロール用div -->
+                    <div class="scroll-year-history">
+                        <!-- グラフ描画用div -->
+                        <div>
+                            <canvas id="watch-movie-history"></canvas>
+                        </div>
+                        <canvas id="movie-yAxis" width="0"></canvas>
+                        <script>
+                            x_title = "year";
+                            result = get_movie_watch_history_all();
+                            // result[0]：ラベルリスト
+                            // result[1]：データ
+                            myMovieChart = movie_history_graph(x_title, result[0], result[1]);
                         </script>
                     </div>
                     <br>
+                    <script>
+                        copyYAxisImage(myMovieChart, "watch-movie-history", "movie-yAxis");
+                    </script>
+
 
                     <div class="sns-box">
                         <!-- X（旧Twitter） -->

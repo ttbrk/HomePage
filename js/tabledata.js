@@ -234,59 +234,6 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
     // Chart用canvasのstyle.width(すなわち実際に描画されるべきサイズ)に上記の幅を設定
     cvsChart.style.width = chartWidth + "px";
 
-    function copyYAxisImage(chart) {
-        if (bResponsiveFlg) {
-            return
-        }
-
-        var cvsYAxis = document.getElementById("yAxis");
-        var ctxYAxis = cvsYAxis.getContext("2d");
-        // グラフ描画後は、canvas.width(height):canvas.style.width(height) 比は、下記 scale の値になっている
-        var scale = window.devicePixelRatio;
-    
-        // Y軸のスケール情報
-        var yAxScale = chart.scales.yAxes;
-
-        // Y軸部分としてグラフからコピーすべき幅
-        var yAxisStyleWidth0 = yAxScale.width - 10;
-    
-        // canvas におけるコピー幅(yAxisStyleWidth0を直接使うと微妙にずれるので、整数値に切り上げる)
-        var copyWidth = Math.ceil(yAxisStyleWidth0 * scale);
-
-        // Y軸canvas の幅(右側に少し空白部を残す)
-        var yAxisCvsWidth = copyWidth + 4;
-
-        // 実際の描画幅(styleに設定する)
-        var yAxisStyleWidth = yAxisCvsWidth / scale;
-
-        // Y軸部分としてグラフからコピーすべき高さ⇒これを実際の描画高とする(styleに設定)
-        var yAxisStyleHeight = yAxScale.height + yAxScale.top + 10;
-
-        // canvas におけるコピー高
-        var copyHeight = yAxisStyleHeight * scale;
-
-        // Y軸canvas の高さ
-        var yAxisCvsHeight = copyHeight;
-
-        // Y軸canvas の幅と高さを設定
-        cvsYAxis.width = yAxisCvsWidth;
-        cvsYAxis.height = yAxisCvsHeight;
-    
-        // Y軸canvas.style(実際に描画される大きさ)の幅と高さを設定
-        cvsYAxis.style.width = yAxisStyleWidth + "px";
-        cvsYAxis.style.height = yAxisStyleHeight + "px";
-    
-        // グラフcanvasからY軸部分のイメージをコピーする
-        ctxYAxis.drawImage(cvsChart, 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight);
-    
-        // 軸ラベルのフォント色を透明に変更して、以降、再表示されても見えないようにする
-        chart.options.scales.yAxes[0].ticks.fontColor = "rgba(0,0,0,0)";
-        chart.update();
-
-        // 最初に描画されたグラフのY軸ラベル部分をクリアする
-        ctx.clearRect(0, 0, yAxisStyleWidth, yAxisStyleHeight);
-    }
-
     // グラフの描画
     var myChart = new Chart(ctx, {
         type: "bar",
@@ -323,7 +270,7 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
                     label: "合計",
                     data: graph_data[3],
                     lineTension: 0.2,
-                    pointBorderWidth: 7, 
+                    pointBorderWidth: 10, 
                     borderColor: "rgb(243, 48, 216)",
                     fill: true,
                     backgroundColor: "rgb(200, 200, 200, 0.2)"
@@ -394,12 +341,62 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
             }
         },
         plugins: [
-            ChartDataLabels,
-            {
-                afterRender: copyYAxisImage
-            }
+            ChartDataLabels
         ],
     });
+    return myChart;
+}
+
+
+function copyYAxisImage(chart, copySrc, copyDst) {
+    var cvsChart = document.getElementById(copySrc);
+
+    var cvsYAxis = document.getElementById(copyDst);
+    var ctxYAxis = cvsYAxis.getContext("2d");
+    // グラフ描画後は、canvas.width(height):canvas.style.width(height) 比は、下記 scale の値になっている
+    var scale = window.devicePixelRatio;
+
+    // Y軸のスケール情報
+    var yAxScale = chart.scales.yAxes;
+
+    // Y軸部分としてグラフからコピーすべき幅
+    var yAxisStyleWidth0 = yAxScale.width - 10;
+
+    // canvas におけるコピー幅(yAxisStyleWidth0を直接使うと微妙にずれるので、整数値に切り上げる)
+    var copyWidth = Math.ceil(yAxisStyleWidth0 * scale);
+
+    // Y軸canvas の幅(右側に少し空白部を残す)
+    var yAxisCvsWidth = copyWidth + 4;
+
+    // 実際の描画幅(styleに設定する)
+    var yAxisStyleWidth = yAxisCvsWidth / scale;
+
+    // Y軸部分としてグラフからコピーすべき高さ⇒これを実際の描画高とする(styleに設定)
+    var yAxisStyleHeight = yAxScale.height + yAxScale.top + 10;
+
+    // canvas におけるコピー高
+    var copyHeight = yAxisStyleHeight * scale;
+
+    // Y軸canvas の高さ
+    var yAxisCvsHeight = copyHeight;
+
+    // Y軸canvas の幅と高さを設定
+    cvsYAxis.width = yAxisCvsWidth;
+    cvsYAxis.height = yAxisCvsHeight;
+
+    // Y軸canvas.style(実際に描画される大きさ)の幅と高さを設定
+    cvsYAxis.style.width = yAxisStyleWidth + "px";
+    cvsYAxis.style.height = yAxisStyleHeight + "px";
+
+    // グラフcanvasからY軸部分のイメージをコピーする
+    ctxYAxis.drawImage(cvsChart, 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight);
+
+    // // 軸ラベルのフォント色を透明に変更して、以降、再表示されても見えないようにする
+    // chart.options.scales.yAxes[0].ticks.fontColor = "rgba(0,0,0,0)";
+    // chart.update();
+
+    // // 最初に描画されたグラフのY軸ラベル部分をクリアする
+    // ctx.clearRect(0, 0, yAxisStyleWidth, yAxisStyleHeight);
 }
 
 
