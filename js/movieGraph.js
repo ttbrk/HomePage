@@ -59,6 +59,9 @@ function movie_history_graph(x_title, labellist, graph_data) {
         // それ以外の処理
         var xAxisStepSize = 120;
     }
+    labellist.unshift('');
+    graph_data.unshift('null');
+    console.log(labellist)
 
     // グラフ全体の幅を計算
     var chartWidth = labellist.length * xAxisStepSize;
