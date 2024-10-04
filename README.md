@@ -32,6 +32,8 @@
 　　サイトマップ  
 
 ## 更新履歴
+[2024/10/04]&emsp;2024夏ランキング追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024秋アニメ追加  
 [2024/08/15]&emsp;2024視聴映画追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;映画視聴数推移グラフ追加  
 [2024/07/14]&emsp;2024視聴映画追加  
