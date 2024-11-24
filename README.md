@@ -1,8 +1,12 @@
-# アニメ備忘録用のホームページ
 
+<div align="center">
+    <img width="128" src=image/favicon/favicon.ico/>  
+</div>
+
+# アニメ備忘録用のホームページ  
 視聴履歴や、視聴数等をまとめたホームページ用のリポジトリです。
 
-## ディレクトリ構成
+## <font color="LightGreen">ディレクトリ構成</font>
 [index.html](/index.html)  
 　　トップページ  
 [archive](/archive/)  
@@ -31,7 +35,7 @@
 [sitemap.xml](/sitemap.xml)  
 　　サイトマップ  
 
-## 更新履歴
+## <font color="LightGreen">更新履歴</font>
 [2024/10/04]&emsp;2024夏ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024秋アニメ追加  
 [2024/08/15]&emsp;2024視聴映画追加  
