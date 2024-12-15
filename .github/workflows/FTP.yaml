@@ -18,6 +18,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
+          passive: true
           protocol: ftp
           port: 21
           server: ${{ secrets.FTP_SERVER }}
@@ -29,4 +30,3 @@ jobs:
             **/.git*/**
             **/node_modules/**
             fileToExclude.txt
-          debug: true
