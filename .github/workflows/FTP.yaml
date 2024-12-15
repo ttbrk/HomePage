@@ -9,12 +9,10 @@ on:
 jobs:
   test:
     name: Deploy to server
-
     runs-on: ubuntu-24.04
-
     steps:
       - uses: actions/checkout@master
-      - name: Sync files
+      - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: animelog.starfree.jp
