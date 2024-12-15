@@ -56,4 +56,4 @@ jobs:
         username: animelog.starfree.jp
         password: i7r4og5d
         server-dir: ./
-      log-level: verbose
+        log-level: verbose
