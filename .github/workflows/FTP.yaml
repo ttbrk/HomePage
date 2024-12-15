@@ -18,11 +18,11 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          timeout: 120  # タイムアウトを60秒に設定
+          timeout: 1200000  # タイムアウトを60秒に設定
           protocol: ftp
           port: 21
           server: animelog.starfree.jp
-          username: animelog.starfree.jp
+          username: animelog
           password: i7r4og5d
           server-dir: ./
           # server: ${{ secrets.FTP_SERVER }}
