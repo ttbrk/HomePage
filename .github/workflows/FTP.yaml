@@ -21,7 +21,7 @@ jobs:
           timeout: 1200000  # タイムアウトを60秒に設定
           protocol: ftp
           port: 21
-          server: animelog.starfree.jp
+          server: sv3.html.starfree.ne.jp
           username: animelog
           password: i7r4og5d
           server-dir: ./
