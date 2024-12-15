@@ -47,5 +47,5 @@ jobs:
           FTP_PASSWORD: i7r4og5d
           REMOTE_DIR: /
         with:
-          timeout: 1200000
+          timeout: 120
           passive: true
