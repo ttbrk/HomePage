@@ -18,13 +18,17 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          passive: true
+          timeout: 120  # タイムアウトを60秒に設定
           protocol: ftp
           port: 21
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server: animelog.starfree.jp
+          username: animelog.starfree.jp
+          password: i7r4og5d
+          server-dir: ./
+          # server: ${{ secrets.FTP_SERVER }}
+          # username: ${{ secrets.FTP_USERNAME }}
+          # password: ${{ secrets.FTP_PASSWORD }}
+          # server-dir: ${{ secrets.FTP_SERVER_DIR }}
           exclude: |
             **/.git*
             **/.git*/**
