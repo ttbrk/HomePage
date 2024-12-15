@@ -19,7 +19,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           protocol: ftp
-          port: 21
           server: animelog.starfree.jp
           username: animelog.starfree.jp
           password: i7r4og5d
@@ -35,4 +34,3 @@ jobs:
             fileToExclude.txt
           log-level: verbose
           timeout: 60000
-          passive: true  # パッシブモードを有効にする
