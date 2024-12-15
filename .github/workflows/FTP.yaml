@@ -20,7 +20,8 @@ jobs:
           server: animelog.starfree.jp
           username: animelog.starfree.jp
           password: i7r4og5d
-          server-dir: /aa/animelog/
+          # server-dir: /home/animelog/
+          server-dir: ./
           # server: ${{ secrets.FTP_SERVER }}
           # username: ${{ secrets.FTP_USERNAME }}
           # password: ${{ secrets.FTP_PASSWORD }}
