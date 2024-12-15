@@ -6,46 +6,29 @@ on:
     # tags:
     #   - '[0-9]+.[0-9]+.[0-9]*'
 
-# jobs:
-#   test:
-#     name: Deploy to server
-
-#     runs-on: ubuntu-24.04
-
-#     steps:
-#       - uses: actions/checkout@master
-#       - name: Sync files
-#         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-#         with:
-#           server: animelog.starfree.jp
-#           username: animelog.starfree.jp
-#           password: i7r4og5d
-#           server-dir: /home/animelog/
-#           # server: ${{ secrets.FTP_SERVER }}
-#           # username: ${{ secrets.FTP_USERNAME }}
-#           # password: ${{ secrets.FTP_PASSWORD }}
-#           # server-dir: ${{ secrets.FTP_SERVER_DIR }}
-#           exclude: |
-#             **/.git*
-#             **/.git*/**
-#             **/node_modules/**
-#             fileToExclude.txt
-#           log-level: verbose
-#           timeout: 60000
-
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
-    runs-on: ubuntu-latest
+  test:
+    name: Deploy to server
+
+    runs-on: ubuntu-24.04
+
     steps:
       - uses: actions/checkout@master
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@2.0.0
-        env:
-          FTP_SERVER: animelog.starfree.jp
-          FTP_USERNAME: animelog.starfree.jp
-          FTP_PASSWORD: i7r4og5d
-          REMOTE_DIR: /
+      - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          timeout: 120
-          passive: true
+          server: animelog.starfree.jp
+          username: animelog.starfree.jp
+          password: i7r4og5d
+          server-dir: /aa/animelog/
+          # server: ${{ secrets.FTP_SERVER }}
+          # username: ${{ secrets.FTP_USERNAME }}
+          # password: ${{ secrets.FTP_PASSWORD }}
+          # server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            fileToExclude.txt
+          log-level: verbose
+          timeout: 60000
