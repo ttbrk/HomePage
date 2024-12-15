@@ -13,24 +13,32 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@master
 
-      - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # - name: Sync files
+      #   uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      #   with:
+      #     protocol: ftp
+      #     port: 21
+      #     server: animelog.starfree.jp
+      #     username: animelog.starfree.jp
+      #     password: i7r4og5d
+      #     server-dir: http://animelog.starfree.jp/
+      #     # server: ${{ secrets.FTP_SERVER }}
+      #     # username: ${{ secrets.FTP_USERNAME }}
+      #     # password: ${{ secrets.FTP_PASSWORD }}
+      #     # server-dir: ${{ secrets.FTP_SERVER_DIR }}
+      #     exclude: |
+      #       **/.git*
+      #       **/.git*/**
+      #       **/node_modules/**
+      #       fileToExclude.txt
+      #     log-level: verbose
+      - name: FTP Deploy
+        uses: lukaszadamczewski/ftp-deploy-action@v1
         with:
-          protocol: ftp
-          port: 21
-          server: animelog.starfree.jp
-          username: animelog.starfree.jp
-          password: i7r4og5d
-          server-dir: http://animelog.starfree.jp/
-          # server: ${{ secrets.FTP_SERVER }}
-          # username: ${{ secrets.FTP_USERNAME }}
-          # password: ${{ secrets.FTP_PASSWORD }}
-          # server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            fileToExclude.txt
-          log-level: verbose
+          ftp-server: animelog.starfree.jp
+          ftp-username: animelog.starfree.jp
+          ftp-password: i7r4og5d
+          remote-dir: /
+          method: ftp
