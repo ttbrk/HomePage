@@ -46,3 +46,6 @@ jobs:
           FTP_USERNAME: animelog.starfree.jp
           FTP_PASSWORD: i7r4og5d
           REMOTE_DIR: /
+        with:
+          timeout: 1200000
+          passive: true
