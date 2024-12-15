@@ -18,7 +18,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          protocol: ftps
+          protocol: ftp
           port: 21
           server: animelog.starfree.jp
           username: animelog.starfree.jp
@@ -35,3 +35,4 @@ jobs:
             fileToExclude.txt
           log-level: verbose
           timeout: 60000
+          passive: true  # パッシブモードを有効にする
