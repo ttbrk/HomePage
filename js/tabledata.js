@@ -1,3 +1,6 @@
+// 更新日付
+// 2024/12/27
+
 AllFileList = ["../archive/2015.html",
                "../archive/2016.html",
                "../archive/2017.html",
@@ -10,7 +13,8 @@ AllFileList = ["../archive/2015.html",
                "../archive/2024.html"];
 
 AllYearList = ["2015", "2016", "2017", "2018", "2019",
-               "2020", "2021", "2022", "2023", "2024"];
+               "2020", "2021", "2022", "2023", "2024",
+               "2024"];
 
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;

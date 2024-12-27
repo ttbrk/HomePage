@@ -36,6 +36,7 @@
 　　サイトマップ  
 
 ## <font color="LightGreen">更新履歴</font>
+[2024/12/27]&emsp;2024秋ランキング追加  
 [2024/10/04]&emsp;2024夏ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024秋アニメ追加  
 [2024/08/15]&emsp;2024視聴映画追加  
