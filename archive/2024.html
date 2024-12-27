@@ -1,5 +1,5 @@
 <!-- 更新日付 -->
-    <!-- 2023/12/28 -->
+    <!-- 2024/12/27 -->
 
 <!doctype html>
 <html lang="ja">
@@ -17,8 +17,10 @@
         <link rel="apple-touch-icon" sizes="152x152" href="/image/favicon/apple-touch-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="512x512" href="/image/favicon/iTunesArtwork.png">
         <link rel="apple-touch-icon" sizes="1024x1024" href="/image/favicon/iTunesArtwork@2x.png">
+        <!-- jsファイルの読み込み -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
         <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
         <title>2024 視聴アニメ一覧</title>
     </head>
@@ -33,54 +35,31 @@
             <!-- ヘッダー定義 -->
             <header>
                 <div class="header-wrap">
-                    <div class="headerMain">
-                        <div class="SubItem0">
-                            <div class="SubItem0-Title">
-                                <p>ダークモード</p>
-                            </div>
-                            <div class="SubItem0-swich">
-                                <div class="onoffswitch">
-                                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0"/>
-                                    <label class="onoffswitch-label" for="myonoffswitch">
-                                        <span class="onoffswitch-inner"></span>
-                                        <span class="onoffswitch-switch"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <script src="/js/darkMode_on_off.js" type="text/javascript" charset="UTF-8"></script>
-                        </div>
-                        <div><p1  class="TitleMain"><a href="/anime.html" style="text-decoration:none;">TTBのアニメ備忘録</a></p1></div>
-                        <div class="SubItem1">
-                            <div class="hamburger-menu">
-                                <input type="checkbox" id="menu-btn-check">
-                                <label for="menu-btn-check" class="menu-btn"><span></span></label>
-                                <div class="menu-content">
-                                    <ul>
-                                        <li><a href="/anime.html">Top</a></li>
-                                        <li><a href="/archive/archivetop.html">Archive</a></li>
-                                        <li><a href="#">Contact</a></li>
-                                        <li><a href="#">Setting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="headerMain" class="headerMain"></div>
+                    <script>
+                        $("#headerMain").load("/common/hamburger-menu.html", function(){
+                           $("nav").hide();
+                        });
+                    </script>
+
                     <div class="header">
-                        <div class="ArchiveTitle"><p1>Archive-2024</p1></div>
+                        <div class="HeaderTitle"><p1>2024</p1></div>
                         <div class="SubItem2"><p1 id="count_year_sum_2024"></p1></div>
                         <div class="SubItem3"><p1 id="count_year_2024"></p1></div>
                     </div>
                 </div>
             </header>
-            <br></br>
+
             <!-- メイン -->
             <main>
                 <!-- コンテンツ -->
                 <div class="content">
+                    <br>
+
                     <div class="season-winter">
-                        <div class="season-sub1"><h3>冬</h3></div>
-                        <div class="season-sub2"><h4>2024/01～2024/03</h4></div>
-                        <div class="season-sub3"><h4 id="count_winter_2024"></h4></div>
+                        <div class="season-sub1">冬</div>
+                        <div class="season-sub2">&emsp;[2024/01～2024/03]</div>
+                        <div class="season-sub3" id="count_winter_2024"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_winter_2024">
@@ -104,7 +83,7 @@
                             </tr>
                             <tr>
                                 <th class="tue">火曜</th>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">機動戦士ガンダムSEED HDリマスター</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -113,10 +92,10 @@
                             </tr>
                             <tr>
                                 <th class="wed">水曜</th>
+                                <td class="new">新</td><td class="title">異修羅</td>
                                 <td class="new">新</td><td class="title">戦国妖狐</td>
                                 <td class="new">新</td><td class="title">メタリックルージュ</td>
-                                <td class="new">新</td><td class="title">百妖譜</td>
-                                <td class="new">新</td><td class="title">異修羅</td>
+                                <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
@@ -150,209 +129,191 @@
                         </table>
                         <script> countup_season("table_winter_" + year, "count_winter_" + year);</script>
                     </div>
+                    <br>
 
-                    <h3>&emsp; ●冬アニメランキング</h3>
+                    <div class="caption">&emsp; ●冬アニメランキング！！</div>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/僕の心のヤバイやつ 第2期.jpg"></td>
+                                    <td class="ranking1"><h4>僕の心のヤバイやつ 第2期</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/道産子ギャルはなまらめんこい.jpg"></td>
+                                    <td class="ranking1"><h4>道産子ギャルはなまらめんこい</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 桜井のりお（秋田書店）／僕ヤバ製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 伊科田海／集英社・道産子ギャルはなまらめんこい製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/ゆびさきと恋々.jpg"></td>
+                                    <td class="ranking2"><h4>ゆびさきと恋々</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/俺だけレベルアップな件.jpg"></td>
+                                    <td class="ranking2"><h4>俺だけレベルアップな件</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 森下suu・講談社／ゆびさきと恋々製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; Solo Leveling Animation Partners</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/愚かな天使は悪魔と踊る.jpg"></td>
+                                    <td class="ranking3"><h4>愚かな天使は悪魔と踊る</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/月が導く異世界道中 第二幕.jpg"></td>
+                                    <td class="ranking3"><h4>月が導く異世界道中 第二幕</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 2023 アズマサワヨシ/KADOKAWA/かな天製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; あずみ圭・アルファポリス/月が導く異世界道中第二幕製作委員会</div></td>
                                     <td></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <br>
 
                     <div class="season-spring">
-                        <div class="season-sub1"><h3>春</h3></div>
-                        <div class="season-sub2"><h4>2024/04～2024/06</h4></div>
-                        <div class="season-sub3"><h4 id="count_spring_2024"></h4></div>
+                        <div class="season-sub1">春</div>
+                        <div class="season-sub2">&emsp;[2024/04～2024/06]</div>
+                        <div class="season-sub3" id="count_spring_2024"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_spring_2024">
                             <tr>
                                 <th class="sun">日曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">響け！ユーフォニアム３</td>
+                                <td class="new">新</td><td class="title">夜桜さんちの大作戦</td>
+                                <td class="new">新</td><td class="title">転生貴族、鑑定スキルで成り上がる</td>
+                                <td class="continuation">継</td><td class="title">無職転生 Ⅱ ～異世界行ったら本気だす～</td>
                             </tr>
                             <tr>
                                 <th class="mon">月曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">ゾイド -ZOIDS-</td>
+                                <td class="new">新</td><td class="title">終末トレインどこへいく？</td>
+                                <td class="continuation">継</td><td class="title">月が導く異世界道中 第二幕</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="tue">火曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">機動戦士ガンダムSEED HDリマスター</td>
+                                <td class="new">新</td><td class="title">Unnamed Memory</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="wed">水曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">この素晴らしい世界に祝福を！３</td>
+                                <td class="new">新</td><td class="title">怪異と乙女と神隠し</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="thu">木曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="continuation">継</td><td class="title">ダンジョン飯</td>
+                                <td class="new">新</td><td class="title">花野井くんと恋の病</td>
+                                <td class="new">新</td><td class="title">WIND BREAKER</td>
+                                <td class="new">新</td><td class="title">変人のサラダボウル</td>
                             </tr>
                                 <tr>
                                 <th class="fri">金曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">デジモンアドベンチャー</td>
+                                <td class="new">新</td><td class="title">魔法科高校の劣等生 第3シーズン</td>
+                                <td class="new">新</td><td class="title">ガールズバンドクライ</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="sat">土曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">怪獣８号</td>
+                                <td class="new">新</td><td class="title">龍族 -The Blazing Dawn-</td>
+                                <td class="new">新</td><td class="title">夜のクラゲは泳げない</td>
+                                <td class="new">新</td><td class="title">ささやくように恋を唄う</td>
                             </tr>
                         </table>
                         <script> countup_season("table_spring_" + year, "count_spring_" + year);</script>
                     </div>
+                    <br>
 
-                    <h3>&emsp; ●春アニメランキング</h3>
+                    <div class="caption">&emsp; ●春アニメランキング！！</div>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/ガールズバンドクライ.jpg"></td>
+                                    <td class="ranking1"><h4>ガールズバンドクライ</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/響け！ユーフォニアム３.jpg"></td>
+                                    <td class="ranking1"><h4>響け！ユーフォニアム３</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 東映アニメーション</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 武田綾乃・宝島社／『響け！』製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/変人のサラダボウル.jpg"></td>
+                                    <td class="ranking2"><h4>変人のサラダボウル</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/怪獣８号.jpg"></td>
+                                    <td class="ranking2"><h4>怪獣８号</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 平坂読／小学館／「変人のサラダボウル」製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 防衛隊第３部隊 &copy; 松本直也／集英社</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/夜のクラゲは泳げない.jpg"></td>
+                                    <td class="ranking3"><h4>夜のクラゲは泳げない</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/魔法科高校の劣等生 第3シーズン.jpg"></td>
+                                    <td class="ranking3"><h4>魔法科高校の劣等生 第3シーズン</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; JELEE／「夜のクラゲは泳げない」製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 2023 佐島 勤/KADOKAWA/魔法科高校3製作委員会</div></td>
                                     <td></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <br>
 
                     <div class="season-summer">
-                        <div class="season-sub1"><h3>夏</h3></div>
-                        <div class="season-sub2"><h4>2024/07～2024/09</h4></div>
-                        <div class="season-sub3"><h4 id="count_summer_2024"></h4></div>
+                        <div class="season-sub1">夏</div>
+                        <div class="season-sub2">&emsp;[2024/07～2024/09]</div>
+                        <div class="season-sub3" id="count_summer_2024"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_summer_2024">
                             <tr>
                                 <th class="sun">日曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">杖と剣のウィストリア</td>
+                                <td class="continuation">継</td><td class="title">夜桜さんちの大作戦</td>
+                                <td class="new">新</td><td class="title">しかのこのこのここしたんたん</td>
+                                <td class="new">新</td><td class="title">魔道具師ダリヤはうつむかない</td>
+                                <td class="new">新</td><td class="title">菜なれ花なれ</td>
                             </tr>
                             <tr>
                                 <th class="mon">月曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">SHY 東京奪還編</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -360,173 +321,160 @@
                             </tr>
                             <tr>
                                 <th class="tue">火曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">機動戦士ガンダムSEED HDリマスター</td>
+                                <td class="new">新</td><td class="title">僕の妻は感情がない</td>
+                                <td class="new">新</td><td class="title">かつて魔法少女と悪は敵対していた。</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="wed">水曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">【推しの子】第2期</td>
+                                <td class="new">新</td><td class="title">時々ボソッとロシア語でデレる隣のアーリャさん</td>
+                                <td class="continuation">継</td><td class="title">戦国妖狐 千魔混沌編</td>
+                                <td class="new">新</td><td class="title">恋は双子で割り切れない</td>
+                                <td class="new">新</td><td class="title">下の階には澪がいる</td>
                             </tr>
                             <tr>
                                 <th class="thu">木曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">義妹生活</td>
+                                <td class="new">新</td><td class="title">女神のカフェテラス 第2期</td>
+                                <td class="new">新</td><td class="title">疑似ハーレム</td>
+                                <td class="new">新</td><td class="title">先輩はおとこのこ</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                                 <tr>
                                 <th class="fri">金曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">デジモンアドベンチャー</td>
+                                <td class="reair">再</td><td class="title">ソードアート・オンライン オルタナティブ ガンゲイル・オンライン</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="sat">土曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">逃げ上手の若君</td>
+                                <td class="new">新</td><td class="title">ATRI -My Dear Moments-</td>
+                                <td class="new">新</td><td class="title">負けヒロインが多すぎる！</td>
+                                <td class="new">新</td><td class="title">小市民シリーズ</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
                         <script> countup_season("table_summer_" + year, "count_summer_" + year);</script>
                     </div>
+                    <br>
 
-                    <h3>&emsp; ●夏アニメランキング</h3>
+                    <div class="caption">&emsp; ●夏アニメランキング！！</div>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/ATRI -My Dear Moments-.jpg"></td>
+                                    <td class="ranking1"><h4>ATRI -My Dear Moments-</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/義妹生活.jpg"></td>
+                                    <td class="ranking1"><h4>義妹生活</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; ATRI ANIME PROJECT</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 三河ごーすと・Hiten/KADOKAWA/義妹生活製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/時々ボソッとロシア語でデレる隣のアーリャさん.jpg"></td>
+                                    <td class="ranking2"><h4>時々ボソッとロシア語でデレる隣のアーリャさん</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/負けヒロインが多すぎる！.jpg"></td>
+                                    <td class="ranking2"><h4>負けヒロインが多すぎる！</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; Sunsunsun,Momoco/KADOKAWA/Alya-san Partners</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 雨森たきび／小学館／マケイン応援委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/杖と剣のウィストリア.jpg"></td>
+                                    <td class="ranking3"><h4>杖と剣のウィストリア</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/【推しの子】第2期.jpg"></td>
+                                    <td class="ranking3"><h4>【推しの子】第2期</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 大森藤ノ・青井聖・講談社／「杖と剣のウィストリア」製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会</div></td>
                                     <td></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <br>
 
                     <div class="season-autumn">
-                        <div class="season-sub1"><h3>秋</h3></div>
-                        <div class="season-sub2"><h4>2024/10～2024/12</h4></div>
-                        <div class="season-sub3"><h4 id="count_autumn_2024"></h4></div>
+                        <div class="season-sub1">秋</div>
+                        <div class="season-sub2">&emsp;[2024/10～2024/12]</div>
+                        <div class="season-sub3" id="count_autumn_2024"></div>
                     </div>
                     <div class="table-wrap">
                         <table id="table_autumn_2024">
                             <tr>
                                 <th class="sun">日曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">シャングリラ・フロンティア 2nd season</td>
+                                <td class="new">新</td><td class="title">ラブライブ！スーパースター!! 第3期</td>
+                                <td class="new">新</td><td class="title">妻、小学生になる。</td>
+                                <td class="new">新</td><td class="title">転生貴族、鑑定スキルで成り上がる 第2期</td>
+                                <td class="new">新</td><td class="title">村井の恋</td>
                             </tr>
                             <tr>
                                 <th class="mon">月曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">ありふれた職業で世界最強 season 3</td>
+                                <td class="new">新</td><td class="title">精霊幻想記2</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="tue">火曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">機動戦士ガンダムSEED HDリマスター</td>
+                                <td class="new">新</td><td class="title">甘神さんちの縁結び</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="wed">水曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="continuation">継</td><td class="title">戦国妖狐 千魔混沌編</td>
+                                <td class="new">新</td><td class="title">Re:ゼロから始める異世界生活 3rd season 襲撃編</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
                                 <th class="thu">木曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="new">新</td><td class="title">アオのハコ</td>
+                                <td class="new">新</td><td class="title">ダンダダン</td>
+                                <td class="new">新</td><td class="title">るろうに剣心 －明治剣客浪漫譚－ 京都動乱</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                                 <tr>
                                 <th class="fri">金曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="reair">再</td><td class="title">デジモンアドベンチャー</td>
+                                <td class="new">新</td><td class="title">株式会社マジルミエ</td>
+                                <td class="new">新</td><td class="title">ソードアート・オンライン オルタナティブ ガンゲイル・オンラインⅡ</td>
+                                <td class="new">新</td><td class="title">ダンジョンに出会いを求めるのは間違っているだろうかⅤ 豊穣の女神篇</td>
+                                <td class="new">新</td><td class="title">合コンに行ったら女がいなかった話</td>
                             </tr>
                             <tr>
                                 <th class="sat">土曜</th>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
+                                <td class="continuation">継</td><td class="title">BLEACH 千年血戦篇-相剋譚-</td>
+                                <td class="new">新</td><td class="title">君は冥土様。</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -534,65 +482,103 @@
                         </table>
                         <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
                     </div>
+                    <br>
 
-                    <h3>&emsp; ●秋アニメランキング</h3>
+                    <div class="caption">&emsp; ●秋アニメランキング！！</div>
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/村井の恋.jpg"></td>
+                                    <td class="ranking1"><h4>村井の恋</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/アオのハコ.jpg"></td>
+                                    <td class="ranking1"><h4>アオのハコ</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 島順太・KADOKAWA／アニメ村井の恋製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 三浦糀／集英社・「アオのハコ」製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/ダンジョンに出会いを求めるのは間違っているだろうかⅤ 豊穣の女神篇.jpg"></td>
+                                    <td class="ranking2"><h4>ダンジョンに出会いを求めるのは間違っているだろうかⅤ 豊穣の女神篇</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/Reゼロから始める異世界生活 3rd season 襲撃編.png"></td>
+                                    <td class="ranking2"><h4>Re:ゼロから始める異世界生活 3rd season 襲撃編</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 大森藤ノ・SBクリエイティブ/ダンまち5製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 長月達平・株式会社 KADOKAWA 刊／Re:ゼロから始める異世界生活3製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/202"></td>
-                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/合コンに行ったら女がいなかった話.jpg"></td>
+                                    <td class="ranking3"><h4>合コンに行ったら女がいなかった話</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/株式会社マジルミエ.jpg"></td>
+                                    <td class="ranking3"><h4>株式会社マジルミエ</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 蒼川なな／SQUARE ENIX・「合コンに行ったら女がいなかった話」製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 岩田雪花・青木裕／集英社・マジルミエ製作委員会</div></td>
                                     <td></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                     <h4>※再放送枠、継続枠は含めない</h4>
-                    <br></br>
+                    <br>
+
+                    <!-- 映画 -->
+                    <div class="caption">&emsp; ●2024視聴アニメ映画！！ 視聴数:5</div>
+                    <div class="movie">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <td class="movie-img"><img src="/image/key Visual/2024/movie/機動戦士ガンダムSEED FREEDOM.jpg"></td>
+                                    <td class="movie-img"><img src="/image/key Visual/2024/movie/名探偵コナン 100万ドルの五稜星.jpg"></td>
+                                    <td class="movie-img"><img src="/image/key Visual/2024/movie/コードギアス 奪還のロゼ 第1幕.jpg"></td>
+                                    <td class="movie-img"><img src="/image/key Visual/2024/movie/コードギアス 奪還のロゼ 第2幕.jpg"></td>
+                                    <td class="movie-img"><img src="/image/key Visual/2024/movie/コードギアス 奪還のロゼ 第3幕.jpg"></td>
+                                    <td class="movie-img"><img src="/image/key Visual/2024/movie/コードギアス 奪還のロゼ 第4幕.jpg"></td>
+                                    <td class="movie-img"></td>
+                                </tr>
+                                <tr>
+                                    <td >機動戦士ガンダムSEED FREEDOM</td>
+                                    <td >名探偵コナン 100万ドルの五稜星</td>
+                                    <td >コードギアス 奪還のロゼ 第1幕</td>
+                                    <td >コードギアス 奪還のロゼ 第2幕</td>
+                                    <td >コードギアス 奪還のロゼ 第3幕</td>
+                                    <td >コードギアス 奪還のロゼ 第4幕</td>
+                                    <td ></td>
+                                </tr>
+                                <tr>
+                                    <td class="ranking-copyright"><div>&copy; 創通・サンライズ</div></td>
+                                    <td class="ranking-copyright"><div>&copy; 2024 青山剛昌／名探偵コナン製作委員会</div></td>
+                                    <td class="ranking-copyright"><div>&copy; SUNRISE／PROJECT G-ROZE Character Design &copy;2006-2024 CLAMP・ST</div></td>
+                                    <td class="ranking-copyright"><div>&copy; SUNRISE／PROJECT G-ROZE Character Design &copy;2006-2024 CLAMP・ST</div></td>
+                                    <td class="ranking-copyright"><div>&copy; SUNRISE／PROJECT G-ROZE Character Design &copy;2006-2024 CLAMP・ST</div></td>
+                                    <td class="ranking-copyright"><div>&copy; SUNRISE／PROJECT G-ROZE Character Design &copy;2006-2024 CLAMP・ST</div></td>
+                                    <td ></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
 
                     <!-- グラフ -->
                     <div class="data"><h3>&emsp; ●年間視聴データ分析</h3></div>
                     <div class="graph-area">
                         <!-- 円グラフ1 -->
                         <div>
-                            <canvas id="category-division"></canvas>
+                            <canvas id="category-division" width="300" height="200"></canvas>
                             <script>
                                 var result = [0, 0, 0];
                                 result = countup_year(["table_winter_" + year,
@@ -604,45 +590,47 @@
                                 category_division_graph(result);
                             </script>
                         </div>
+                        <!-- 棒グラフ -->
+                        <div>
+                            <canvas id="watch-history" width="300" height="300"></canvas>
+                            <script>
+                                x_title = year + "_season"
+                                result = get_watch_history_year(year)
+                                history_graph(x_title, result[0], result[1], true);
+                            </script>
+                        </div>
                         <!-- 円グラフ2 -->
                         <div>
-                            <canvas id="week-division"></canvas>
+                            <canvas id="week-division" width="300" height="200"></canvas>
                             <script>
                                 result = get_week_division_year(year);
                                 week_division_graph(result);
                             </script>
                         </div>
                     </div>
-                    <!-- 棒グラフ -->
-                    <div>
-                        <canvas id="watch-history"></canvas>
-                        <script>
-                            x_title = year + "_season"
-                            result = get_watch_history_year(year)
-                            history_graph(x_title, result[0], result[1]);
-                        </script>
-                    </div>
-
-                    <br></br>
-                    <br></br>
-                    <br></br>
+                    <br>
+                    <br>
+                    <br>
                 </div>
 
                 <!-- サイドバー -->
                 <div id="sidebar" class="sidebar"></div>
                 <script>
-                    fetch("/common/sidebar.html")
-                    .then((response) => response.text())
-                    .then((data) => document.querySelector("#sidebar").innerHTML = data);
+                    $("#sidebar").load("/common/sidebar.html", function(){
+                    $("nav").hide();
+                    });
                 </script>
                 </div>
             </main>
 
             <!-- フッター定義 -->
             <footer>
-                <div class="footer">
-                    <p><small>&copy; 2024 TTB</small></p>
-                </div>
+                <div id="footer"></div>
+                <script>
+                    $("#footer").load("/common/footer.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
             </footer>
         </div>
     </body>

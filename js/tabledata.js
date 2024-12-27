@@ -1,3 +1,6 @@
+// 更新日付
+// 2024/12/27
+
 AllFileList = ["../archive/2015.html",
                "../archive/2016.html",
                "../archive/2017.html",
@@ -10,7 +13,8 @@ AllFileList = ["../archive/2015.html",
                "../archive/2024.html"];
 
 AllYearList = ["2015", "2016", "2017", "2018", "2019",
-               "2020", "2021", "2022", "2023", "2024"];
+               "2020", "2021", "2022", "2023", "2024",
+               "2024"];
 
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
@@ -215,9 +219,26 @@ function get_watch_history_year(year) {
     return [labellist, graph_data]
 }
 
+// https://qiita.com/okatako/items/94a769a0925337c79483参考
+function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
+    var cvsChart = document.getElementById("watch-history");
+    var ctx = cvsChart.getContext("2d");
 
-function history_graph(x_title, labellist, graph_data) {
-    var ctx = document.getElementById("watch-history").getContext('2d');
+    // X軸の1データ当たりの幅（PC:120 sp:60）
+    if (window.matchMedia("(max-width: 834px)").matches) {
+        // ウィンドウサイズ834px以下のときの処理
+        var xAxisStepSize = 70;
+    } else {
+        // それ以外の処理
+        var xAxisStepSize = 120;
+    }
+
+    // グラフ全体の幅を計算
+    var chartWidth = labellist.length * xAxisStepSize;
+    // Chart用canvasのstyle.width(すなわち実際に描画されるべきサイズ)に上記の幅を設定
+    cvsChart.style.width = chartWidth + "px";
+
+    // グラフの描画
     var myChart = new Chart(ctx, {
         type: "bar",
         data: {
@@ -253,7 +274,7 @@ function history_graph(x_title, labellist, graph_data) {
                     label: "合計",
                     data: graph_data[3],
                     lineTension: 0.2,
-                    pointBorderWidth: 7, 
+                    pointBorderWidth: 10, 
                     borderColor: "rgb(243, 48, 216)",
                     fill: true,
                     backgroundColor: "rgb(200, 200, 200, 0.2)"
@@ -261,6 +282,7 @@ function history_graph(x_title, labellist, graph_data) {
             ]
         },
         options: {
+            responsive: bResponsiveFlg,
             plugins: {
                 tooltip: {
                     enabled: false
@@ -323,14 +345,67 @@ function history_graph(x_title, labellist, graph_data) {
             }
         },
         plugins: [
-            ChartDataLabels,
+            ChartDataLabels
         ],
     });
+    return myChart;
+}
+
+
+function copyYAxisImage(chart, copySrc, copyDst) {
+    var cvsChart = document.getElementById(copySrc);
+
+    var cvsYAxis = document.getElementById(copyDst);
+    var ctxYAxis = cvsYAxis.getContext("2d");
+    // グラフ描画後は、canvas.width(height):canvas.style.width(height) 比は、下記 scale の値になっている
+    var scale = window.devicePixelRatio;
+
+    // Y軸のスケール情報
+    var yAxScale = chart.scales.yAxes;
+
+    // Y軸部分としてグラフからコピーすべき幅
+    var yAxisStyleWidth0 = yAxScale.width - 10;
+
+    // canvas におけるコピー幅(yAxisStyleWidth0を直接使うと微妙にずれるので、整数値に切り上げる)
+    var copyWidth = Math.ceil(yAxisStyleWidth0 * scale);
+
+    // Y軸canvas の幅(右側に少し空白部を残す)
+    var yAxisCvsWidth = copyWidth + 4;
+
+    // 実際の描画幅(styleに設定する)
+    var yAxisStyleWidth = yAxisCvsWidth / scale;
+
+    // Y軸部分としてグラフからコピーすべき高さ⇒これを実際の描画高とする(styleに設定)
+    var yAxisStyleHeight = yAxScale.height + yAxScale.top + 10;
+
+    // canvas におけるコピー高
+    var copyHeight = yAxisStyleHeight * scale;
+
+    // Y軸canvas の高さ
+    var yAxisCvsHeight = copyHeight;
+
+    // Y軸canvas の幅と高さを設定
+    cvsYAxis.width = yAxisCvsWidth;
+    cvsYAxis.height = yAxisCvsHeight;
+
+    // Y軸canvas.style(実際に描画される大きさ)の幅と高さを設定
+    cvsYAxis.style.width = yAxisStyleWidth + "px";
+    cvsYAxis.style.height = yAxisStyleHeight + "px";
+
+    // グラフcanvasからY軸部分のイメージをコピーする
+    ctxYAxis.drawImage(cvsChart, 0, 0, copyWidth, copyHeight, 0, 0, copyWidth, copyHeight);
+
+    // // 軸ラベルのフォント色を透明に変更して、以降、再表示されても見えないようにする
+    // chart.options.scales.yAxes[0].ticks.fontColor = "rgba(0,0,0,0)";
+    // chart.update();
+
+    // // 最初に描画されたグラフのY軸ラベル部分をクリアする
+    // ctx.clearRect(0, 0, yAxisStyleWidth, yAxisStyleHeight);
 }
 
 
 function category_division_graph() {
-    var ctx = document.getElementById("category-division").getContext('2d');
+    var ctx = document.getElementById("category-division").getContext("2d");
     // 各データののラベル
     var myChart = new Chart(ctx, {
         type: "doughnut",
@@ -397,7 +472,7 @@ function get_week_division_year(year) {
 
 
 function week_division_graph(graph_data) {
-    var ctx = document.getElementById("week-division").getContext('2d');
+    var ctx = document.getElementById("week-division").getContext("2d");
     // 各データののラベル
     var myChart = new Chart(ctx, {
         type: "doughnut",
@@ -442,3 +517,25 @@ function week_division_graph(graph_data) {
         ],
     });
 }
+
+window.globalFunction = {};
+
+// Dark Mode時のグラフ文字色設定
+function set_char_color() {
+    if (localStorage.getItem("darkMode") === "on") {
+        return "white"
+    } else if (localStorage.getItem("darkMode") === "off") {
+        return "black"
+    }
+}
+window.globalFunction.set_char_color = set_char_color;
+
+// Dark Mode時のTwitterカラーテーマ設定
+function set_twitter_theme() {
+    if (localStorage.getItem("darkMode") === "on") {
+        return "dark"
+    } else if (localStorage.getItem("darkMode") === "off") {
+        return "light"
+    }
+}
+window.globalFunction.set_twitter_theme = set_twitter_theme;

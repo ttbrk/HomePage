@@ -1,0 +1,274 @@
+<!-- 更新日付 -->
+    <!-- 2024/12/27 -->
+
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="/image/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/image/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/image/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/image/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/image/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/image/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/image/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/image/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="/image/favicon/iTunesArtwork.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="/image/favicon/iTunesArtwork@2x.png">
+        <!-- jsファイルの読み込み -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="/js/source/jquery.highlight-5.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
+        <script src="/js/movieGraph.js" type="text/javascript" charset="UTF-8"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <title>アニメ備忘録</title>
+    </head>
+
+    <body>
+        <script>year = "2025"</script>
+        <link rel="stylesheet" href="/css/style.css"></link>
+        <link rel="stylesheet" href="/css/menu.css"></link>
+        <link rel="stylesheet" href="/css/style-Table.css"></link>
+        <link rel="stylesheet" href="/css/darkMode_on_off.css"></link>
+        <div class="container">
+            <!-- ヘッダー定義 -->
+            <header>
+                <div class="header-wrap">
+                    <div id="headerMain" class="headerMain"></div>
+                    <script>
+                        $("#headerMain").load("/common/hamburger-menu.html", function(){
+                           $("nav").hide();
+                        });
+                    </script>
+                    <div class="header">
+                        <div class="HeaderTitle">2015~2025</div>
+                        <div class="SubItem2"><p1 id="count_year_sum_all"></p1></div>
+                        <div class="SubItem3"><p1 id="count_year_all"></p1></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- メイン -->
+            <main>
+                <!-- コンテンツ -->
+                <div class="content">
+                    <br>
+
+                    <div class="caption">&emsp; ●前期の視聴アニメランキング！！</div>
+                    <!-- <h2>&emsp; ●前期の視聴アニメランキング！！</h2> -->
+                    <div class="ranking">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <th class="ranking1"><h4>１位</h4></th>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/村井の恋.jpg"></td>
+                                    <td class="ranking1"><h4>村井の恋</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/アオのハコ.jpg"></td>
+                                    <td class="ranking1"><h4>アオのハコ</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 島順太・KADOKAWA／アニメ村井の恋製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 三浦糀／集英社・「アオのハコ」製作委員会</div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking2"><h4>２位</h4></th>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/ダンジョンに出会いを求めるのは間違っているだろうかⅤ 豊穣の女神篇.jpg"></td>
+                                    <td class="ranking2"><h4>ダンジョンに出会いを求めるのは間違っているだろうかⅤ 豊穣の女神篇</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/Reゼロから始める異世界生活 3rd season 襲撃編.png"></td>
+                                    <td class="ranking2"><h4>Re:ゼロから始める異世界生活 3rd season 襲撃編</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 大森藤ノ・SBクリエイティブ/ダンまち5製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 長月達平・株式会社 KADOKAWA 刊／Re:ゼロから始める異世界生活3製作委員会</div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking3"><h4>３位</h4></th>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/合コンに行ったら女がいなかった話.jpg"></td>
+                                    <td class="ranking3"><h4>合コンに行ったら女がいなかった話</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2024/株式会社マジルミエ.jpg"></td>
+                                    <td class="ranking3"><h4>株式会社マジルミエ</h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; 蒼川なな／SQUARE ENIX・「合コンに行ったら女がいなかった話」製作委員会</div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; 岩田雪花・青木裕／集英社・マジルミエ製作委員会</div></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="caption">&emsp; ●今期の視聴アニメ！！</div>
+                    <div class="season-summer">
+                        <div class="season-sub1">冬</div>
+                        <div class="season-sub2">&emsp;[2025/01～2025/03]</div>
+                        <div class="season-sub3" id="count_winter_2025"></div>
+                    </div>
+                    <div class="table-wrap">
+                        <table id="table_winter_2025">
+                            <tr>
+                                <th class="sun">日曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="mon">月曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="tue">火曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="wed">水曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="thu">木曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                                <tr>
+                                <th class="fri">金曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="sat">土曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                        </table>
+                        <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
+                    </div>
+                    <br>
+                    <br>
+                    <!-- グラフ -->
+                    <div class="caption">&emsp; ●アニメ視聴数推移</div>
+                    <!-- スクロール用div -->
+                    <div class="scroll-year-history">
+                        <!-- グラフ描画用div -->
+                        <div>
+                            <canvas id="watch-history"></canvas>
+                        </div>
+                        <canvas id="yAxis" width="0"></canvas>
+                        <script>
+                            x_title = "year";
+                            result = get_watch_history_all();
+                            // result[0]：ラベルリスト
+                            // result[1]：データ
+                            myHistoryChart = history_graph(x_title, result[0], result[1], false);
+                        </script>
+                    </div>
+                    <script>
+                        copyYAxisImage(myHistoryChart, "watch-history", "yAxis");
+                    </script>
+
+                    <br>
+                    <br>
+                    <!-- グラフ -->
+                    <div class="caption">&emsp; ●映画視聴数推移</div>
+                    <!-- スクロール用div -->
+                    <div class="scroll-year-history">
+                        <!-- グラフ描画用div -->
+                        <div>
+                            <canvas id="watch-movie-history"></canvas>
+                        </div>
+                        <canvas id="movie-yAxis" width="0"></canvas>
+                        <script>
+                            x_title = "year";
+                            result = get_movie_watch_history_all();
+                            // result[0]：ラベルリスト
+                            // result[1]：データ
+                            myMovieChart = movie_history_graph(x_title, result[0], result[1]);
+                        </script>
+                    </div>
+                    <br>
+                    <script>
+                        copyYAxisImage(myMovieChart, "watch-movie-history", "movie-yAxis");
+                    </script>
+
+
+                    <div class="sns-box">
+                        <!-- X（旧Twitter） -->
+                        <div>
+                            <div class="caption">&emsp; ●X（旧Twitter）</div>
+                            アニメの感想、gameの感想等々気まぐれに呟いてます！
+                            <br>
+                            <a class="twitter-timeline" data-width="100%" data-height="600px" data-theme="theme" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <script>
+                                $(".twitter-timeline").attr("data-theme", window.globalFunction.set_twitter_theme());
+                            </script>
+                        </div>
+                        <!-- 読書メーター -->
+                        <div>
+                            <div class="caption">&emsp; ●読書メーター</div>
+                            小説の感想等々気まぐれに呟いてます！<br>
+                            ジャンルは主にミステリーやラノベなど<br>&emsp;
+                            <h2></p4><a href="https://bookmeter.com/users/1293090">読書メータートップページはこちら！</a></h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <script> countup_all("count_year_sum_all", "count_year_all");</script>
+
+                <!-- サイドバー -->
+                <div id="sidebar" class="sidebar"></div>
+                <script>
+                    $("#sidebar").load("/common/sidebar.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
+            </main>
+
+            <!-- フッター定義 -->
+            <footer>
+                <div id="footer"></div>
+                <script>
+                    $("#footer").load("/common/footer.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
+            </footer>
+        </div>
+    </body>
+</html>
