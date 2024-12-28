@@ -132,14 +132,17 @@ div.archivecontent {
     display: grid;
     width: 100%;
     height: auto;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     gap: 10px;
 }
+@media screen and (max-width: 834px) { div.archivecontent { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); } }
+@media screen and (max-width: 334px) { div.archivecontent { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
+
 div.archive-title {
     background: var(--table-caption-color);
     color: var(--table-char-color);
-    /* 上下2%、左右20% */
-    padding:  2% 20%;
+    /* 上下2%、左右10% */
+    padding:  2% 10%;
     text-align:justify;
     text-align-last: justify;
 }
