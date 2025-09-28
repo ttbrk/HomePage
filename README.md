@@ -36,6 +36,8 @@
 　　サイトマップ  
 
 ## <font color="LightGreen">更新履歴</font>
+[2025/09/28]&emsp;2025夏ランキング追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2025秋アニメ追加  
 [2025/07/07]&emsp;2025春ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2025夏アニメ追加  
 [2025/03/22]&emsp;2025冬ランキング追加  
