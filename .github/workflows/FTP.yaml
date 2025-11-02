@@ -2,7 +2,7 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - develop
+      - main
 
 jobs:
   ftp-deploy:
