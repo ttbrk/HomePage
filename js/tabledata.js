@@ -1,21 +1,21 @@
 // 更新日付
 // 2025/03/22
 
-AllFileList = ["../archive/2015.html",
-               "../archive/2016.html",
-               "../archive/2017.html",
-               "../archive/2018.html",
-               "../archive/2019.html",
-               "../archive/2020.html",
-               "../archive/2021.html",
-               "../archive/2022.html",
-               "../archive/2023.html",
-               "../archive/2024.html",
-               "../archive/2025.html"];
+import { AllFileList, AllYearList } from "./define.js";
 
-AllYearList = ["2015", "2016", "2017", "2018", "2019",
-               "2020", "2021", "2022", "2023", "2024",
-               "2025"];
+window.countup_all = countup_all;
+window.countup_year = countup_year;
+window.countup_season = countup_season;
+window.get_watch_history_all = get_watch_history_all
+window.get_watch_history_year = get_watch_history_year
+window.history_graph = history_graph
+window.copyYAxisImage = copyYAxisImage
+window.category_division_graph = category_division_graph
+window.get_week_division_year = get_week_division_year
+window.week_division_graph = week_division_graph
+
+window.set_char_color = set_char_color;
+window.set_twitter_theme = set_twitter_theme;
 
 function countup_all(count_year_sum, count_year) {
     var td_new = 0;
@@ -79,7 +79,7 @@ function countup_year(TableIDList, count_year, count_year_sum) {
     var td_new = 0;
     var td_continuation = 0;
     var td_reair = 0;
-    result = [0, 0, 0];
+    var result = [0, 0, 0];
     for (var i=0; i < TableIDList.length; i++) {
         var table = document.getElementById(TableIDList[i]);
         result = table_td_count(table, result[0], result[1], result[2]);
@@ -116,7 +116,7 @@ function countup_season(TableID, displayID) {
     var td_new = 0;
     var td_continuation = 0;
     var td_reair = 0;
-    result = table_td_count(table, td_new, td_continuation, td_reair);
+    var result = table_td_count(table, td_new, td_continuation, td_reair);
     if (result[0] == 0) {
         td_new = "--";
     } else {
@@ -194,10 +194,10 @@ function get_watch_history_year(year) {
     // 再放送|     　|      　| 
     // 合計　|     　|      　| 
     // archiveから集計データを取得しgraph_dataに格納
-    TableIDList = ["table_winter_" + year,
-                   "table_spring_" + year,
-                   "table_summer_" + year,
-                   "table_autumn_" + year]
+    var TableIDList = ["table_winter_" + year,
+                       "table_spring_" + year,
+                       "table_summer_" + year,
+                       "table_autumn_" + year]
     var result = [0, 0, 0, 0];
     var graph_data = new Array(4);
     for (var i = 0; i < 4; i++) {
@@ -216,7 +216,7 @@ function get_watch_history_year(year) {
         graph_data[2][i] = result[2]
         graph_data[3][i] = result[0] + result[1] + result[2]
     }
-    labellist =[year + "冬", year + "春", year + "夏", year + "秋"]
+    var labellist =[year + "冬", year + "春", year + "夏", year + "秋"]
     return [labellist, graph_data]
 }
 
@@ -289,7 +289,7 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
                     enabled: false
                 },
                 datalabels: {
-                    color: window.globalFunction.set_char_color(),
+                    color: window.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -300,7 +300,7 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
                 legend: {
                     display: true,
                     labels: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 }
             },
@@ -312,12 +312,12 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
                         color: "black" 
                     },
                     title: {
-                        color: window.globalFunction.set_char_color(),
+                        color: window.set_char_color(),
                         display: true,
                         text: x_title
                     },
                     ticks: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 },
                 yAxes: {
@@ -327,12 +327,12 @@ function history_graph(x_title, labellist, graph_data, bResponsiveFlg) {
                         color: "black" 
                     },
                     title: {
-                        color: window.globalFunction.set_char_color(),
+                        color: window.set_char_color(),
                         display: true,
                         text: "視聴数"
                     },
                     ticks: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 },
             },
@@ -405,7 +405,7 @@ function copyYAxisImage(chart, copySrc, copyDst) {
 }
 
 
-function category_division_graph() {
+function category_division_graph(result) {
     var ctx = document.getElementById("category-division").getContext("2d");
     // 各データののラベル
     var myChart = new Chart(ctx, {
@@ -425,7 +425,7 @@ function category_division_graph() {
         options: {
             plugins: {
                 datalabels: {
-                    color: window.globalFunction.set_char_color(),
+                    color: window.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -437,7 +437,7 @@ function category_division_graph() {
                     display: true,
                     position: "right",
                     labels: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 }
             },
@@ -450,10 +450,10 @@ function category_division_graph() {
 
 
 function get_week_division_year(year) {
-    TableIDList = ["table_winter_" + year,
-                   "table_spring_" + year,
-                   "table_summer_" + year,
-                   "table_autumn_" + year]
+    var TableIDList = ["table_winter_" + year,
+                       "table_spring_" + year,
+                       "table_summer_" + year,
+                       "table_autumn_" + year]
     var graph_data = [0, 0, 0, 0, 0, 0, 0];
     for (const TableID of TableIDList) {
         var table = document.getElementById(TableID);
@@ -496,7 +496,7 @@ function week_division_graph(graph_data) {
         options: {
             plugins: {
                 datalabels: {
-                    color: window.globalFunction.set_char_color(),
+                    color: window.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -508,7 +508,7 @@ function week_division_graph(graph_data) {
                     display: true,
                     position: "right",
                     labels: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 }
             },
@@ -519,7 +519,7 @@ function week_division_graph(graph_data) {
     });
 }
 
-window.globalFunction = {};
+// window.globalFunction = {};
 
 // Dark Mode時のグラフ文字色設定
 function set_char_color() {
@@ -529,7 +529,7 @@ function set_char_color() {
         return "black"
     }
 }
-window.globalFunction.set_char_color = set_char_color;
+
 
 // Dark Mode時のTwitterカラーテーマ設定
 function set_twitter_theme() {
@@ -539,4 +539,3 @@ function set_twitter_theme() {
         return "light"
     }
 }
-window.globalFunction.set_twitter_theme = set_twitter_theme;

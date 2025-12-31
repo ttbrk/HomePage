@@ -21,7 +21,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
         <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
-        <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
+        <script type="module" src="/js/tabledata.js" charset="UTF-8"></script>
         <title>2025 視聴アニメ一覧</title>
     </head>
 
@@ -103,12 +103,12 @@
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
-                                <tr>
+                            <tr>
                                 <th class="fri">金曜</th>
                                 <td class="reair">再</td><td class="title">デジモンアドベンチャー</td>
                                 <td class="new">新</td><td class="title">薬屋のひとりごと 第2期</td>
                                 <td class="new">新</td><td class="title">クラスの大嫌いな女子と結婚することになった。</td>
-                                <td class="reair">再</td><td class="title">戦記絶唱シンフォギア</td>
+                                <td class="reair">再</td><td class="title">戦姫絶唱シンフォギア</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
@@ -120,7 +120,7 @@
                                 <td class="new">新</td><td class="title">メダリスト</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_winter_" + year, "count_winter_" + year);</script>
+                        <script type="module"> window.countup_season("table_winter_" + year, "count_winter_" + year);</script>
                     </div>
                     <br>
 
@@ -240,7 +240,7 @@
                                 <td class="new">新</td><td class="title">日々は過ぎれど飯うまし</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_spring_" + year, "count_spring_" + year);</script>
+                        <script type="module"> window.countup_season("table_spring_" + year, "count_spring_" + year);</script>
                     </div>
                     <br>
 
@@ -367,7 +367,7 @@
                                 <td class="new">新</td><td class="title">公女殿下の家庭教師</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_summer_" + year, "count_summer_" + year);</script>
+                        <script type="module"> window.countup_season("table_summer_" + year, "count_summer_" + year);</script>
                     </div>
                     <br>
 
@@ -501,7 +501,7 @@
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
+                        <script type="module"> window.countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
                     </div>
                     <br>
 
@@ -511,44 +511,46 @@
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"></td>
-                                    <td class="ranking1"><h4></h4></td>
-                                    <td class="ranking-img"></td>
-                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/永久のユウグレ.jpg"></td>
+                                    <td class="ranking1"><h4>永久のユウグレ</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/アルマちゃんは家族になりたい.jpg"></td>
+                                    <td class="ranking1"><h4>アルマちゃんは家族になりたい</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; Project FT／永久のユウグレ製作委員会・MBS</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; ななてる／KADOKAWA／神里・夜羽研究所</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"></td>
-                                    <td class="ranking2"><h4></h4></td>
-                                    <td class="ranking-img"></td>
-                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/笑顔のたえない職場です。.jpg"></td>
+                                    <td class="ranking2"><h4>笑顔のたえない職場です。</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/最後にひとつだけお願いしてもよろしいでしょうか.jpg"></td>
+                                    <td class="ranking2"><h4>最後にひとつだけお願いしてもよろしいでしょうか</h4></td>
+
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; くずしろ・講談社／「笑顔のたえない職場です。」製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 鳳ナナ・アルファポリス／最ひと製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"></td>
-                                    <td class="ranking3"><h4></h4></td>
-                                    <td class="ranking-img"></td>
-                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/ちゃんと吸えない吸血鬼ちゃん.jpg"></td>
+                                    <td class="ranking3"><h4>ちゃんと吸えない吸血鬼ちゃん</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/顔に出ない柏田さんと顔に出る太田君.jpg"></td>
+                                    <td class="ranking3"><h4>顔に出ない柏田さんと顔に出る太田君</h4></td>
+
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 2025 二式恭介/KADOKAWA/ちゃんと吸えない製作委員会ちゃん</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td class="ranking-copyright"><div>&copy; 東ふゆ/KADOKAWA/顔に出ない柏田さんと顔に出る太田君製作委員会</div></td>
                                     <td></td>
                                 </tr>
                             </table>
@@ -600,32 +602,32 @@
                         <!-- 円グラフ1 -->
                         <div>
                             <canvas id="category-division" width="300" height="200"></canvas>
-                            <script>
+                            <script type="module">
                                 var result = [0, 0, 0];
-                                result = countup_year(["table_winter_" + year,
+                                result = window.countup_year(["table_winter_" + year,
                                                        "table_spring_" + year,
                                                        "table_summer_" + year,
                                                        "table_autumn_" + year],
                                                        "count_year_" + year,
                                                        "count_year_sum_" + year);
-                                category_division_graph(result);
+                                window.category_division_graph(result);
                             </script>
                         </div>
                         <!-- 棒グラフ -->
                         <div>
                             <canvas id="watch-history" width="300" height="300"></canvas>
-                            <script>
-                                x_title = year + "_season"
-                                result = get_watch_history_year(year)
-                                history_graph(x_title, result[0], result[1], true);
+                            <script type="module">
+                                var x_title = year + "_season"
+                                var result = window.get_watch_history_year(year)
+                                window.history_graph(x_title, result[0], result[1], true);
                             </script>
                         </div>
                         <!-- 円グラフ2 -->
                         <div>
                             <canvas id="week-division" width="300" height="200"></canvas>
-                            <script>
-                                result = get_week_division_year(year);
-                                week_division_graph(result);
+                            <script type="module">
+                                var result = window.get_week_division_year(year);
+                                window.week_division_graph(result);
                             </script>
                         </div>
                     </div>

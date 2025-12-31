@@ -22,14 +22,14 @@
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
         <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
         <script src="/js/source/jquery.highlight-5.js" type="text/javascript" charset="UTF-8"></script>
-        <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
-        <script src="/js/movieGraph.js" type="text/javascript" charset="UTF-8"></script>
+        <script type="module" src="/js/tabledata.js" charset="UTF-8"></script>
+        <script type="module" src="/js/movieGraph.js" charset="UTF-8"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <title>アニメ備忘録</title>
     </head>
 
     <body>
-        <script>year = "2025"</script>
+        <script>year = "2026"</script>
         <link rel="stylesheet" href="/css/style.css"></link>
         <link rel="stylesheet" href="/css/menu.css"></link>
         <link rel="stylesheet" href="/css/style-Table.css"></link>
@@ -45,7 +45,7 @@
                         });
                     </script>
                     <div class="header">
-                        <div class="HeaderTitle">2015~2025</div>
+                        <div class="HeaderTitle">2015~2026</div>
                         <div class="SubItem2"><p1 id="count_year_sum_all"></p1></div>
                         <div class="SubItem3"><p1 id="count_year_all"></p1></div>
                     </div>
@@ -59,50 +59,51 @@
                     <br>
 
                     <div class="caption">&emsp; ●前期の視聴アニメランキング！！</div>
-                    <!-- <h2>&emsp; ●前期の視聴アニメランキング！！</h2> -->
                     <div class="ranking">
                         <div class="table-wrap">
                             <table class="table">
                                 <tr>
                                     <th class="ranking1"><h4>１位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/2025/薫る花は凛と咲く.jpg"></td>
-                                    <td class="ranking1"><h4>薫る花は凛と咲く</h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/2025/その着せ替え人形は恋をする Season 2.jpg"></td>
-                                    <td class="ranking1"><h4>その着せ替え人形は恋をする Season 2</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/永久のユウグレ.jpg"></td>
+                                    <td class="ranking1"><h4>永久のユウグレ</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/アルマちゃんは家族になりたい.jpg"></td>
+                                    <td class="ranking1"><h4>アルマちゃんは家族になりたい</h4></td>
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; 三香見サカ・講談社／「薫る花は凛と咲く」製作委員会</div></td>
+                                    <td class="ranking-copyright"><div>&copy; Project FT／永久のユウグレ製作委員会・MBS</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; 福田晋一/SQUARE ENIX・アニメ「着せ恋」製作委員会</div></td>
+                                    <td class="ranking-copyright"><div>&copy; ななてる／KADOKAWA／神里・夜羽研究所</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking2"><h4>２位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/2025/帝乃三姉妹は案外、チョロい。.jpg"></td>
-                                    <td class="ranking2"><h4>帝乃三姉妹は案外、チョロい。</h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/2025/青春ブタ野郎はサンタクロースの夢を見ない.jpg"></td>
-                                    <td class="ranking2"><h4>青春ブタ野郎はサンタクロースの夢を見ない</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/笑顔のたえない職場です。.jpg"></td>
+                                    <td class="ranking2"><h4>笑顔のたえない職場です。</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/最後にひとつだけお願いしてもよろしいでしょうか.jpg"></td>
+                                    <td class="ranking2"><h4>最後にひとつだけお願いしてもよろしいでしょうか</h4></td>
+
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; ひらかわあや／小学館／アニプレックス</div></td>
+                                    <td class="ranking-copyright"><div>&copy; くずしろ・講談社／「笑顔のたえない職場です。」製作委員会</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; 2024 鴨志田 一/KADOKAWA/青ブタ Project</div></td>
+                                    <td class="ranking-copyright"><div>&copy; 鳳ナナ・アルファポリス／最ひと製作委員会</div></td>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <th class="ranking3"><h4>３位</h4></th>
-                                    <td class="ranking-img"><img src="/image/key Visual/2025/サイレント・ウィッチ　沈黙の魔女の隠しごと.jpg"></td>
-                                    <td class="ranking3"><h4>サイレント・ウィッチ　沈黙の魔女の隠しごと</h4></td>
-                                    <td class="ranking-img"><img src="/image/key Visual/2025/クレバテス-魔獣の王と赤子と屍の勇者-.jpg"></td>
-                                    <td class="ranking3"><h4>クレバテス-魔獣の王と赤子と屍の勇者-</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/ちゃんと吸えない吸血鬼ちゃん.jpg"></td>
+                                    <td class="ranking3"><h4>ちゃんと吸えない吸血鬼ちゃん</h4></td>
+                                    <td class="ranking-img"><img src="/image/key Visual/2025/顔に出ない柏田さんと顔に出る太田君.jpg"></td>
+                                    <td class="ranking3"><h4>顔に出ない柏田さんと顔に出る太田君</h4></td>
+
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td class="ranking-copyright"><div>&copy; 2024 依空まつり・藤実なんな/KADOKAWA/セレンディア学園広報部</div></td>
+                                    <td class="ranking-copyright"><div>&copy; 2025 二式恭介/KADOKAWA/ちゃんと吸えない製作委員会ちゃん</div></td>
                                     <td></td>
-                                    <td class="ranking-copyright"><div>&copy; Yuji Iwahara/LDF/クレバテス製作委員会</div></td>
+                                    <td class="ranking-copyright"><div>&copy; 東ふゆ/KADOKAWA/顔に出ない柏田さんと顔に出る太田君製作委員会</div></td>
                                     <td></td>
                                 </tr>
                             </table>
@@ -111,26 +112,32 @@
                     <br>
 
                     <div class="caption">&emsp; ●今期の視聴アニメ！！</div>
-                    <div class="season-autumn">
-                        <div class="season-sub1">秋</div>
-                        <div class="season-sub2">&emsp;[2025/10～2025/12]</div>
-                        <div class="season-sub3" id="count_autumn_2025"></div>
+                    <div class="season-winter">
+                        <div class="season-sub1">冬</div>
+                        <div class="season-sub2">&emsp;[2026/01～2026/03]</div>
+                        <div class="season-sub3" id="count_winter_2026"></div>
                     </div>
                     <div class="table-wrap">
-                        <table id="table_autumn_2025">
+                        <table id="table_winter_2026">
                             <tr>
                                 <th class="sun">日曜</th>
                                 <td class="continuation">継</td><td class="title">プリンセッション・オーケストラ</td>
-                                <td class="new">新</td><td class="title">DIGIMON BEATBREAK</td>
-                                <td class="new">新</td><td class="title">SI-VIS: The Sound of Heroes</td>
-                                <td class="new">新</td><td class="title">青のオーケストラ Season2</td>
-                                <td class="new">新</td><td class="title">機械じかけのマリー</td>
-                                <td class="new">新</td><td class="title">ちゃんと吸えない吸血鬼ちゃん</td>
-                                <td class="new">新</td><td class="title">アルマちゃんは家族になりたい</td>
+                                <td class="continuation">継</td><td class="title">DIGIMON BEATBREAK</td>
+                                <td class="continuation">継</td><td class="title">SI-VIS: The Sound of Heroes</td>
+                                <td class="reair">再</td><td class="title">響け！ユーフォニアム２</td>
+                                <td class="new">新</td><td class="title">うるわしの宵の月</td>
+                                <td class="continuation">継</td><td class="title">青のオーケストラ Season2</td>
+                                <td class="new">新</td><td class="title">正反対な君と僕</td>
+                                <td class="new">新</td><td class="title">花ざかりの君たちへ</td>
+                                <td class="new">新</td><td class="title">悪役令嬢は隣国の王太子に溺愛される</td>
+                                <td class="new">新</td><td class="title">地獄楽 第二期</td>
                             </tr>
                             <tr>
                                 <th class="mon">月曜</th>
-                                <td class="new">新</td><td class="title">笑顔のたえない職場です。</td>
+                                <td class="new">新</td><td class="title">姫様“拷問”の時間です 第2期</td>
+                                <td class="new">新</td><td class="title">幼馴染とはラブコメにならない</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -140,9 +147,12 @@
                             </tr>
                             <tr>
                                 <th class="tue">火曜</th>
-                                <td class="reair">再</td><td class="title">機動戦士ガンダムSEED DESTINY HDリマスター</td>
-                                <td class="new">新</td><td class="title">キミと越えて恋になる</td>
-                                <td class="new">新</td><td class="title">千歳くんはラムネ瓶のなか</td>
+                                <td class="new">新</td><td class="title">真夜中ハートチューン</td>
+                                <td class="new">新</td><td class="title">ダーウィン事変</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -150,7 +160,23 @@
                             </tr>
                             <tr>
                                 <th class="wed">水曜</th>
-                                <td class="new">新</td><td class="title">龍族Ⅱ -The Mourner's Eyes-</td>
+                                <td class="new">新</td><td class="title">かぐや様は告らせたい 大人への階段</td>
+                                <td class="new">新</td><td class="title">魔王の娘は優しすぎる!!</td>
+                                <td class="new">新</td><td class="title">【推しの子】第3期</td>
+                                <td class="new">新</td><td class="title">死亡遊戯で飯を食う。</td>
+                                <td class="new">新</td><td class="title">29歳独身中堅冒険者の日常</td>
+                                <td class="continuation">継</td><td class="title">わたしが恋人になれるわけないじゃん、ムリムリ！（※ムリじゃなかった!?）</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="thu">木曜</th>
+                                <td class="new">新</td><td class="title">勇者刑に処す 懲罰勇者9004隊刑務記録</td>
+                                <td class="new">新</td><td class="title">呪術廻戦 死滅回游 前編</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -159,18 +185,11 @@
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                             <tr>
-                                <th class="thu">木曜</th>
-                                <td class="new">新</td><td class="title">不器用な先輩。</td>
-                                <td class="new">新</td><td class="title">私を喰べたい、ひとでなし</td>
-                                <td class="new">新</td><td class="title">永久のユウグレ</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                                <td class="none"></td><td class="title">--</td>
-                            </tr>
-                                <tr>
                                 <th class="fri">金曜</th>
-                                <td class="new">新</td><td class="title">最後にひとつだけお願いしてもよろしいでしょうか</td>
+                                <td class="new">新</td><td class="title">葬送のフリーレン 第2期</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
@@ -180,16 +199,19 @@
                             </tr>
                             <tr>
                                 <th class="sat">土曜</th>
-                                <td class="new">新</td><td class="title">顔に出ない柏田さんと顔に出る太田君</td>
-                                <td class="new">新</td><td class="title">SPY×FAMILY Season 3</td>
-                                <td class="new">新</td><td class="title">終末ツーリング</td>
-                                <td class="new">新</td><td class="title">友達の妹が俺にだけウザい</td>
-                                <td class="reair">再</td><td class="title">響け！ユーフォニアム</td>
+                                <td class="new">新</td><td class="title">デッドアカウント</td>
+                                <td class="new">新</td><td class="title">勇者のクズ</td>
+                                <td class="new">新</td><td class="title">メダリスト 第2期</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
+                        <script type="module"> window.countup_season("table_winter_" + year, "count_winter_" + year);</script>
                     </div>
                     <br>
                     <br>
@@ -202,16 +224,16 @@
                             <canvas id="watch-history"></canvas>
                         </div>
                         <canvas id="yAxis" width="0"></canvas>
-                        <script>
-                            x_title = "year";
-                            result = get_watch_history_all();
+                        <script type="module">
+                            var x_title = "year";
+                            var result = window.get_watch_history_all();
                             // result[0]：ラベルリスト
                             // result[1]：データ
-                            myHistoryChart = history_graph(x_title, result[0], result[1], false);
+                            window.myHistoryChart = window.history_graph(x_title, result[0], result[1], false);
                         </script>
                     </div>
-                    <script>
-                        copyYAxisImage(myHistoryChart, "watch-history", "yAxis");
+                    <script type="module">
+                        window.copyYAxisImage(window.myHistoryChart, "watch-history", "yAxis");
                     </script>
 
                     <br>
@@ -225,17 +247,17 @@
                             <canvas id="watch-movie-history"></canvas>
                         </div>
                         <canvas id="movie-yAxis" width="0"></canvas>
-                        <script>
-                            x_title = "year";
-                            result = get_movie_watch_history_all();
+                        <script type="module">
+                            var x_title = "year";
+                            var result = window.get_movie_watch_history_all();
                             // result[0]：ラベルリスト
                             // result[1]：データ
-                            myMovieChart = movie_history_graph(x_title, result[0], result[1]);
+                            window.myMovieChart = window.movie_history_graph(x_title, result[0], result[1]);
                         </script>
                     </div>
                     <br>
-                    <script>
-                        copyYAxisImage(myMovieChart, "watch-movie-history", "movie-yAxis");
+                    <script type="module">
+                        window.copyYAxisImage(window.myMovieChart, "watch-movie-history", "movie-yAxis");
                     </script>
 
 
@@ -247,8 +269,8 @@
                             <br>
                             <a class="twitter-timeline" data-width="100%" data-height="600px" data-theme="theme" href="https://twitter.com/ttbrk2?ref_src=twsrc%5Etfw">Tweets by ttbrk2</a>
                             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                            <script>
-                                $(".twitter-timeline").attr("data-theme", window.globalFunction.set_twitter_theme());
+                            <script type="module">
+                                $(".twitter-timeline").attr("data-theme", window.set_twitter_theme());
                             </script>
                         </div>
                         <!-- 読書メーター -->
@@ -256,14 +278,14 @@
                             <div class="caption">&emsp; ●読書メーター</div>
                             小説の感想等々気まぐれに呟いてます！<br>
                             ジャンルは主にミステリーやラノベなど<br>&emsp;
-                            <h2></p4><a href="https://bookmeter.com/users/1293090">読書メータートップページはこちら！</a></h2>
+                            <h2></p4><a href="https://bookmeter.com/users/1293090">読書メータートップページはこちら！ <span class="link-icon">🔗</span></a></h2>
                         </div>
                     </div>
                     <br>
                     <br>
                     <br>
                 </div>
-                <script> countup_all("count_year_sum_all", "count_year_all");</script>
+                <script type="module"> window.countup_all("count_year_sum_all", "count_year_all");</script>
 
                 <!-- サイドバー -->
                 <div id="sidebar" class="sidebar"></div>

@@ -182,6 +182,16 @@ div.data {
 div.table-wrap {
     overflow-x: scroll;
 }
+div.all_title_table-wrap {
+    flex: 3;
+    overflow-y: scroll;
+    /* max-height: 50vh; */
+}
+div.all_movie_title_table-wrap {
+    flex: 1;
+    overflow-y: scroll;
+    /* max-height: 50vh; */
+}
 table.table {
     table-layout: fixed;
     /* width: 3 * var(--table-size); */
@@ -189,6 +199,8 @@ table.table {
     border-collapse: separate;
 }
 
+/* =======================2026======================= */
+#table_winter_2026, #table_spring_2026, #table_summer_2026, #table_autumn_2026,
 /* =======================2025======================= */
 #table_winter_2025, #table_spring_2025, #table_summer_2025, #table_autumn_2025,
 /* =======================2024======================= */
@@ -215,6 +227,50 @@ table.table {
     width: var(--table-size);
     border-collapse: separate;
 }
+
+table.table_all_title {
+    table-layout: fixed;
+    /* width: 100%; */
+    /* height: 10% */
+    /* padding: 5px; */
+    /* border-collapse: separate; */
+}
+/* 横幅比率 */
+.col-title {
+    width: 75%;
+}
+
+.col-year {
+    width: 25%;
+}
+table.table_all_title th,
+table.table_all_title td {
+    /* border-radius: 0px 5px 5px 0px; */
+    border-bottom-style: var(--table-boder-type);
+    border-bottom-width: var(--table-boder-size);
+    border-bottom-color: var(--table-boder-color);
+
+    border-right-style: var(--table-boder-type);
+    border-right-width: var(--table-boder-size);
+    border-right-color: var(--table-boder-color);
+
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: var(--table-char-color);
+    font-size: 20px;
+}
+@media screen and (max-width: 834px) { table.table_all_title th, table.table_all_title td { font-size: 12px;} }
+@media screen and (max-width: 480px) { table.table_all_title th, table.table_all_title td { font-size: 12px;} }
+
+table.table_all_title thead tr th{
+    position: sticky;
+    top: 0;
+    background: var(--table-caption-color);
+    z-index: 990;
+}
+
 
 
 /* テーブル種別アイコン共通設定 */
@@ -445,3 +501,5 @@ td.movie-copyright > div {
 }
 @media screen and (max-width: 834px) { td.movie-img, td.movie-copyright > div { width: var(--table-movie-img-size-sp); font-size: 8px; } }
 @media screen and (max-width: 480px) { td.movie-img, td.movie-copyright > div { width: var(--table-movie-img-size-sp); font-size: 8px; } }
+
+

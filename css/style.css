@@ -6,31 +6,35 @@
     --header-boder-size: 0.1rem;
     --sidebar-width: 130px;
     /* 配色設定 */
-    --header-boder-color: rgb(0, 0, 0);
-    --char-color:         rgb(0, 0, 0);
-    --menu-background:    rgb(220, 220, 220);
-    --background-color:   rgb(255, 255, 255);
+    --header-boder-color:         rgb(0, 0, 0);
+    --char-color:                 rgb(0, 0, 0);
+    --link_char-color:            rgb(012, 096, 188);
+    --link_visited_char-color:    rgb(238, 049, 217);
+    --menu-background:            rgb(220, 220, 220);
+    --background-color:           rgb(255, 255, 255);
     --header-color: linear-gradient(180deg, rgb(220, 220, 220), rgb(220, 220, 220));
     --footer-color: linear-gradient(360deg, rgb(220, 220, 220), rgb(220, 220, 220));
-    --sidebar-color:      rgb(220, 220, 220);
+    --sidebar-color:              rgb(220, 220, 220);
     /* スクロールバーカラー */
-    --scroll-color:       rgb(220, 220, 220);
-    --scroll-border-color:rgb(012, 096, 188);
-    --scroll-border-title-color:rgb(238, 049, 217);
+    --scroll-color:               rgb(220, 220, 220);
+    --scroll-border-color:        rgb(012, 096, 188);
+    --scroll-border-title-color:  rgb(238, 049, 217);
 }
 /* OSの設定または、トグルスイッチがDark Mode時のスタイル */
 :root.darkmode {
-    --header-boder-color: rgb(255, 255, 255);
-    --char-color:         rgb(255, 255, 255);
-    --menu-background:    rgb(035, 035, 035);
-    --background-color:   rgb(065, 065, 065);
+    --header-boder-color:         rgb(255, 255, 255);
+    --char-color:                 rgb(255, 255, 255);
+    --link_char-color:            rgb(238, 049, 217);
+    --link_visited_char-color:    rgb(012, 096, 188);
+    --menu-background:            rgb(035, 035, 035);
+    --background-color:           rgb(065, 065, 065);
     --header-color: linear-gradient(180deg, rgb(035, 035, 035), rgb(035, 035, 035));
     --footer-color: linear-gradient(360deg, rgb(035, 035, 035), rgb(035, 035, 035));
-    --sidebar-color:      rgb(035, 035, 035);
+    --sidebar-color:              rgb(035, 035, 035);
     /* スクロールバーカラー */
-    --scroll-color:       rgb(035, 035, 035);
-    --scroll-border-color:rgb(238, 049, 217);
-    --scroll-border-title-color:rgb(012, 096, 188);
+    --scroll-color:               rgb(035, 035, 035);
+    --scroll-border-color:        rgb(238, 049, 217);
+    --scroll-border-title-color:  rgb(012, 096, 188);
 }
 
 /* 画面余白を削除 */
@@ -48,7 +52,6 @@ header {
     background: var(--header-color);
     color: var(--char-color);
 }
-
 
 /* ===========================ヘッダー=========================== */
 div.header-wrap {
@@ -126,6 +129,12 @@ div.content {
     display: flex;
     flex-direction: column;
     overflow-x: scroll;
+}
+div.allindex_content {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    height: 100vh;        /* 画面高さ基準 */
 }
 
 div.archivecontent {
@@ -283,7 +292,7 @@ a {
     text-decoration:none; 
 }
 /* a:visited {
-    color:rgb(255, 000, 000);
+    color: var(--link_visited_char-color);
 } */
 li{
     list-style: none;

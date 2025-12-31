@@ -1,21 +1,10 @@
 // 更新日付
 // 2024/12/28
 
-AllFileList = ["../archive/2015.html",
-               "../archive/2016.html",
-               "../archive/2017.html",
-               "../archive/2018.html",
-               "../archive/2019.html",
-               "../archive/2020.html",
-               "../archive/2021.html",
-               "../archive/2022.html",
-               "../archive/2023.html",
-               "../archive/2024.html",
-               "../archive/2025.html"];
+import { AllFileList, AllYearList } from "./define.js";
 
-AllYearList = ["2015", "2016", "2017", "2018", "2019",
-               "2020", "2021", "2022", "2023", "2024",
-               "2025"];
+window.get_movie_watch_history_all = get_movie_watch_history_all;
+window.movie_history_graph = movie_history_graph;
 
 function getMovieCount(elm) {
     var count = 0;
@@ -26,7 +15,7 @@ function getMovieCount(elm) {
         success: function(data) {
             var str = data.split(/\r\n|\r|\n/);
             for(var row in str) {
-                if (str[row].match("movie-img")) {
+                if (str[row].match("movie-img") && !str[row].match("noimage.jpg")) {
                     count = count + 1;
                 }
             }
@@ -98,7 +87,7 @@ function movie_history_graph(x_title, labellist, graph_data) {
                     enabled: false
                 },
                 datalabels: {
-                    color: window.globalFunction.set_char_color(),
+                    color: window.set_char_color(),
                     font: {
                         size: 15,
                     },
@@ -109,7 +98,7 @@ function movie_history_graph(x_title, labellist, graph_data) {
                 legend: {
                     display: true,
                     labels: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 }
             },
@@ -121,12 +110,12 @@ function movie_history_graph(x_title, labellist, graph_data) {
                         color: "black" 
                     },
                     title: {
-                        color: window.globalFunction.set_char_color(),
+                        color: window.set_char_color(),
                         display: true,
                         text: x_title
                     },
                     ticks: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 },
                 yAxes: {
@@ -136,12 +125,12 @@ function movie_history_graph(x_title, labellist, graph_data) {
                         color: "black" 
                     },
                     title: {
-                        color: window.globalFunction.set_char_color(),
+                        color: window.set_char_color(),
                         display: true,
                         text: "視聴数"
                     },
                     ticks: {
-                        color: window.globalFunction.set_char_color()
+                        color: window.set_char_color()
                     }
                 },
             },

@@ -1,0 +1,679 @@
+<!-- 更新日付 -->
+    <!-- 2026/12/27 -->
+
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="/image/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/image/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/image/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/image/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/image/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/image/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/image/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/image/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="/image/favicon/iTunesArtwork.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="/image/favicon/iTunesArtwork@2x.png">
+        <!-- jsファイルの読み込み -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
+        <script type="module" src="/js/tabledata.js" charset="UTF-8"></script>
+        <title>2026 視聴アニメ一覧</title>
+    </head>
+
+    <body>
+        <script>year = "2026"</script>
+        <link rel="stylesheet" href="/css/style.css"></link>
+        <link rel="stylesheet" href="/css/menu.css"></link>
+        <link rel="stylesheet" href="/css/style-Table.css"></link>
+        <link rel="stylesheet" href="/css/darkMode_on_off.css"></link>
+        <div class="container">
+            <!-- ヘッダー定義 -->
+            <header>
+                <div class="header-wrap">
+                    <div id="headerMain" class="headerMain"></div>
+                    <script>
+                        $("#headerMain").load("/common/hamburger-menu.html", function(){
+                           $("nav").hide();
+                        });
+                    </script>
+
+                    <div class="header">
+                        <div class="HeaderTitle"><p1>2026</p1></div>
+                        <div class="SubItem2"><p1 id="count_year_sum_2026"></p1></div>
+                        <div class="SubItem3"><p1 id="count_year_2026"></p1></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- メイン -->
+            <main>
+                <!-- コンテンツ -->
+                <div class="content">
+                    <br>
+
+                    <div class="season-winter">
+                        <div class="season-sub1">冬</div>
+                        <div class="season-sub2">&emsp;[2026/01～2026/03]</div>
+                        <div class="season-sub3" id="count_winter_2026"></div>
+                    </div>
+                    <div class="table-wrap">
+                        <table id="table_winter_2026">
+                            <tr>
+                                <th class="sun">日曜</th>
+                                <td class="continuation">継</td><td class="title">プリンセッション・オーケストラ</td>
+                                <td class="continuation">継</td><td class="title">DIGIMON BEATBREAK</td>
+                                <td class="continuation">継</td><td class="title">SI-VIS: The Sound of Heroes</td>
+                                <td class="reair">再</td><td class="title">響け！ユーフォニアム２</td>
+                                <td class="new">新</td><td class="title">うるわしの宵の月</td>
+                                <td class="continuation">継</td><td class="title">青のオーケストラ Season2</td>
+                                <td class="new">新</td><td class="title">正反対な君と僕</td>
+                                <td class="new">新</td><td class="title">花ざかりの君たちへ</td>
+                                <td class="new">新</td><td class="title">悪役令嬢は隣国の王太子に溺愛される</td>
+                                <td class="new">新</td><td class="title">地獄楽 第二期</td>
+                            </tr>
+                            <tr>
+                                <th class="mon">月曜</th>
+                                <td class="new">新</td><td class="title">姫様“拷問”の時間です 第2期</td>
+                                <td class="new">新</td><td class="title">幼馴染とはラブコメにならない</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="tue">火曜</th>
+                                <td class="new">新</td><td class="title">真夜中ハートチューン</td>
+                                <td class="new">新</td><td class="title">ダーウィン事変</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="wed">水曜</th>
+                                <td class="new">新</td><td class="title">かぐや様は告らせたい 大人への階段</td>
+                                <td class="new">新</td><td class="title">魔王の娘は優しすぎる!!</td>
+                                <td class="new">新</td><td class="title">【推しの子】第3期</td>
+                                <td class="new">新</td><td class="title">死亡遊戯で飯を食う。</td>
+                                <td class="new">新</td><td class="title">29歳独身中堅冒険者の日常</td>
+                                <td class="continuation">継</td><td class="title">わたしが恋人になれるわけないじゃん、ムリムリ！（※ムリじゃなかった!?）</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="thu">木曜</th>
+                                <td class="new">新</td><td class="title">勇者刑に処す 懲罰勇者9004隊刑務記録</td>
+                                <td class="new">新</td><td class="title">呪術廻戦 死滅回游 前編</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="fri">金曜</th>
+                                <td class="new">新</td><td class="title">葬送のフリーレン 第2期</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="sat">土曜</th>
+                                <td class="new">新</td><td class="title">デッドアカウント</td>
+                                <td class="new">新</td><td class="title">勇者のクズ</td>
+                                <td class="new">新</td><td class="title">メダリスト 第2期</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                        </table>
+                        <script type="module"> window.countup_season("table_winter_" + year, "count_winter_" + year);</script>
+                    </div>
+                    <h5>以下は単発放送<br>&emsp; かぐや様は告らせたい 大人への階段<br>&emsp; わたしが恋人になれるわけないじゃん、ムリムリ！（※ムリじゃなかった!?）</h5>
+                    <br>
+
+                    <div class="caption">&emsp; ●冬アニメランキング！！</div>
+                    <div class="ranking">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <th class="ranking1"><h4>１位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking2"><h4>２位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking3"><h4>３位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h4>※再放送枠、継続枠は含めない</h4>
+                    <br>
+
+                    <div class="season-spring">
+                        <div class="season-sub1">春</div>
+                        <div class="season-sub2">&emsp;[2026/04～2026/06]</div>
+                        <div class="season-sub3" id="count_spring_2026"></div>
+                    </div>
+                    <div class="table-wrap">
+                        <table id="table_spring_2026">
+                            <tr>
+                                <th class="sun">日曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="mon">月曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="tue">火曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="wed">水曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="thu">木曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                                <tr>
+                                <th class="fri">金曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="sat">土曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                        </table>
+                        <script type="module"> window.countup_season("table_spring_" + year, "count_spring_" + year);</script>
+                    </div>
+                    <br>
+
+                    <div class="caption">&emsp; ●春アニメランキング！！</div>
+                    <div class="ranking">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <th class="ranking1"><h4>１位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking2"><h4>２位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking3"><h4>３位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h4>※再放送枠、継続枠は含めない</h4>
+                    <br>
+
+                    <div class="season-summer">
+                        <div class="season-sub1">夏</div>
+                        <div class="season-sub2">&emsp;[2026/07～2026/09]</div>
+                        <div class="season-sub3" id="count_summer_2026"></div>
+                    </div>
+                    <div class="table-wrap">
+                        <table id="table_summer_2026">
+                            <tr>
+                                <th class="sun">日曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="mon">月曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="tue">火曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="wed">水曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="thu">木曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                                <tr>
+                                <th class="fri">金曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="sat">土曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                        </table>
+                        <script type="module"> window.countup_season("table_summer_" + year, "count_summer_" + year);</script>
+                    </div>
+                    <br>
+
+                    <div class="caption">&emsp; ●夏アニメランキング！！</div>
+                    <div class="ranking">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <th class="ranking1"><h4>１位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking2"><h4>２位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking3"><h4>３位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h4>※再放送枠、継続枠は含めない</h4>
+                    <br>
+
+                    <div class="season-autumn">
+                        <div class="season-sub1">秋</div>
+                        <div class="season-sub2">&emsp;[2026/10～2026/12]</div>
+                        <div class="season-sub3" id="count_autumn_2026"></div>
+                    </div>
+                    <div class="table-wrap">
+                        <table id="table_autumn_2026">
+                            <tr>
+                                <th class="sun">日曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="mon">月曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="tue">火曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="wed">水曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="thu">木曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                                <tr>
+                                <th class="fri">金曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                            <tr>
+                                <th class="sat">土曜</th>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                                <td class="none"></td><td class="title">--</td>
+                            </tr>
+                        </table>
+                        <script type="module"> window.countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
+                    </div>
+                    <br>
+
+                    <div class="caption">&emsp; ●秋アニメランキング！！</div>
+                    <div class="ranking">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <th class="ranking1"><h4>１位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking1"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking2"><h4>２位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking2"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th class="ranking3"><h4>３位</h4></th>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                    <td class="ranking-img"></td>
+                                    <td class="ranking3"><h4></h4></td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <h4>※再放送枠、継続枠は含めない</h4>
+                    <br>
+
+                    <!-- 映画 -->
+                    <div class="caption">&emsp; ●2026視聴アニメ映画！！ 視聴数:0</div>
+                    <div class="movie">
+                        <div class="table-wrap">
+                            <table class="table">
+                                <tr>
+                                    <td class="movie-img"><img src="/image/key Visual/noimage.jpg"></td>
+                                    <td class="movie-img"></td>
+                                </tr>
+                                <tr>
+                                    <td ></td>
+                                    <td ></td>
+                                </tr>
+                                <tr>
+                                    <td class="ranking-copyright"><div>&copy; </div></td>
+                                    <td ></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- グラフ -->
+                    <div class="data"><h3>&emsp; ●年間視聴データ分析</h3></div>
+                    <div class="graph-area">
+                        <!-- 円グラフ1 -->
+                        <div>
+                            <canvas id="category-division" width="300" height="200"></canvas>
+                            <script type="module">
+                                var result = [0, 0, 0];
+                                result = window.countup_year(["table_winter_" + year,
+                                                       "table_spring_" + year,
+                                                       "table_summer_" + year,
+                                                       "table_autumn_" + year],
+                                                       "count_year_" + year,
+                                                       "count_year_sum_" + year);
+                                window.category_division_graph(result);
+                            </script>
+                        </div>
+                        <!-- 棒グラフ -->
+                        <div>
+                            <canvas id="watch-history" width="300" height="300"></canvas>
+                            <script type="module">
+                                var x_title = year + "_season"
+                                var result = window.get_watch_history_year(year)
+                                window.history_graph(x_title, result[0], result[1], true);
+                            </script>
+                        </div>
+                        <!-- 円グラフ2 -->
+                        <div>
+                            <canvas id="week-division" width="300" height="200"></canvas>
+                            <script type="module">
+                                var result = window.get_week_division_year(year);
+                                window.week_division_graph(result);
+                            </script>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+                <!-- サイドバー -->
+                <div id="sidebar" class="sidebar"></div>
+                <script>
+                    $("#sidebar").load("/common/sidebar.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
+                </div>
+            </main>
+
+            <!-- フッター定義 -->
+            <footer>
+                <div id="footer"></div>
+                <script>
+                    $("#footer").load("/common/footer.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
+            </footer>
+        </div>
+    </body>
+</html>

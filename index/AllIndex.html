@@ -1,6 +1,115 @@
 <!-- 更新日付 -->
     <!-- 2024/1/6 -->
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="icon" href="/image/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/image/favicon/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/image/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/image/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/image/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/image/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/image/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/image/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/image/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="512x512" href="/image/favicon/iTunesArtwork.png">
+        <link rel="apple-touch-icon" sizes="1024x1024" href="/image/favicon/iTunesArtwork@2x.png">
+        <!-- jsファイルの読み込み -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+        <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
+        <script type="module" src="/js/tabledata.js" charset="UTF-8"></script>
+        <title></title>
+    </head>
 
-工事中
-<br>
-<a href="/index.html">Topにもどる</a>
+    <body>
+        <link rel="stylesheet" href="/css/style.css"></link>
+        <link rel="stylesheet" href="/css/menu.css"></link>
+        <link rel="stylesheet" href="/css/style-Table.css"></link>
+        <link rel="stylesheet" href="/css/darkMode_on_off.css"></link>
+        <div class="container">
+            <!-- ヘッダー定義 -->
+            <header>
+                <div class="header-wrap">
+                    <div id="headerMain" class="headerMain"></div>
+                    <script>
+                        $("#headerMain").load("/common/hamburger-menu.html", function(){
+                           $("nav").hide();
+                        });
+                    </script>
+
+                    <div class="header">
+                        <div class="HeaderTitle"><p1>索引</p1></div>
+                        <div class="SubItem2"></div>
+                        <div class="SubItem3"></div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- メイン -->
+            <main>
+
+
+                <!-- コンテンツ -->
+                <div class="allindex_content">
+                    <br>
+                    <div class="all_title_table-wrap">
+                        <table class="table_all_title">
+                            <colgroup>
+                                <col class="col-title">
+                                <col class="col-year">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>アニメ番組タイトル</th>
+                                    <th>年度</th>
+                                </tr>
+                            </thead>
+                            <tbody id="program-table-body"></tbody>
+                        </table>
+                    </div>
+                    <script type="module" src="/js/load_all_title.js"></script>
+                    <br>
+
+                    <div class="all_movie_title_table-wrap">
+                        <table class="table_all_title">
+                            <colgroup>
+                                <col class="col-title">
+                                <col class="col-year">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>アニメ映画タイトル</th>
+                                    <th>年度</th>
+                                </tr>
+                            </thead>
+                            <tbody id="movie-table-body"></tbody>
+                        </table>
+                    </div>
+                    <script type="module" src="/js/load_all_movie_title.js"></script>
+
+                </div>
+                <!-- サイドバー -->
+                <div id="sidebar" class="sidebar"></div>
+                <script>
+                    $("#sidebar").load("/common/sidebar.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
+            </main>
+        
+            <!-- フッター定義 -->
+            <footer>
+                <div id="footer"></div>
+                <script>
+                    $("#footer").load("/common/footer.html", function(){
+                    $("nav").hide();
+                    });
+                </script>
+            </footer>
+        </div>
+    </body>
+
+</html>

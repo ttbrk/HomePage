@@ -21,7 +21,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
         <script src="/js/source/jquery-3.7.0.min.js" type="text/javascript" charset="UTF-8"></script>
-        <script src="/js/tabledata.js" type="text/javascript" charset="UTF-8"></script>
+        <script type="module" src="/js/tabledata.js"charset="UTF-8"></script>
         <title>2015 視聴アニメ一覧</title>
     </head>
 
@@ -113,7 +113,7 @@
                                 <td class="none"></td><td class="title">--</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_winter_" + year, "count_winter_" + year);</script>
+                        <script type="module"> window.countup_season("table_winter_" + year, "count_winter_" + year);</script>
                     </div>
                     <br>
                     <br>
@@ -175,7 +175,7 @@
                                 <td class="new">新</td><td class="title">終わりのセラフ</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_spring_" + year, "count_spring_" + year);</script>
+                        <script type="module"> window.countup_season("table_spring_" + year, "count_spring_" + year);</script>
                     </div>
                     <br>
 
@@ -288,7 +288,7 @@
                                 <td class="new">新</td><td class="title">下ネタという概念が存在しない退屈な世界</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_summer_" + year, "count_summer_" + year);</script>
+                        <script type="module"> window.countup_season("table_summer_" + year, "count_summer_" + year);</script>
                     </div>
                     <br>
 
@@ -387,7 +387,7 @@
                                 <td class="new">新</td><td class="title">ご注文はうさぎですか??</td>
                             </tr>
                         </table>
-                        <script> countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
+                        <script type="module"> window.countup_season("table_autumn_" + year, "count_autumn_" + year);</script>
                     </div>
                     <br>
 
@@ -471,32 +471,32 @@
                         <!-- 円グラフ1 -->
                         <div>
                             <canvas id="category-division" width="300" height="200"></canvas>
-                            <script>
+                            <script type="module">
                                 var result = [0, 0, 0];
-                                result = countup_year(["table_winter_" + year,
+                                result = window.countup_year(["table_winter_" + year,
                                                        "table_spring_" + year,
                                                        "table_summer_" + year,
                                                        "table_autumn_" + year],
                                                        "count_year_" + year,
                                                        "count_year_sum_" + year);
-                                category_division_graph(result);
+                                window.category_division_graph(result);
                             </script>
                         </div>
                         <!-- 棒グラフ -->
                         <div>
                             <canvas id="watch-history" width="300" height="300"></canvas>
-                            <script>
-                                x_title = year + "_season"
-                                result = get_watch_history_year(year)
-                                history_graph(x_title, result[0], result[1], true);
+                            <script type="module">
+                                var x_title = year + "_season"
+                                var result = window.get_watch_history_year(year)
+                                window.history_graph(x_title, result[0], result[1], true);
                             </script>
                         </div>
                         <!-- 円グラフ2 -->
                         <div>
                             <canvas id="week-division" width="300" height="200"></canvas>
-                            <script>
-                                result = get_week_division_year(year);
-                                week_division_graph(result);
+                            <script type="module">
+                                var result = window.get_week_division_year(year);
+                                window.week_division_graph(result);
                             </script>
                         </div>
                     </div>
