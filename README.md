@@ -36,8 +36,10 @@
 　　サイトマップ  
 
 ## <font color="LightGreen">更新履歴</font>
+[2026/07/04]&emsp;2026春ランキング追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2026夏アニメ追加  
 [2026/04/12]&emsp;2026冬ランキング追加  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2026春アニメ追加 
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2026春アニメ追加  
 [2025/12/28]&emsp;2025秋ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2026冬アニメ追加  
 [2025/09/28]&emsp;2025夏ランキング追加  
@@ -56,12 +58,9 @@
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024春ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024夏アニメ追加  
 [2024/05/11]&emsp;2024視聴映画追加  
-[2024/04/27]&emsp;2024春アニメリスト修正  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;削除：声優ラジオのウラオモテ、Re:Monster   
 [2024/03/24]&emsp;2024冬ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2024春アニメ追加   
 [2024/02/25]&emsp;2024冬アニメリスト修正  
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;削除：百妖譜、追加：機動戦士ガンダムSEED HDリマスター   
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;視聴映画を追加  
 [2024/01/06]&emsp;ページ内検索表示時に水平方向スクロールを実装  
 [2024/01/05]&emsp;ページ内検索ボタン実装  
