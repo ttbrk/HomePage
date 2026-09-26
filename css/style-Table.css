@@ -5,7 +5,7 @@
     --table-archive-img-size: 100px;
     --table-archive-season-size: 20px;
     --table-size: 400px;
-    --table-th-size-pc: 60px;
+    --table-th-size-pc: 80px;
     --table-th-size-sp: 35px;
 
     --table-label-size-pc: 25px;
@@ -55,6 +55,7 @@
     --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(220, 220, 220));
     --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(220, 220, 220));
     --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(220, 220, 220));
+    --table-sp-color:           linear-gradient(90deg, rgb(190, 190, 190), rgb(220, 220, 220));
     /* 視聴区分配色 */
     --table-new-color:          linear-gradient(30deg, rgb(255, 255, 255)   0%, rgb(255, 255, 255)  30%, 
                                                        rgb(251, 153, 102)  30%, rgb(220, 220, 220)  45%, 
@@ -102,6 +103,7 @@
     --table-thu-color:          linear-gradient(90deg, rgb(016, 168, 059), rgb(035, 035, 035));
     --table-fri-color:          linear-gradient(90deg, rgb(249, 190, 000), rgb(035, 035, 035));
     --table-sat-color:          linear-gradient(90deg, rgb(070, 082, 161), rgb(035, 035, 035));
+    --table-sp-color:           linear-gradient(90deg, rgb(190, 190, 190), rgb(220, 220, 220));
     /* 視聴区分配色 */
     --table-new-color:          linear-gradient(30deg, rgb(065, 065, 065)   0%, rgb(065, 065, 065)  30%, 
                                                        rgb(251, 153, 102)  30%, rgb(035, 035, 035)  45%, 
@@ -319,7 +321,7 @@ td.title {
 @media screen and (max-width: 480px) { td.title { width: var(--table-td-size-sp); font-size: 12px;} }
 
 /* テーブル曜日共通設定 */
-th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
+th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat, th.sp {
     width: var(--table-th-size-pc);
     position: sticky;
     left: 0;
@@ -328,8 +330,8 @@ th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat {
     color: var(--table-char-color);
     font-size: 20px;
 }
-@media screen and (max-width: 834px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
-@media screen and (max-width: 480px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat { width: var(--table-th-size-sp); font-size: 12px;} }
+@media screen and (max-width: 834px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat, th.sp{ width: var(--table-th-size-sp); font-size: 12px;} }
+@media screen and (max-width: 480px) { th.sun,th.mon, th.tue, th.wed, th.thu, th.fri, th.sat, th.sp { width: var(--table-th-size-sp); font-size: 12px;} }
 
 /* テーブル曜日カラー設定 */
 th.sun {
@@ -352,6 +354,9 @@ th.fri {
 }
 th.sat {
     background: var(--table-sat-color);
+}
+th.sp {
+    background: var(--table-sp-color);
 }
 
 /* ランキングth共通設定 */

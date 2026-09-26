@@ -36,6 +36,8 @@
 　　サイトマップ  
 
 ## <font color="LightGreen">更新履歴</font>
+[2026/09/26]&emsp;2026夏ランキング追加  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2026秋アニメ追加  
 [2026/07/04]&emsp;2026春ランキング追加  
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2026夏アニメ追加  
 [2026/04/12]&emsp;2026冬ランキング追加  
