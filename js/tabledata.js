@@ -454,7 +454,7 @@ function get_week_division_year(year) {
                        "table_spring_" + year,
                        "table_summer_" + year,
                        "table_autumn_" + year]
-    var graph_data = [0, 0, 0, 0, 0, 0, 0];
+    var graph_data = [0, 0, 0, 0, 0, 0, 0, 0];
     for (const TableID of TableIDList) {
         var table = document.getElementById(TableID);
         for (var i=0; i < table.rows.length; i++) {
@@ -478,7 +478,7 @@ function week_division_graph(graph_data) {
     var myChart = new Chart(ctx, {
         type: "doughnut",
         data: {
-            labels: ["日曜", "月曜", "火曜", "水曜", "木曜", "金曜", "土曜"],
+            labels: ["日曜", "月曜", "火曜", "水曜", "木曜", "金曜", "土曜", "単発放送(TVSP)"],
             datasets: [
                 {
                     backgroundColor: ["rgb(231, 0, 18)",
@@ -487,7 +487,8 @@ function week_division_graph(graph_data) {
                                       "rgb(0, 170, 232)",
                                       "rgb(16, 168, 59)",
                                       "rgb(249, 190, 0)",
-                                      "rgb(70, 82, 161)"],
+                                      "rgb(70, 82, 161)",
+                                      "rgb(190, 190, 190)"],
                     borderColor: "transparent",
                     data: graph_data
                 }
